@@ -1,0 +1,337 @@
+
+input, select {
+	vertical-align: middle
+}
+
+mark {
+	background-color: #fcd700;
+	color: #000;
+	font-style: italic;
+	font-weight: 700
+}
+input:-moz-placeholder {
+color:#a9a9a9
+}
+textarea:-moz-placeholder {
+color:#a9a9a9
+}
+a {
+	touch-callout: none!important;
+	-webkit-touch-callout: none!important;
+	-webkit-tap-highlight-color: rgba(0,0,0,0)!important;
+	-webkit-tap-highlight-color: rgba(0,0,0,0)!important
+}
+.resetpwd-container {
+	color: #8e8e8e;
+	box-sizing: border-box;
+	padding:20px 0px;
+}
+.resetpwd-container .resetpwd-steps {
+	width: 100%;
+	height: 2rem;
+	text-align: center;
+	overflow: hidden
+}
+.resetpwd-container .resetpwd-steps .reset-pwd {
+	height: 2rem;
+	width: 83%;
+	margin: 0 1%;
+    border: 1px solid #1cd39b;
+    background-color: #1cd39b;
+    color: #fff;
+	border-radius: 2px;
+	line-height: 2rem;
+	font-size: 16px;
+	vertical-align: middle
+}
+.resetpwd-container .resetpwd-steps .reset-pwd.active {
+	border: 1px solid #1993e8;
+	background-color: #1993e8;
+	color: #fff
+}
+
+
+.form-item1 textarea {
+	width: 100%;
+	height: 100%;
+	padding-left: 40px;
+	border: 1px solid #d8d8d8;
+	border-radius: 4px;
+	line-height: normal;
+	vertical-align: middle;
+	flex: 1;
+	-webkit-box-flex: 1;
+	font-size: 16px;
+	background-position: 12px 10px;
+	min-height: 200px;
+	padding-top: 10px;
+}
+.form-item input.ruc-input-register-auth {
+	width: 50%;
+	background-position: 10px -33px
+}
+.form-item #ruc-send-auth-code-btn {
+	display: inline-block;
+	width: 130px;
+	height: 42px;
+	line-height: 42px;
+	font-size: 18px;
+	border-radius: 4px;
+	vertical-align: middle;
+	text-align: center;
+	color: #fff;
+	background-color: #1993e8;
+	margin-left: 10px
+}
+.form-item #ruc-send-auth-code-btn:hover {
+	background-color: #1993e8
+}
+.form-item #ruc-send-auth-code-btn.button-disable, .form-item #ruc-send-auth-code-btn.button-disable:hover {
+	background-color: #d7dbdc
+}
+.next-prove-account {
+	margin-top: 3rem
+}
+.next-prove-account div {
+	display: inline-block;
+	width: 100%;
+	height: 42px;
+	line-height: 42px;
+	font-size: 18px;
+	border-radius: 4px;
+	vertical-align: middle;
+	text-align: center;
+	flex: 1;
+	-webkit-box-flex: 1;
+	background-color: #1993e8;
+	color: #fff;
+	cursor: pointer
+}
+
+.form-item input.ruc-input-register-password {
+	background-position: 10px -119px
+}
+.next-prove-reset {
+	margin-top: 70px
+}
+.next-prove-reset div {
+	display: inline-block;
+	width: 100%;
+	height: 42px;
+	line-height: 42px;
+	font-size: 18px;
+	border-radius: 4px;
+	vertical-align: middle;
+	text-align: center;
+	flex: 1;
+	-webkit-box-flex: 1;
+	background-color: #1993e8;
+	color: #fff;
+	cursor: pointer
+}
+.resetpwd-success {
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 5rem;
+	display: flex
+}
+.resetpwd-success .icon-success {
+	background-image: url('../img/t0168c87888d0846265.png');
+	background-repeat: no-repeat;
+	background-position: right center;
+	width: 80px;
+	height: 100px
+}
+.resetpwd-success .success-info {
+	flex: 1;
+	width: 50px;
+	height: 100px;
+	padding: 25px 0 0 10px
+}
+.resetpwd-success .success-info .success-info-text {
+	display: block;
+	font-size: 1.2rem;
+	color: #1993e8
+}
+@media screen and (max-width:320px) {
+.resetpwd-success .success-info .success-info-text {
+	display: block;
+	font-size: 1rem;
+	color: #1993e8
+}
+}
+.resetpwd-success .success-info .success-info-remind {
+	display: block;
+	color: #8e8e8e;
+font-size:.5rem
+}
+.successinfo {
+	width: 277px;
+	height: 100px;
+	margin: auto;
+	background-image: url('../img/t0168c87888d0846265.png');
+	background-repeat: no-repeat;
+	background-position: left top;
+	padding-left: 65px;
+	padding-top: 10px
+}
+.successinfo .suc_title {
+	font-size: 1.2rem;
+	color: #1993e8
+}
+.successinfo .suc_content {
+	color: #8e8e8e;
+font-size:.5rem
+}
+
+.form-item {
+	position: relative;
+	display: flex;
+	width: 99%;
+	height: 40px;
+	margin:20px 0px;
+}
+
+.form-item input {
+	width: 98%;
+	height: 40px;
+	padding-left: 40px;
+	border: 1px solid #d8d8d8;
+	border-radius: 4px;
+	line-height: normal;
+	vertical-align: middle;
+	flex: 1;
+	-webkit-box-flex: 1;
+	font-size: 16px;
+	background-image: url('../img/t017f13cca971d53a44.png');
+	background-repeat: no-repeat;
+	background-position: 12px 9px;
+	font-size:16px;
+}
+.form-item input#password {
+	width: 98%;
+	height: 40px;
+	padding-left: 140px;
+	border: 1px solid #d8d8d8;
+	border-radius: 4px;
+	line-height: normal;
+	vertical-align: middle;
+	flex: 1;
+	-webkit-box-flex: 1;
+	font-size: 16px;
+	background-image: url('../img/t017f13cca971d53a44.png');
+	background-repeat: no-repeat;
+	background-position: 10px -120px;
+	font-size:16px;
+}
+.form-item input.ruc-input-register-captcha {
+	width: 50%;
+	background-position: 10px -33px
+}
+.form-item input.ruc-input-register-nickname {
+	background-position: 10px -74px
+}
+.form-item .ruc-image-register-captcha {
+	display: inline-block;
+	width: 90px;
+	height: 42px;
+	line-height: 42px;
+	font-size: 16px;
+	border-radius: 0;
+	vertical-align: middle;
+	text-align: center;
+	border: 0;
+	margin-left: 5px
+}
+.form-item .ruc-a-register-change {
+	display: inline-block;
+	width: 50px;
+	height: 42px;
+	line-height: 42px;
+	font-size: 16px;
+	border-radius: 0;
+	vertical-align: middle;
+	text-align: center;
+	color: #c9c9c9;
+	margin-left: 5px
+}
+.next-write-prove {
+	margin-top: 3rem
+}
+.next-write-prove div {
+	display: inline-block;
+	width: 100%;
+	height: 42px;
+	line-height: 42px;
+	font-size: 18px;
+	border-radius: 4px;
+	vertical-align: middle;
+	text-align: center;
+	flex: 1;
+	-webkit-box-flex: 1;
+	background-color: #1993e8;
+	color: #fff;
+	cursor: pointer
+}
+.input-item-error-text {
+	position: fixed;
+	top: 120px;
+	left: 50%;
+	display: inline-block;
+	width: 260px;
+	height: 42px;
+	line-height: 42px;
+	font-size: 16px;
+	border-radius: 2px;
+	vertical-align: middle;
+	text-align: center;
+	display: none;
+	margin-left: -130px;
+	border: 1px solid #333;
+	background-color: #333;
+	color: #fff
+}
+#pop {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	text-align: center;
+	overflow: auto
+}
+.hide {
+	display: none
+}
+.show {
+	display: block
+}
+.gt_holder {
+	margin-top: 100px;
+	display: inline-block
+}
+#pop .gt_ajax_tip {
+	right: 0
+}
+#pop .gt_guide_tip {
+	left: 45px
+}
+#pop .gt_help_button {
+	display: none
+}
+.resetpwd-container .resetpwd-steps .reset-pwd.active {
+	border: 1px solid #1cd39b;
+	background-color: #1cd39b;
+	color: #fff;
+}
+.form-item #ruc-send-auth-code-btn,  .form-item #ruc-send-auth-code-btn:hover,  .next-prove-account div,  .next-prove-reset div,  .next-write-prove div {
+	background-color: #1cd39b;
+}
+.successinfo .suc_title {
+	color: #1cd39b;
+}
+
+.yuyue-date{ background:url(../img/date.png) no-repeat 7px 8px !important; background-size:23px !important}
+.yuyue-time{ background:url(../img/time.png) no-repeat 7px 8px !important; background-size:23px !important}
+.yuyue-remark{ background:url(../img/remark.png) no-repeat 7px 8px !important; background-size:23px !important}

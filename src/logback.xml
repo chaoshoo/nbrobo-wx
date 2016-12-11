@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>   
+	<property name="FILE_DIR" value="/home/appuser/backlogs" />   
+   
+   <appender name="DATA_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">  
+       <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">   
+          	<fileNamePattern>${FILE_DIR}/partner.%d{yyyy-MM-dd}.log</fileNamePattern>   
+       </rollingPolicy>   
+       <encoder>   
+        	<pattern>%d{HH:mm:ss.SSS} [%thread] %logger{0}  %msg%n</pattern>   
+       </encoder>
+       <filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+	   </filter>   
+    </appender>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">   
+	   <encoder>   
+	      	<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>   
+	   </encoder>   
+    </appender>  
+    <root level="DEBUG">   
+      	<appender-ref ref="STDOUT" />   
+    </root>   
+    <logger name="data" level="INFO" additivity="false">
+    	<appender-ref ref="DATA_FILE" />   
+    </logger>
+    <logger name="org"  level="ERROR" /> 
+</configuration>  

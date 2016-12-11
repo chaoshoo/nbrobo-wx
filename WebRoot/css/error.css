@@ -1,0 +1,22 @@
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  background-color:#fff;
+  width:100%;
+  overflow: hidden;
+}
+.content{
+  width:1200px;
+  height:auto;
+}
+.content .error{
+  margin:auto;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:20%;
+}

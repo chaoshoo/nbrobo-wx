@@ -1,0 +1,25 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{padding:0;margin:0;}body,button,input,select,textarea{font:14px/1.8 "Microsoft Yahei",Helvetica;color:#666;background:#fff;}ul,ol,li{list-style:none;}img{vertical-align:top;border:0;}a{color:#666;text-decoration:none;}a:hover{color:#306ca2;text-decoration:none;}a.on{font-weight:bold;}table{border-collapse:collapse;border-spacing:0;}table td{padding:0;margin:0;}table th.wztop{vertical-align:top;}.clearfix{*zoom:1;}.clearfix:after{display:block;clear:both;height:0;overflow:hidden;visibility:hidden;content:".";}input,button,select,textarea{outline:none}textarea{resize:none;}.fl{float:left;}.fr{float:right;}section,article,aside,header,footer,nav,dialog,figure{display:block;padding:0;margin:0;}
+/*mod*/
+body{background:#e7e7e7 url(../img/bg_body.png) 0 0 repeat;}
+.nobg{background:#fff;}
+.area{clear:both;padding:10px 15px;margin:0 auto;overflow:hidden;}
+.anC{display:block;font:bold 16px/43px "Microsoft Yahei";text-align:center;color:#fff;width:98%;height:43px;margin:0 auto;background:#81d142;border-radius:6px;overflow:hidden;}
+.anC:hover{color:#fff;}
+.inputC,.textareaC{font-size:14px;color:#666;width:98%;height:30px;line-height:30px;border:1p solid #ccc;overflow:hidden;}
+.textareaC{height:72px;line-height:24px;}
+.dxC{float:left;margin-right:15px;}
+/*logP*/
+.logP .cap,.logP .cap2{font:bold 32px/40px "Microsoft Yahei";color:#0000FF;}
+.logP .cap2{text-align:center;padding:30px 0;}
+.xxC,.xxC li,.nrP .hd,.nrP .bd,.dxP{clear:both;text-align:left;overflow:hidden;}
+.xxC{padding:10px;margin-bottom:10px;background:#fff;border:1px solid #ccc;border-radius:5px;}
+.xxC li{padding-bottom:10px;}
+.xxC label{display:block;height:30px;line-height:30px;}
+/*nrP*/
+.fcB{color:#037097;}
+.nrP .bd{padding:10px;}
+.nrP .cap{font-size:20px;color:#000;}
+.nrP .info{line-height:20px;}
+.nrP .date{margin-right:10px;}
+.nrP p{text-indent:28px;word-wrap:break-word;margin-bottom:10px;}
+.nrP p img{display:block;margin:0 auto;}
