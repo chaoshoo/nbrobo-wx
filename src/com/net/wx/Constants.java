@@ -15,7 +15,7 @@ public  class Constants {
 	public static final String HOST_ADDRESS = "http://wx.cunjk.com/";
   	
   	//微信登录授权APPID
-  	public static final String OAUTH_APPID = "wxfd65d5401333bc07";
+  	public static final String OAUTH_APPID = "wx595d88175949ba23";
   	//微信登录授权AppSecret
   	public static final String OAUTH_APPSECRET = "9ce209909b58457286c1c1fe8cf7f22b";
   	

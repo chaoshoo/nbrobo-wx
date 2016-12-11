@@ -82,11 +82,11 @@ public  class Constants {
   		//公众号名称
   	public static final String NICKNAME = "gh_026be9e5d2a5";
   		//appID
-  	public static final String APPID = "wxfd65d5401333bc07"; 
+  	public static final String APPID = "wx595d88175949ba23"; 
   		//应用密钥
  	public static final String APPSECRET = "9ce209909b58457286c1c1fe8cf7f22b"; 	
  	//微信登录授权APPID
-  	public static final String OAUTH_APPID = "wxfd65d5401333bc07";
+  	public static final String OAUTH_APPID = "wx595d88175949ba23";
   	//微信登录授权AppSecret
   	public static final String OAUTH_APPSECRET = "9ce209909b58457286c1c1fe8cf7f22b";
   	

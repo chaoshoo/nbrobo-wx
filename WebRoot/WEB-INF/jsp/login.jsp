@@ -11,7 +11,7 @@
 <html style="font-size: 76.8px;" data-dpr="1"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
-<title>居民健康管理服务平台</title>
+<title>环球健康管理平台</title>
     <meta name="keywords" contnet="登录">
     <meta name="description" contnet="登录">
     <link href="<%=path %>/css/common.css" rel="stylesheet">

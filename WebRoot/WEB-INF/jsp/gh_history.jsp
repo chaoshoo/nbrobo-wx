@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>居民健康管理服务平台</title>
+<title>环球健康管理平台</title>
 <meta name="meituan_check">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -113,7 +113,7 @@ function history(){
 }
 
 function orderinfo(orderid){
-	window.location='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxfd65d5401333bc07&redirect_uri=http://wx.nbrobo.com/guahao/orderinfo.html?orderid='+orderid+'&response_type=code&scope=snsapi_base&state=123#wechat_redirect';
+	window.location='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx595d88175949ba23&redirect_uri=http://wx.nbrobo.com/guahao/orderinfo.html?orderid='+orderid+'&response_type=code&scope=snsapi_base&state=123#wechat_redirect';
 }
 
 </script>

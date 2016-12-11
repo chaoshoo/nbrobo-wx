@@ -27,7 +27,7 @@
 											data:"orderid="+orderid,
 											success:function(data){
 												if(data=='1'){
-													window.location='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxfd65d5401333bc07&redirect_uri=http://wx.nbrobo.com/index/toLogin.html&response_type=code&scope=snsapi_base&state=123#wechat_redirect';
+													window.location='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx595d88175949ba23&redirect_uri=http://wx.nbrobo.com/index/toLogin.html&response_type=code&scope=snsapi_base&state=123#wechat_redirect';
 												}else{
 													$.alert("更新挂号订单状态失败，请联系客服人员。");
 												}
