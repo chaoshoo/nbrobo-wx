@@ -6,10 +6,10 @@ import com.net.jfinal.JFinalEntity;
 import com.net.jfinal.TableBind;
 @TableBind(name="doctor_vip_msg")
 public class DoctorVipMsgEntity extends JFinalEntity {
-	private	String	doctor_code	;//	医生编码
-	private	Long	vip_code	;//	会员编码
-	private	Date	create_time	;//	创建时间
-	private	String	content	;//	内容
+	private	String	doctor_code	;//	Doctor code
+	private	Long	vip_code	;//	Member code
+	private	Date	create_time	;//	Created time
+	private	String	content	;//	content
 	public String getDoctor_code() {
 		return doctor_code;
 	}

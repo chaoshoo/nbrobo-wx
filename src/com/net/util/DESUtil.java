@@ -8,14 +8,14 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
 /**
- * DES加解密类
- * @author 涂缘
+ * DESEncryption and decryption class
+ * @author Paint edge
  *
  */
 public class DESUtil {
 
 	/**
-	 * 加密，密钥长度都必须是8的倍数 返回16进制字符串
+	 * encryption，The key length must be8Multiple of Return16Hexadecimal Strings
 	 * 
 	 * @param datasource
 	 * @param password
@@ -42,7 +42,7 @@ public class DESUtil {
 	}
 
 	/**
-	 * 用DES加密后，返回16进制字符串
+	 * useDESAfter encryption，Return16Hexadecimal Strings
 	 * @param datasource
 	 * @param password
 	 * @return
@@ -52,7 +52,7 @@ public class DESUtil {
 		return bytesToHexString(dd);
 	}
 	/**
-	 * 解密
+	 * Decrypt
 	 * 
 	 * @param src
 	 * @param password
@@ -76,7 +76,7 @@ public class DESUtil {
 		return cipher.doFinal(src);
 	}
 	/**
-	 * 解密经过DES加密的16进制的字符串
+	 * Decryption passDESEncrypted16Binary string
 	 * @param hexSrc
 	 * @param password
 	 * @return
@@ -96,7 +96,7 @@ public class DESUtil {
 	}
 
 	/**
-	 * byte数组转换成16进制字符串
+	 * byteConvert array16Hexadecimal Strings
 	 * 
 	 * @param b
 	 * @return
@@ -114,7 +114,7 @@ public class DESUtil {
 	}
 
 	/**
-	 * 16进制字符串转成byte数组
+	 * 16Decimal stringbytearray
 	 * 
 	 * @param src
 	 * @return
@@ -142,7 +142,7 @@ public class DESUtil {
 
 		DESUtil des = new DESUtil();
 		// 待加密内容
-		String str = "测试内容asda可是sdadfasdfaaaf1232323aaaaa2121212&*())__+!@#$%^&~";
+		String str = "Test contentasdahoweversdadfasdfaaaf1232323aaaaa2121212&*())__+!@#$%^&~";
 		System.out.println("加密前内容为:"+str);
 		// 密码，长度要是8的倍数
 		String password = "V0QWX6T7MOY921DJUSN4E5GBZRLIKC8AFHP3";

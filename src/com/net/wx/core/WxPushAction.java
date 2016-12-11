@@ -19,7 +19,7 @@ import com.nky.Constants;
 public class WxPushAction {
 
 	/**
-	 * 接口对外  
+	 * External interface  
 	 * @param req
 	 * @return
 	 */
@@ -32,7 +32,7 @@ public class WxPushAction {
 			String dpid="100";
 			Record r = WxRegisterSingleton.getInstance().getInfoByDpid(dpid);
 			if(r==null){
-				return "false:微信公众号配置有误。";
+				return "false:WeChat public account configuration error。";
 			}
 			String openid = req.getParameter("wxid");
 			String message = req.getParameter("message");
@@ -42,7 +42,7 @@ public class WxPushAction {
 			String str = Constants.WEIXIN_MD5KEY+openid+message;
 			if(!MD5Util.MD5(str, "utf-8").equals(token)){
 				System.out.println("token 认证失败");
-				return "false:认证失败。";
+				return "false:Authentication failure。";
 			}
 			MPAct mpAct = new MPAct();
 			mpAct.setAppId(r.get("APPID") + "");
@@ -66,7 +66,7 @@ public class WxPushAction {
 			if(x == openids.length){
 				return "true";
 			}else{
-				return "false:部分推送失败。";
+				return "false:Partial push failure。";
 			}
 //			String sql = "insert  into `t_weixin_log`(`wxid`,`content`,`result`,`createtime`) values ('"+openid+"','"+message+"','"+result+"',now())";
 
@@ -75,7 +75,7 @@ public class WxPushAction {
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-			return "false:系统异常。";
+			return "false:Abnormal system。";
 		}
 
 	}

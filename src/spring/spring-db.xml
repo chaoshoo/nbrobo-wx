@@ -16,17 +16,17 @@
 		<property name="url" value="${jdbc.url}" />
 		<property name="username" value="${jdbc.user}" />
 		<property name="password" value="${jdbc.password}" />
-		<!-- 配置初始化大小-->
+		<!-- Configuration initialization size-->
 		<property name="initialSize" value="5" />
-		<!-- 配置初始化最小 -->
+		<!-- Configuration initialization minimum -->
 		<property name="minIdle" value="1" />
-		<!-- 配置初始化最大 -->
+		<!-- Configuration initialization Max -->
 		<property name="maxActive" value="50" />
 
-		<!-- 获取连接等待超时的时间 -->
+		<!-- Connection time out -->
 		<property name="maxWait" value="60000" />
 		
-		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<!-- Configuration interval how long before the detection，To detect idle connections that need to be closed，Unit is millisecond -->
 		<property name="timeBetweenEvictionRunsMillis" value="60000" />
 		<property name="minEvictableIdleTimeMillis" value="300000" />
 		<property name="validationQuery" value="SELECT 'x'" />
@@ -35,22 +35,22 @@
 		<property name="testOnReturn" value="false" />
 		<property name="poolPreparedStatements" value="false" />
 		<!-- <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/> -->
-        <!--连接泄漏处理。Druid提供了RemoveAbandanded相关配置，用来关闭长时间不使用的连接。-->
-        <!-- 打开removeAbandoned功能 --> 
+        <!--Connection leakage treatment。DruidProvidedRemoveAbandandedRelated configuration，Used to close the connection that is not used for a long time.。-->
+        <!-- openremoveAbandonedfunction --> 
         <property name="removeAbandoned" value="true"/>      
-        <!-- 1800秒，也就是30分钟 -->
+        <!-- 1800second，that is30Minute -->
         <property name="removeAbandonedTimeout" value="1800"/>
-         <!-- 关闭abanded连接时输出错误日志 -->       
+         <!-- CloseabandedOutput error log -->       
         <property name="logAbandoned" value="true"/>
                  
-        <!-- 配置监控统计拦截的filters -->      
+        <!-- Configuration monitoring statistics interceptfilters -->      
         <!-- <property name="filters">stat,wall</property> --> 
 	</bean>
 	
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-	<!-- cglib管理事务，控制在实现类中 -->
+	<!-- cglibAdministrative affairs，Control in the implementation class -->
 	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
 	
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">  

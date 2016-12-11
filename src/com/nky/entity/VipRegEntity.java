@@ -6,8 +6,8 @@ import com.net.jfinal.JFinalEntity;
 import com.net.jfinal.TableBind;
 @TableBind(name="vip_reg")
 public class VipRegEntity  extends JFinalEntity implements java.io.Serializable{
-	private	String	orderid	;//	订单号
-	private	String	status	;//	支付状态
+	private	String	orderid	;//	Order number
+	private	String	status	;//	Payment status
 	private	String	orderfee	;//	
 	private	Date	payrtime	;//	
 	private	String	ordertime	;//	

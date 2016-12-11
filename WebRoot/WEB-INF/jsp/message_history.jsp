@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>环球健康管理平台</title>
+<title>Residents health management service platform</title>
 <meta name="meituan_check">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -29,47 +29,47 @@
 <body id="account">
 <header class="navbar">
   <div class="nav-wrap-left"> <a class="react back" href="<%=path %>/index/homepage.html"  ><i class="text-icon icon-back"></i></a> </div>
-  <span class="nav-header h1"> 消息列表 </span> 
+  <span class="nav-header h1"> Message list </span> 
   <div class="nav-wrap-right"> <a class="react headSearch" href="javascript:void(0)"> 
-  <font style="font-weight:bold;font-style:italic;">&nbsp;&nbsp;</font>
+  <font style="font-weight:bold;font-style:italic;"></font>
   </a> </div></header>
 <div class="cur-control-con" >
   <div class="weui_search_bar" id="search_bar">
     <form class="weui_search_outer">
       <div class="weui_search_inner"> <i class="weui_icon_search"></i>
-        <input type="search" class="weui_search_input" id="search_input" placeholder="搜索" required>
+        <input type="search" class="weui_search_input" id="search_input" placeholder="search" required>
         <a href="javascript:" class="weui_icon_clear" id="search_clear"></a> </div>
-      <label for="search_input" class="weui_search_text" id="search_text"> <i class="weui_icon_search"></i> <span>搜索</span> </label>
+      <label for="search_input" class="weui_search_text" id="search_text"> <i class="weui_icon_search"></i> <span>search</span> </label>
     </form>
-    <a href="javascript:" class="weui_search_cancel" id="search_cancel">取消</a> </div>
+    <a href="javascript:" class="weui_search_cancel" id="search_cancel">cancel</a> </div>
         <input type="hidden" name="pageno" id="pageno" value="0"/>
     
   <div id="liuyanlist" class="cur-control-con" >
       <!-- 
   <div class=" replay-item">
-  <div class="replay-item-title">我&nbsp;星期天&nbsp;12：50</div>
-  <div class="replay-item-info">你好，我是谢晨！前几天在您这边检查了身体，感觉还可以，什么时候可以再来！</div>
+  <div class="replay-item-title">I Sunday12：50</div>
+  <div class="replay-item-info">Hello,，This is Xie Chen.！A few days ago, you had a physical check-up，Feeling can also，When can I come back！</div>
   </div>
   --> 
     </div>
      <div class="weui-infinite-scroll" id="loadingdiv">
 	  <div class="infinite-preloader"></div>
-	    <!-- 正在加载... -->
-	    <span  id="loading">上拉加载更多</span>
+	    <!-- Being loaded... -->
+	    <span  id="loading">Pull up load more</span>
 	</div>
     </div>
 <script>
 $(document).ready(function(e) {
 	 $("#pageno").val(0);
 	messagelist();
-	var loading = false;  //状态标记
+	var loading = false;  //State mark
 	$(document.body).infinite().on("infinite", function() {
 	  if(loading) return;
 	  loading = true;
 	  setTimeout(function() {
 		liuyanlist();
 	    loading = false;
-	  }, 1500);   //模拟延迟
+	  }, 1500);   //Simulation delay
 	});
 });
 function messagelist(){

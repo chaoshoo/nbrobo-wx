@@ -28,7 +28,7 @@ public class JfinalUtil {
 	}
 	
 	/**
-	 * 键值为驼峰。如:dp_id---->dpId
+	 * The key for the hump。as:dp_id---->dpId
 	 * @param rc
 	 * @return
 	 */
@@ -54,7 +54,7 @@ public class JfinalUtil {
 	}
 	
 	/**
-	 * 键值为小写。如:dp_id---->dpid
+	 * The key to lowercase。as:dp_id---->dpid
 	 * @param rc
 	 * @return
 	 */

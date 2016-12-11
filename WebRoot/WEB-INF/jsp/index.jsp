@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>环球健康管理平台</title>
+<title>Residents health management service platform</title>
 <meta name="meituan_check">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -29,10 +29,10 @@
   </a> 
 <input type="hidden" id="vip_code" name="vip_code" value="${vip.vip_code}">
 <input type="hidden" id="card_code" name="card_code" value="${vip.card_code}">
- <a href="#" onclick="userhome();" ><img src="${heard_img_url}" width="100"><i class="text-icon order-card order-icon" style="position:absolute;width:80px;top:85px;padding:2px;font-size:12px !important;margin-left:-15px;">进入个人中心</i></a>
+ <a href="#" onclick="userhome();" ><img src="${heard_img_url}" width="100"><i class="text-icon order-card order-icon" style="position:absolute;width:80px;top:85px;padding:2px;font-size:12px !important;margin-left:-15px;">Enter personal Center</i></a>
   <div class="username white">${vip.nick_name}</div>
  
-  <div class="userinfo white"> <i class="text-icon order-card order-icon" style="background:#F5B345">卡</i>${vip.card_code}</div>
+  <div class="userinfo white"> <i class="text-icon order-card order-icon" style="background:#F5B345">card</i>${vip.card_code}</div>
 
   <dl class="list" style="background:none; border-top:none;border-bottom:none;">
     <dd>
@@ -45,30 +45,30 @@
       <li>
         <input type="hidden" id="orderid" value="${orderid}"/>
         <a class="text-icon green left" style="font-size: .4rem;" id="last_guahao" href="#" onclick="showguahao()">${outpdate}</a>
-        <div class="gray left" id="guahao_no" >无挂号记录</div>
-        <div class="gray left" id="guahao_more"  style="display:none" ><a href="#" onclick="showmore()">更多挂号记录</a></div>
+        <div class="gray left" id="guahao_no" >No registration records</div>
+        <div class="gray left" id="guahao_more"  style="display:none" ><a href="#" onclick="showmore()">More registration records</a></div>
       </li>
-      <li class="right"><a href="#" onclick="guahao();" class="guahao-btn react">马上挂号</a> </li>
+      <li class="right"><a href="#" onclick="guahao();" class="guahao-btn react">Registere immediately</a> </li>
     </ul>
     <div class="clearfix"></div>
   </div>
 </div>
 <dl class="list"  style=" border-top:none;border-bottom:none;">
   <dd><a class="react" href="#" >
-    <div class="more more-weak" onclick="yuyue();"> <i class="text-icon order-jiudian order-icon">约</i>立即预约<!-- <span class="more-after"></span> --> 
+    <div class="more more-weak" onclick="yuyue();"> <i class="text-icon order-jiudian order-icon">about</i>Book now<!-- <span class="more-after"></span> --> 
     </div>
     </a> <span class="yuyue"></span> </dd>
 </dl>
 <dl class="list"  style=" border-top:none;border-bottom:none;">
   <dd><a class="react" href="#" onclick="member();">
-    <div class="more more-weak"> <i class="text-icon order-lottery order-icon">家</i>家庭成员 </div>
+    <div class="more more-weak"> <i class="text-icon order-lottery order-icon">home</i>Family member </div>
     </a> <span class="jiating"></span> </dd>
 </dl>
 <div class="weui_grids" id="inspectlisthtml"> 
 <!-- 
 <a href="" class="weui_grid">
   <div class="weui_grid_icon icon-niaosuan"> <img src="<%=path %>/img/icon_niaosuan.png" width="50" height="50"> </div>
-  <p class="weui_grid_label"> 尿酸 </p>
+  <p class="weui_grid_label"> uric acid </p>
   </a>
   -->
  </div>

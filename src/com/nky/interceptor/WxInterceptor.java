@@ -13,7 +13,7 @@ import com.nky.Constants;
 
 
 /**
- * 拦截器
+ * Interceptor
  * @author smiven
  *
  */
@@ -39,11 +39,11 @@ public class WxInterceptor implements HandlerInterceptor{
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object arg2) throws Exception {
 		String uri = request.getRequestURI();
 		if(!PubMethod.isEmpty(uri)  &&  uri.startsWith("/nkywx/customer") 
-				&& !uri.endsWith("/index/toLogin.html")//登录界面
-				&& !uri.endsWith("/index/login.json")//登录验证密码
-				&& !uri.endsWith("/index/updatePWD.html")//修改密码
-				&& !uri.endsWith("/index/sendYZM.html")//获取验证码
-				&& !uri.endsWith("/index/findPSW.html")){//找回密码
+				&& !uri.endsWith("/index/toLogin.html")//Login interface
+				&& !uri.endsWith("/index/login.json")//Login authentication password
+				&& !uri.endsWith("/index/updatePWD.html")//Change password
+				&& !uri.endsWith("/index/sendYZM.html")//Get verification code
+				&& !uri.endsWith("/index/findPSW.html")){//Retrieve password
 			if(isLogin(request)){
 				return true;
 			}else{
@@ -59,7 +59,7 @@ public class WxInterceptor implements HandlerInterceptor{
 	
 	private boolean isLogin(HttpServletRequest request) {
 		Object pharmacistEntity = request.getSession().getAttribute(Constants.CUSTOMER_SESSION_KEY);
-		if (pharmacistEntity != null) {//用户信息已存储至session中
+		if (pharmacistEntity != null) {//User information is stored tosessionin
 			return true;
 		}
 		

@@ -2,17 +2,17 @@ package com.net.util;
 
 import java.util.LinkedList;
 /**
- * 工作线程池
+ * Working thread pool
  * 
  * huilet 2013-4-17
  * @author yuanc
  */
 public class ThreadPool extends ThreadGroup {
-	/** 线程池是否关闭*/
+	/** Thread pool is closed*/
 	private boolean isClosed = false; 
-	/** 工作队列 */
+	/** Job queue */
 	private LinkedList workQueue; 
-	/** 线程池的id */
+	/** Thread poolid */
 	private static int threadPoolID = 1; 
 
 	private static ThreadPool instance;
@@ -26,7 +26,7 @@ public class ThreadPool extends ThreadGroup {
 	/**
 	 * 
 	 * @param poolSize
-	 * 			表示线程池中的工作线程的数量
+	 * 			Represents the number of threads in the thread pool
 	 * huilet 2013-4-17
 	 * @author yuanc
 	 */
@@ -44,7 +44,7 @@ public class ThreadPool extends ThreadGroup {
 	}
 
 	/**
-	 * 向工作队列中加入一个新任务,由工作线程去执行该任务
+	 * Add a new task to the job queue,The task is performed by the worker thread
 	 * @param task
 	 * huilet 2013-4-17
 	 * @author yuanc
@@ -54,7 +54,7 @@ public class ThreadPool extends ThreadGroup {
 			throw new IllegalStateException();
 		}
 		/*
-		 * 此处可以考虑设置线程池中等待线程大小、时间机制 if(workQueue.size()>30) {
+		 * Here you can consider setting the thread pool to wait for the thread size、Time mechanism if(workQueue.size()>30) {
 		 * //Thread.sleep(3000); }
 		 */
 //		if(workQueue.size()>30) {    //线程数量超过30则休眠5秒
@@ -73,7 +73,7 @@ public class ThreadPool extends ThreadGroup {
 	}
 
 	/**
-	 * 从工作队列中取出一个任务,工作线程会调用此方法
+	 * Take a task from the job queue,The working thread will call this method
 	 * @param threadid
 	 * @return
 	 * @throws InterruptedException
@@ -95,7 +95,7 @@ public class ThreadPool extends ThreadGroup {
 	}
 
 	/**
-	 * 关闭线程池
+	 * Close thread pool
 	 * 
 	 * huilet 2013-4-17
 	 * @author yuanc
@@ -113,7 +113,7 @@ public class ThreadPool extends ThreadGroup {
 	}
 
 	/**
-	 * 等待工作线程把所有任务执行完毕 
+	 * Wait for the worker thread to execute all the tasks 
 	 * 
 	 * huilet 2013-4-17
 	 * @author yuanc
@@ -141,7 +141,7 @@ public class ThreadPool extends ThreadGroup {
 	}
 
 	/**
-	 * 内部类,工作线程,负责从工作队列中取出任务,并执行
+	 * Internal class,Working thread,Be responsible for taking out tasks from the job queue.,And execute
 	 * 
 	 * huilet 2013-4-17
 	 * 

@@ -6,36 +6,36 @@ import com.net.jfinal.JFinalEntity;
 import com.net.jfinal.TableBind;
 @TableBind(name="t_vip")
 public class VipEntity  extends JFinalEntity implements java.io.Serializable{
-	private	String	vip_code	;//	会员id编码
-	private	String	card_code	;//	卡号
-	private	String	login_account	;//	会员登录账户
-	private	String	mobile	;//	手机号
-	private	String	login_password	;//	密码
-	private	String	heard_img_url	;//	头像地址
-	private	Integer	isvalid	;//	是否有效,1有效,0无效
-	private	String	papers_type	;//	证件类型
-	private	String	papers_num	;//	证件号码
-	private	String	nick_name	;//	会员昵称
-	private	String	real_name	;//	真实姓名
-	private	String	account_mail	;//	邮箱
-	private	String	weight	;//	体重
-	private	String	height	;//	身高
-	private	String	sex	;//	性别
-	private	String	area	;//	省市区
-	private	String	address	;//	详细地址
-	private	String	birthday	;//	出生日期
-	private	String	post_code	;//	邮编
-	private	String	phone	;//	固定电话
-	private	String	ill_history	;//	病史
-	private	String	gm	;//	过敏史
+	private	String	vip_code	;//	MemberidCode
+	private	String	card_code	;//	Credit Card Number
+	private	String	login_account	;//	Member login account
+	private	String	mobile	;//	Cell number
+	private	String	login_password	;//	Password
+	private	String	heard_img_url	;//	Avatar address
+	private	Integer	isvalid	;//	Whether effective,1effective,0invalid
+	private	String	papers_type	;//	Id type
+	private	String	papers_num	;//	Id Number
+	private	String	nick_name	;//	Member nickname
+	private	String	real_name	;//	Real name
+	private	String	account_mail	;//	mailbox
+	private	String	weight	;//	weight
+	private	String	height	;//	height
+	private	String	sex	;//	Gender
+	private	String	area	;//	Provincial city
+	private	String	address	;//	Detailed address
+	private	String	birthday	;//	Birthday
+	private	String	post_code	;//	Zip code
+	private	String	phone	;//	Landline
+	private	String	ill_history	;//	Medical history
+	private	String	gm	;//	Allergic History
 	private	String	qq	;//	QQ
 	private	String	wxopenid	;//	wxopenid
 	private String wx_code;
 	private	String	android_tv_token_id	;//	android_tv_token
 	private	String	android_tv_channel_id	;//	android_tv_channel
 	private Integer age;
-	private	Date	modify_time	;//	修改时间
-	private	Date	create_time	;//	创建时间
+	private	Date	modify_time	;//	Modification time
+	private	Date	create_time	;//	Created time
 	public String getVip_code() {
 		return vip_code;
 	}

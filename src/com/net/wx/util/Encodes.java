@@ -15,8 +15,8 @@ import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.lang3.StringEscapeUtils;
 
 /**
- * 封装各种格式的编码解码工具类. 1.Commons-Codec的 hex/base64 编码 2.自制的base62 编码
- * 3.Commons-Lang的xml/html escape 4.JDK提供的URLEncoder
+ * Package of various formats of encoding and decoding tools. 1.Commons-CodecThe hex/base64 Code 2.Self madebase62 Code
+ * 3.Commons-LangThexml/html escape 4.JDKProvidedURLEncoder
  * 
  * @author calvin
  * @version 2013-01-15
@@ -27,14 +27,14 @@ public class Encodes {
  private static final char[] BASE62 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".toCharArray();
 
  /**
-  * Hex编码.
+  * HexCode.
   */
  public static String encodeHex(byte[] input) {
   return Hex.encodeHexString(input);
  }
 
  /**
-  * Hex解码.
+  * HexDecode.
   */
  public static byte[] decodeHex(String input) {
   try {
@@ -47,28 +47,28 @@ public class Encodes {
  }
 
  /**
-  * Base64编码.
+  * Base64Code.
   */
  public static String encodeBase64(byte[] input) {
   return Base64.encodeBase64String(input);
  }
 
  /**
-  * Base64编码, URL安全(将Base64中的URL非法字符'+'和'/'转为'-'和'_', 见RFC3548).
+  * Base64Code, URLsecurity(takeBase64InURLIllegal character'+'and'/'Turn'-'and'_', seeRFC3548).
   */
  public static String encodeUrlSafeBase64(byte[] input) {
   return Base64.encodeBase64URLSafeString(input);
  }
 
  /**
-  * Base64解码.
+  * Base64Decode.
   */
  public static byte[] decodeBase64(String input) {
   return Base64.decodeBase64(input);
  }
 
  /**
-  * Base62编码。
+  * Base62Code。
   */
  public static String encodeBase62(byte[] input) {
   char[] chars = new char[input.length];
@@ -79,35 +79,35 @@ public class Encodes {
  }
 
  /**
-  * Html 转码.
+  * Html transcoding.
   */
  public static String escapeHtml(String html) {
   return StringEscapeUtils.escapeHtml4(html);
  }
 
  /**
-  * Html 解码.
+  * Html Decode.
   */
  public static String unescapeHtml(String htmlEscaped) {
   return StringEscapeUtils.unescapeHtml4(htmlEscaped);
  }
 
  /**
-  * Xml 转码.
+  * Xml transcoding.
   */
  public static String escapeXml(String xml) {
   return StringEscapeUtils.escapeXml(xml);
  }
 
  /**
-  * Xml 解码.
+  * Xml Decode.
   */
  public static String unescapeXml(String xmlEscaped) {
   return StringEscapeUtils.unescapeXml(xmlEscaped);
  }
 
  /**
-  * URL 编码, Encode默认为UTF-8.
+  * URL Code, EncodeBy defaultUTF-8.
   */
  public static String urlEncode(String part) {
   try {
@@ -120,7 +120,7 @@ public class Encodes {
  }
 
  /**
-  * URL 解码, Encode默认为UTF-8.
+  * URL Decode, EncodeBy defaultUTF-8.
   */
  public static String urlDecode(String part) {
 

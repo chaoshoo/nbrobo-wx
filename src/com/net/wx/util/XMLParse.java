@@ -12,15 +12,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 提供提取消息格式中的密文及生成回复消息格式的接口.
+ * Provides an interface for extracting the cipher text in the message format and generating a reply message format.
  */
 class XMLParse {
 
     /**
-     * 提取出xml数据包中的加密消息
+     * ExtractxmlEncrypted messages in a packet
      *
-     * @param xmltext 待提取的xml字符串
-     * @return 提取出的加密消息字符串
+     * @param xmltext To be extractedxmlCharacter string
+     * @return Encrypted message string
      * @throws com.qq.weixin.mp.aes.AesException
      */
     public static Object[] extract(String xmltext) throws AesException {

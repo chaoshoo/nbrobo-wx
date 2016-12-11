@@ -4,7 +4,7 @@ import java.nio.charset.Charset;
 import java.util.Arrays;
 
 /**
- * 提供基于PKCS7算法的加解密接口
+ * Provide basedPKCS7Encryption and decryption interface
  */
 public class PKCS7Encoder {
 
@@ -12,10 +12,10 @@ public class PKCS7Encoder {
 	private static int BLOCK_SIZE = 32;
 
 	/**
-	 * 获得对明文进行补位填充的字节
+	 * To receive a fill in the text to fill the bytes
 	 * 
-	 * @param count 需要进行填充补位操作的明文字节个数
-	 * @return 补齐用的字节数组
+	 * @param count Number of plain text bytes required to fill in
+	 * @return Filled with an array of bytes
 	 */
 	public static byte[] encode(int count) {
 
@@ -34,10 +34,10 @@ public class PKCS7Encoder {
 	}
 
 	/**
-	 * 删除解密后明文的补位字符
+	 * Remove and decrypt the encrypted character
 	 * 
-	 * @param decrypted 解密后的明文
-	 * @return 删除补位字符后的明文
+	 * @param decrypted After the decryption of the text
+	 * @return Clear text after the deletion of the fill character
 	 */
 	public static byte[] decode(byte[] decrypted) {
 		int pad = (int) decrypted[decrypted.length - 1];
@@ -48,10 +48,10 @@ public class PKCS7Encoder {
 	}
 
 	/**
-	 * 将数字转化成ASCII码对应的字符，用于对明文进行补码
+	 * Convert the number intoASCIICode corresponding to the character，Used to complement the plaintext
 	 * 
-	 * @param a 需要转化的数字
-	 * @return 转化得到的字符
+	 * @param a Need to transform the number
+	 * @return Transformed character
 	 */
 	public static char chr(int a) {
 		byte target = (byte) (a & 0xFF);

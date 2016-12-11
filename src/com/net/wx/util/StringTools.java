@@ -15,7 +15,7 @@ public class StringTools {
 	public static final int HASH_INTERATIONS = 1024;
 
 	/**
-	 * 生成复杂的邀请码，生成随机的16位salt并经过1024次 sha-1 hash
+	 * Generate complex invitation code，Generate random16positionsaltAnd passed1024time sha-1 hash
 	 */
 	public static String entryptCode(String plainCode) {
 		byte[] salt = Digests.generateSalt(SALT_SIZE);
@@ -26,7 +26,7 @@ public class StringTools {
 	}
 
 	/**
-	 * 生成简单的邀请码
+	 * Generate a simple invitation code
 	 * @param plainCode
 	 * @return
 	 */
@@ -35,7 +35,7 @@ public class StringTools {
 	}
 	
 	/**
-	 * 获取随机生成UUID
+	 * Get random generationUUID
 	 * @return
 	 */
 	public static String getUUID(){
@@ -43,7 +43,7 @@ public class StringTools {
 	}
 	
 	/**
-	 * 判断邀请码匹配
+	 * Judge invitation code matching
 	 * 
 	 * @param password
 	 * @param saved
@@ -55,7 +55,7 @@ public class StringTools {
 	}
 	
 	/**
-	 * 逗号字符串文本转换增加单引号
+	 * Comma string text conversion increases single quotation marks
 	 * @param str
 	 * @return
 	 */
@@ -74,7 +74,7 @@ public class StringTools {
 	}
 	
 	/**
-	 * 替换字符串 中的单引号字符
+	 * Replacement string Single quote character in
 	 * @param str
 	 * @return
 	 */
@@ -87,7 +87,7 @@ public class StringTools {
 	
 	/**
 	 * 
-	 * hiddenPhone:隐藏手机号码. <br/>
+	 * hiddenPhone:Hide phone number. <br/>
 	 * @author Administrator
 	 * @param phone
 	 * @return
@@ -106,7 +106,7 @@ public class StringTools {
 	
 	/**
 	 * 
-	 * hiddenIdCard:隐藏身份证号码. <br/>
+	 * hiddenIdCard:Hide ID number. <br/>
 	 * @author Administrator
 	 * @param idCard
 	 * @return
@@ -123,7 +123,7 @@ public class StringTools {
 	}
 	
 	/**
-	 * isContainsStr:判断目标字符串是否在in字符串中
+	 * isContainsStr:To determine whether the target string is in theinString in
 	 * @author lujianmin
 	 * @param inStr
 	 * @param targetStr
@@ -143,7 +143,7 @@ public class StringTools {
 	
 	/**
 	 * 
-	 * removeDuplicate:通过HashSet踢除重复元素
+	 * removeDuplicate:adoptHashSetKick in addition to repeat elements
 	 * @author lujianmin
 	 * @param list
 	 * @return

@@ -16,7 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 文件目录管理公共类
+ * File directory management public class
  * 
  * @date 2011-5-23
  * @author xup
@@ -28,11 +28,11 @@ public class FileUtil {
 	private static File file;
 
 	/**
-	 * 判断文件或目录是否存在
+	 * To determine whether a file or directory exists
 	 * 
 	 * @param dirName
-	 *            文件名
-	 * @return 存在true \不存在false
+	 *            file name
+	 * @return existencetrue \Non-existentfalse
 	 * @version CETCMS 2011-6-13
 	 * @author yuanc
 	 */
@@ -46,10 +46,10 @@ public class FileUtil {
 	}
 
 	/**
-	 * 创建目录-不存在就创建
+	 * Create directory-Does not exist on the creation
 	 * 
 	 * @param dirName
-	 *            目录文件名
+	 *            Directory file name
 	 * @author xup
 	 * @date 2011-5-23
 	 */
@@ -60,16 +60,16 @@ public class FileUtil {
 				file.mkdir();
 
 		} catch (Exception e) {
-			Log.error("[文件操作]  创建目录错误:目录名：" + dirName + e.getMessage());
+			Log.error("[File operation]  error creating catalog:Directory name：" + dirName + e.getMessage());
 			e.printStackTrace();
 		}
 	}
 
 	/**
-	 * 删除目录
+	 * Delete directory
 	 * 
 	 * @param dirName
-	 *            目录文件名
+	 *            Directory file name
 	 * @version CETCMS 2011-6-13
 	 * @author yuanc
 	 */
@@ -82,7 +82,7 @@ public class FileUtil {
 				// 是文件或者空文件夹则直接删除
 				srcFile.delete();
 
-			} else { // 如果不是文件，并且文件夹下也不是空的
+			} else { // If it is not a file，And the folder is not empty.
 
 				// 获取文件夹下面所有的文件及文件夹
 				File[] files = srcFile.listFiles();
@@ -95,17 +95,17 @@ public class FileUtil {
 				}
 			}
 		} catch (Exception ex) {
-			Log.error("[文件操作]  删除目录错误:目录名" + dirName + ex.getMessage());
+			Log.error("[File operation]  Delete directory error:Directory name" + dirName + ex.getMessage());
 		}
 	}
 
 	/**
-	 * 覆盖方式写
+	 * Cover the way to write
 	 * 
 	 * @param fileName
-	 *            文件名
+	 *            file name
 	 * @param context
-	 *            内容
+	 *            content
 	 * @author xup
 	 * @date 2011-5-23
 	 */
@@ -123,19 +123,19 @@ public class FileUtil {
 			bout.close();
 
 		} catch (FileNotFoundException e) {
-			Log.error("[文件操作]  文件没找到:文件名" + fileName + e.getMessage());
+			Log.error("[File operation]  file was not found:file name" + fileName + e.getMessage());
 		} catch (IOException e) {
-			Log.error("[文件操作]  文件覆盖写入出错:文件名" + fileName + e.getMessage());
+			Log.error("[File operation]  File overwrite write error:file name" + fileName + e.getMessage());
 		}
 	}
 
 	/**
-	 * 追加方式写
+	 * Append mode
 	 * 
 	 * @param fileName
-	 *            文件名
+	 *            file name
 	 * @param context
-	 *            内容
+	 *            content
 	 * @author xup
 	 * @date 2011-5-23
 	 */
@@ -154,19 +154,19 @@ public class FileUtil {
 
 		} catch (FileNotFoundException e) {
 			System.err.println(e.getMessage());
-			Log.error("[文件操作]  文件没找到:文件名" + fileName + e.getMessage());
+			Log.error("[File operation]  file was not found:file name" + fileName + e.getMessage());
 		} catch (IOException e) {
 			System.err.println(e.getMessage());
-			Log.error("[文件操作]  文件追加写入出错:文件名" + fileName + e.getMessage());
+			Log.error("[File operation]  File append write error:file name" + fileName + e.getMessage());
 		}
 	}
 
 	/**
-	 * 读取文件内容
+	 * Read the contents of the file
 	 * 
 	 * @param fileName
-	 *            文件名
-	 * @return String 文件内容
+	 *            file name
+	 * @return String Document content
 	 * @author xup
 	 * @throws IOException
 	 * @date 2011-5-23
@@ -175,7 +175,7 @@ public class FileUtil {
 		StringBuilder stb = new StringBuilder();
 		InputStream is = new FileInputStream(fileName);
 		// 定义一个字节类型数组，所有的文件都是字节形式存在的
-		byte[] buff = new byte[200];// 每次从文件中读取200个字节
+		byte[] buff = new byte[200];// Read from file each time200Bytes
 		// 每次读取的实际字节长度
 		int length = 0;
 
@@ -192,13 +192,13 @@ public class FileUtil {
 	}
 
 	/**
-	 * 获取当前目录下所有的文件名
+	 * Gets the name of all the files in the current directory
 	 * 
 	 * @param dirName
-	 *            路径名
+	 *            Path name
 	 * @param postfix
-	 *            文件后缀名
-	 * @return 目录下所有文件名String[]
+	 *            File suffix
+	 * @return All file names in the directoryString[]
 	 * @author xup
 	 * @date 2011-5-24
 	 */
@@ -227,14 +227,14 @@ public class FileUtil {
 	}
 
 	/**
-	 * 文件备份 移动 先把文件复制到指定的路径文件名， 复制成功之后再把源文件删除,删除成功时才返回为真
+	 * File backup move Copy the file to the specified path file name， Copy after the success of the source files deleted,To return to true when deleting a success
 	 * 
 	 * @param inFile
-	 *            源文件
+	 *            source file
 	 * @param outFile
-	 *            目标文件
+	 *            Target file
 	 * @author xup
-	 * @return 返回备份结果信息
+	 * @return To return the results of the backup information
 	 * @date 2011-6-13
 	 */
 	public static Boolean moveFile(String inFile, String outFile) {
@@ -250,10 +250,10 @@ public class FileUtil {
 	}
 
 	/**
-	 * 删除文件--删除单个文件
+	 * Delete file--Delete a single file
 	 * 
 	 * @param fileName
-	 *            文件名
+	 *            file name
 	 * @author xup
 	 * @date 2011-6-13
 	 */
@@ -263,12 +263,12 @@ public class FileUtil {
 	}
 
 	/**
-	 * 复制文件
+	 * Copy file
 	 * 
 	 * @param inFile
-	 *            源文件
+	 *            source file
 	 * @param outFile
-	 *            目标文件
+	 *            Target file
 	 * @return
 	 * @throws Exception
 	 */
@@ -284,7 +284,7 @@ public class FileUtil {
 			// 套上输出文件流---目标流
 			FileOutputStream fout = new FileOutputStream(out);
 			// 一次性读取的最大字节数
-			int length = 2097152;// 2m内存
+			int length = 2097152;// 2mMemory
 			byte[] buffer = new byte[length];
 			while (true) {
 				// 读入内存
@@ -301,7 +301,7 @@ public class FileUtil {
 					fout.write(buffer, 0, ins);
 			}
 		} catch (Exception e) {
-			Log.error("[文件操作]文件复制出错" + e.getMessage());
+			Log.error("[File operation]File replication error" + e.getMessage());
 			falg = false;
 		}
 		return falg;
@@ -309,7 +309,7 @@ public class FileUtil {
 
 	/**
 	 * 
-	 * 得到发布根目录
+	 * Get publish root directory
 	 * 
 	 * @return
 	 * @author yuanchong Company huilet 2013-1-11
@@ -344,10 +344,10 @@ public class FileUtil {
 
 		if (result.endsWith("/")){
 
-			result = result.substring(0, result.length() - 1);// 不包含最后的"/"
+			result = result.substring(0, result.length() - 1);// Not included in the final"/"
 		}
-		Properties props=System.getProperties(); //获得系统属性集    
-		String osName = props.getProperty("os.name"); //操作系统名称    
+		Properties props=System.getProperties(); //System attribute set    
+		String osName = props.getProperty("os.name"); //Operating system name    
 //		System.out.println("os------>"+osName);
 		if("Linux".equals(osName)){
 			result = "/" +result;
@@ -356,7 +356,7 @@ public class FileUtil {
 	}
 	
 	public static  void main(String atgs[]){
-		Properties props=System.getProperties(); //获得
+		Properties props=System.getProperties(); //Get
 	     System.out.println("文件分隔符："+file.separator);  
 		
 	}

@@ -9,7 +9,7 @@
 <html lang="zh-cmn-Hans" class="">
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-<title>环球健康管理平台</title>
+<title>Residents health management service platform</title>
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="MobileOptimized" content="240">
@@ -29,9 +29,9 @@ html{ font-size:16px;}
   <a  href="javascript:history.go(-1);"  class="react back" >
   <i class="text-icon icon-back"></i>
   </a> </div>
-  <span class="nav-header h1" > 预约诊断 </span> 
+  <span class="nav-header h1" > Appointment diagnosis </span> 
   <div class="nav-wrap-right"> <a class="react headSearch" href="javascript:void(0)"> 
-  <font style="font-weight:bold;font-style:italic;">&nbsp;&nbsp;</font>
+  <font style="font-weight:bold;font-style:italic;"></font>
   </a> </div>
   </header>
   
@@ -41,14 +41,14 @@ html{ font-size:16px;}
           <input type="hidden" name="doctor_code" id="doctor_code" value="${doctorcode}">
         
     <div class="form-item">
-        <input type="text"  placeholder="请选择预约时间" class="ruc-input-register-name yuyue-date" id="datetime-picker" name="order_time_str">
+        <input type="text"  placeholder="Please choose an appointment time." class="ruc-input-register-name yuyue-date" id="datetime-picker" name="order_time_str">
     </div>
 
     <div class="form-item form-item1" style=" height:auto">
-        <textarea id="remark" placeholder="请填写您的备注" id="ruc-register-password-field" class="ruc-input-register-password yuyue-remark"  name="remark"></textarea>
+        <textarea id="remark" placeholder="Please input your notes" id="ruc-register-password-field" class="ruc-input-register-password yuyue-remark"  name="remark"></textarea>
         <i class="icon-ok"></i>
     </div>
-    <div class="next-prove-reset" onclick="yuetime()"  style=" font-size:18px; border-radius:4px;"><div>提交预约</div></div>
+    <div class="next-prove-reset" onclick="yuetime()"  style=" font-size:18px; border-radius:4px;"><div>Submit an appointment</div></div>
 </div>
       </form>
     </div>
@@ -68,11 +68,11 @@ function yuetime(){
 	var datetime_picker = $("#datetime-picker").val();
 	var remark = $("#remark").val();
 	if(datetime_picker == ''){
-		$.alert("预约时间不能为空");
+		$.alert("Appointment time can not be empty");
 		return;
 	}
 	if(remark == ''){
-		$.alert("请填写您的备注");
+		$.alert("Please input your notes");
 		return;
 	}
 	var formdata = $.serializeObject($("#yuyue_form"));;
@@ -87,14 +87,14 @@ function yuetime(){
 				// $.toast("预约成功", function() {
 				//	   window.location.href='<%=path%>/index/homepage.html';
 			    //    });
-				 $.alert("预约成功", function() {
+				 $.alert("Appointment made", function() {
 					 window.location.href='<%=path%>/index/homepage.html';
 					});
 			}else{
 				// $.toast("预约失败", "cancel", function() {
 			    //      console.log('close');
 			   //     });
-				 $.alert("预约失败");
+				 $.alert("Booking failed");
 			}
 		}
 	});

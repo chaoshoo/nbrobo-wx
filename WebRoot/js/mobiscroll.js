@@ -1126,8 +1126,8 @@
 
 (function ($) {
     $.mobiscroll.i18n.zh = $.extend($.mobiscroll.i18n.zh, {
-        setText: '确定',
-        cancelText: '取消'
+        setText: 'Confirmed',
+        cancelText: 'cancel'
     });
 })(jQuery);
 
@@ -1155,7 +1155,7 @@
             hourText: 'Hours',
             minuteText: 'Minutes',
             secText: 'Seconds',
-            ampmText: '&nbsp;',
+            ampmText: '',
             nowText: 'Now',
             showNow: false,
             stepHour: 1,
@@ -1731,7 +1731,7 @@
                     month = getName('M', s.monthNamesShort, s.monthNames);
                     break;
                 case 'y':
-                	if(yearCounter<1){//解决重复调用年份始终停留在2000年
+                	if(yearCounter<1){//Resolve duplicate call year always stay in2000year
                 		 year = getNumber('y');
                          yearCounter++;
                 	}
@@ -1797,18 +1797,18 @@
     $.mobiscroll.i18n.zh = $.extend($.mobiscroll.i18n.zh, {
         dateFormat: 'yyyy-mm-dd',
         dateOrder: 'yymmdd',
-        dayNames: ['周日', '周一;', '周二;', '周三', '周四', '周五', '周六'],
-		dayNamesShort: ['日', '一', '二', '三', '四', '五', '六'],
-        dayText: '日',
-        hourText: '时',
-        minuteText: '分',
-        monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
-        monthNamesShort: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
-        monthText: '月',
-        secText: '秒',
+        dayNames: ['Sunday', 'Monday;', 'Tuesday;', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+		dayNamesShort: ['day', 'One', 'Two', 'Three', 'Four', 'Five', 'Six'],
+        dayText: 'day',
+        hourText: 'time',
+        minuteText: 'branch',
+        monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        monthNamesShort: ['1month', '2month', '3month', '4month', '5month', '6month', '7month', '8month', '9month', '10month', '11month', '12month'],
+        monthText: 'month',
+        secText: 'second',
         timeFormat: 'HH:ii',
         timeWheels: 'HHii',
-        yearText: '年'
+        yearText: 'year'
     });
 })(jQuery);
 
@@ -1830,4 +1830,3 @@
     $.mobiscroll.themes['android-ics light'] = theme;
 
 })(jQuery);
-

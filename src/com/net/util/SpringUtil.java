@@ -6,11 +6,11 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 /**
- * Description: Spring工具类
+ * Description: SpringTool class
  *
  * @author zhujiang
  * @version 1.0
- * @created 2013-3-21 下午04:47:33
+ * @created 2013-3-21 Afternoon04:47:33
  */
 @Component
 public class SpringUtil implements ApplicationContextAware {
@@ -22,10 +22,10 @@ public class SpringUtil implements ApplicationContextAware {
     }
 
     /**
-     * 根据Bean名称获取实例
+     * according toBeanName access instance
      *
-     * @param name Bean注册名称
-     * @return bean实例
+     * @param name BeanRegistered name
+     * @return beanExample
      * @throws BeansException
      */
     public static Object getBean(String name) throws BeansException {

@@ -5,7 +5,7 @@ import java.util.List;
 import com.jfinal.config.Routes;
 import com.jfinal.core.Controller;
 /**
- * Routes 工具类 自动绑定Controller
+ * Routes Tool class Auto bindingController
  * 
  * huilet 2013-3-20
  * @author yuanc

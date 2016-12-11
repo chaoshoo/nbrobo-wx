@@ -6,18 +6,18 @@ import com.net.jfinal.JFinalEntity;
 import com.net.jfinal.TableBind;
 @TableBind(name="hospital")
 public class HospitalEntity extends JFinalEntity{
-	private	String	code	;//	医院编码
-	private	String	name	;//	医院名字
-	private	String	pic	;//	医院图片
-	private	String	lever	;//	级别
-	private	String	area	;//	省市区
-	private	String	address	;//	详细地址
-	private	String	mobile	;//	电话
-	private	String	website	;//	网站
-	private	String	traffic	;//	交通
-	private	String	info	;//	医院简介
-	private	String	feature	;//	医院特色
-	private	Date	create_time	;//	创建时间
+	private	String	code	;//	Hospital code
+	private	String	name	;//	Hospital name
+	private	String	pic	;//	Hospital picture
+	private	String	lever	;//	level
+	private	String	area	;//	Provincial city
+	private	String	address	;//	Detailed address
+	private	String	mobile	;//	Telephone
+	private	String	website	;//	website
+	private	String	traffic	;//	traffic
+	private	String	info	;//	Hospital profile
+	private	String	feature	;//	Hospital characteristics
+	private	Date	create_time	;//	Created time
 
 	public String getCode() {
 		return code;

@@ -4,19 +4,19 @@ var myScroll,
 	generatedCount = 0;
 
 /**
- * 下拉刷新 （自定义实现此方法）
- * myScroll.refresh();		// 数据加载完成后，调用界面更新方法
+ * Pull down to refresh （Custom implementation of this method）
+ * myScroll.refresh();		// After completion of data loading，Call interface update method
  */
 function pullDownAction () {
 	setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
 	    location.reload() 
-		myScroll.refresh();		//数据加载完成后，调用界面更新方法   Remember to refresh when contents are loaded (ie: on ajax completion)
+		myScroll.refresh();		//After completion of data loading，Call interface update method   Remember to refresh when contents are loaded (ie: on ajax completion)
 	}, 1000);	// <-- Simulate network congestion, remove setTimeout from production!
 }
 
 /**
- * 上拉加载 （自定义实现此方法）
- * myScroll.refresh();		// 数据加载完成后，调用界面更新方法
+ * Top pull loading （Custom implementation of this method）
+ * myScroll.refresh();		// After completion of data loading，Call interface update method
  */
 function pullUpAction () {
 	setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
@@ -25,7 +25,7 @@ function pullUpAction () {
 
 		for (i=0; i<3; i++) {
 			li = document.createElement('li');
-			li.innerText = '数据'+ i;
+			li.innerText = 'data'+ i;
 			el.appendChild(li, el.childNodes[0]);
 		}
 		myScroll.refresh();		
@@ -33,7 +33,7 @@ function pullUpAction () {
 }
 
 /**
- * 初始化iScroll控件
+ * InitializationiScrollcontrol
  */
 function loaded() {
 	pullDownEl = document.getElementById('pullDown');
@@ -42,8 +42,8 @@ function loaded() {
 	pullUpOffset = pullUpEl.offsetHeight;
 	
 	myScroll = new iScroll('wrapper', {
-		scrollbarClass: 'myScrollbar', /* 重要样式 */
-		useTransition: false, /* 此属性不知用意，本人从true改为false */
+		scrollbarClass: 'myScrollbar', /* Important styles */
+		useTransition: false, /* This property is not intended，I fromtrueInsteadfalse */
 		topOffset: pullDownOffset,
 		onRefresh: function () {
 			if (pullDownEl.className.match('loading')) {
@@ -55,30 +55,30 @@ function loaded() {
 		onScrollMove: function () {
 			if (this.y > 5 && !pullDownEl.className.match('flip')) {
 				pullDownEl.className = 'flip';
-				pullDownEl.querySelector('.pullDownLabel').innerHTML = '松手开始更新...';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = 'release to refresh...';
 				this.minScrollY = 0;
 			} else if (this.y < 5 && pullDownEl.className.match('flip')) {
 				pullDownEl.className = 'defalut';
-				pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
 				this.minScrollY = -pullDownOffset;
 			} else if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
 				pullUpEl.className = 'flip';
-				pullUpEl.querySelector('.pullUpLabel').innerHTML = '松手开始加载...';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = 'release to load...';
 				this.maxScrollY = this.maxScrollY;
 			} else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
 				pullUpEl.className = 'defalut';
-				pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Pull up load more...';
 				this.maxScrollY = pullUpOffset;
 			}
 		},
 		onScrollEnd: function () {
 			if (pullDownEl.className.match('flip')) {
 				pullDownEl.className = 'loading';
-				pullDownEl.querySelector('.pullDownLabel').innerHTML = '更新中...';				
+				pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Updating...';				
 				pullDownAction();	// Execute custom function (ajax call?)
 			} else if (pullUpEl.className.match('flip')) {
 				pullUpEl.className = 'loading';
-				pullUpEl.querySelector('.pullUpLabel').innerHTML = '加载中...';				
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Loading...';				
 				pullUpAction();	// Execute custom function (ajax call?)
 			}
 		}

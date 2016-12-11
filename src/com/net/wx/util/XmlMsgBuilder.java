@@ -5,23 +5,23 @@ import com.net.wx.vo.OutPutMsg;
 
 
 /**
- * 创建微信被动消息回复
+ * Create WeChat passive message reply
  */
 public class XmlMsgBuilder {
 
     private final StringBuffer msgBuf = new StringBuffer("<xml>\n");;
 
     /**
-     * 创建
+     * Establish
      */
     public static XmlMsgBuilder create() {
         return new XmlMsgBuilder();
     }
 
     /**
-     * 创建消息体前缀
+     * Create message body prefix
      *
-     * @param msg   输出消息实体
+     * @param msg   Output message entity
      */
     void msgPrefix(OutPutMsg msg) {
         msgBuf.append("<ToUserName><![CDATA[")
@@ -39,8 +39,8 @@ public class XmlMsgBuilder {
     }
 
     /**
-     * 被动文本消息
-     * @param msg   输出消息实体
+     * Passive text message
+     * @param msg   Output message entity
      */
     public XmlMsgBuilder text(OutPutMsg msg) {
         msgPrefix(msg);
@@ -50,9 +50,9 @@ public class XmlMsgBuilder {
     }
 
     /**
-     * 被动图像消息
+     * Passive image message
      *
-     * @param msg   输出消息实体
+     * @param msg   Output message entity
      */
     public XmlMsgBuilder image(OutPutMsg msg) {
         msgPrefix(msg);
@@ -65,9 +65,9 @@ public class XmlMsgBuilder {
     }
 
     /**
-     * 被动语音消息
+     * Passive voice message
      *
-     * @param msg   输出消息实体
+     * @param msg   Output message entity
      */
     public XmlMsgBuilder vioce(OutPutMsg msg) {
         msgPrefix(msg);
@@ -80,9 +80,9 @@ public class XmlMsgBuilder {
     }
 
     /**
-     * 被动视频消息
+     * Passive video message
      *
-     * @param msg   输出消息实体
+     * @param msg   Output message entity
      */
     public XmlMsgBuilder video(OutPutMsg msg) {
         msgPrefix(msg);
@@ -101,9 +101,9 @@ public class XmlMsgBuilder {
     }
 
     /**
-     * 被动音乐消息
+     * Passive Music News
      *
-     * @param msg   输出消息实体
+     * @param msg   Output message entity
      */
     public XmlMsgBuilder music(OutPutMsg msg) {
         msgPrefix(msg);
@@ -128,9 +128,9 @@ public class XmlMsgBuilder {
     }
 
     /**
-     * 被动多图文消息
+     * Passive multi graphic message
      *
-     * @param msg   输出消息实体
+     * @param msg   Output message entity
      */
     public XmlMsgBuilder news(OutPutMsg msg) {
         msgPrefix(msg);
@@ -164,12 +164,12 @@ public class XmlMsgBuilder {
     }
 
     /**
-     * AES加密信息
+     * AESEncryption information
      *
-     * @param xml           消息原文
-     * @param msgSignature  消息签名
-     * @param timeStamp     时间戳
-     * @param nonce         随机字符
+     * @param xml           Message text
+     * @param msgSignature  Message signature
+     * @param timeStamp     time stamp
+     * @param nonce         Random character
      */
     public String encrypt(String xml, String msgSignature,
                                  String timeStamp, String nonce) {
@@ -193,9 +193,9 @@ public class XmlMsgBuilder {
     }
 
     /**
-     * 创建回复消息
+     * Create reply message
      *
-     * @return  回复消息
+     * @return  Reply message
      */
     public String build() {
         msgBuf.append("</xml>");

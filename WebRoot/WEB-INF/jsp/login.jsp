@@ -11,13 +11,13 @@
 <html style="font-size: 76.8px;" data-dpr="1"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
-<title>环球健康管理平台</title>
-    <meta name="keywords" contnet="登录">
-    <meta name="description" contnet="登录">
+<title>Residents health management service platform</title>
+    <meta name="keywords" contnet="Sign in">
+    <meta name="description" contnet="Sign in">
     <link href="<%=path %>/css/common.css" rel="stylesheet">
     <style type="text/css">
     html{ font-size:32px !important;}
-    *{margin: 0px; padding: 0px; font-family: "微软雅黑";}
+    *{margin: 0px; padding: 0px; font-family: "Microsoft YaHei";}
     ::-webkit-input-placeholder {color: #c9c9c9;}
     html,body{ background-color: #f5f5f5;}
     .loginbtn,.registbtn{-webkit-tap-highlight-color: rgba(255,0,0,0);}
@@ -63,43 +63,43 @@
 <meta content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" name="viewport">
 </head>
 <body style="font-size: 12px;">
-    <div class="errormsg">您的帐号存在登录异常情况</div>
+    <div class="errormsg">Your account is logged in.</div>
       
   <header class="navbar">
    <div class="nav-wrap-left"> 
   <a  href="<%=path %>/index/toLogin.html"  class="react back"><i class="text-icon icon-back"></i></a> </div>
-  <span class="nav-header h1">登录</span>
+  <span class="nav-header h1">Sign in</span>
   <div class="nav-wrap-right"> <a class="react headSearch" href="#" onclick="message();"> 
-  <font style="font-weight:bold;font-style:italic;">&nbsp;&nbsp;</font>
+  <font style="font-weight:bold;font-style:italic;"></font>
   </a> </div>
 </header>
     <div class="loginform">
         <div class="inputgroup">
             <div class="username inputdiv">
                 <img src="<%=path %>/img/login1.png">
-                <span>账号</span>
-                <input id="phone" placeholder="(输入手机号码)" maxlength="11" type="text">
+                <span>Account number</span>
+                <input id="phone" placeholder="(Enter a phone number)" maxlength="11" type="text">
             </div>
             <div class="password inputdiv noborder">
                 <img src="<%=path %>/img/login2.png">
-                <span>密码</span>
-                <input id="password" placeholder="(输入登录密码)" type="password">
+                <span>Password</span>
+                <input id="password" placeholder="(Enter the login password)" type="password">
             </div>
         </div>
-        <div class="loginbtn" onclick="login();">登录</div>
-        <div class="registbtn" onclick="regist();">注册</div>
-        <div class="forgetpwd" onclick="findPWD();">忘记密码？</div>
+        <div class="loginbtn" onclick="login();">Sign in</div>
+        <div class="registbtn" onclick="regist();">register</div>
+        <div class="forgetpwd" onclick="findPWD();">Forget password？</div>
     </div>
     
     <div class="input-item-error-text"></div>
     <div class="codepopdiv">
         <div class="popcontent">
-            <p>您的账号存在被盗风险。</p>
+            <p>Your account has the risk of being stolen.。</p>
             <div class="div">
-                <input class="codeinput" id="codeinput" maxlength="6" placeholder="请输入验证码">
-                <div class="codebtn" id="codebtn">获取短信验证码</div>
+                <input class="codeinput" id="codeinput" maxlength="6" placeholder="Please enter verification code">
+                <div class="codebtn" id="codebtn">Get SMS verification code</div>
             </div>
-            <div class="codelogin" id="codelogin">立即验证</div>
+            <div class="codelogin" id="codelogin">Immediately verify</div>
         </div>
     </div>
 </body>
@@ -110,9 +110,9 @@
 		var tel = $("#phone").val();
 		var password = $("#password").val();
 		if( isEmpty(password)){
-			alert("手机号码或密码未填写！");
+			alert("Phone number or password is not complete！");
 		}else if(!istel(tel)){
-			alert('请输入有效的手机号码');
+			alert('Please enter a valid phone number');
 		}else{
 			$.ajax({
 				url:"login.json?ttt="+new Date().getTime(),
@@ -123,11 +123,11 @@
 					if(data.code == 1){
 						location.href = "homepage.html";
 					}else if(data.code == -1){
-						alert("该账号禁用，请联系客服人员。");
+						alert("This account is disabled，Please contact customer service。");
 					}else if(data.code == 2){
-						alert("SESSION失效，请退出重新进入公众号。");
+						alert("SESSIONInvalid，Please quit to re-enter the public number.。");
 					}else{
-						alert("电话号码或密码不正确！");
+						alert("Phone number or password is incorrect！");
 					}
 				}
 			});

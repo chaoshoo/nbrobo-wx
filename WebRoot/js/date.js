@@ -1649,13 +1649,13 @@
 	$.fn.datepicker.Constructor = Datepicker;
 	var dates = $.fn.datepicker.dates = {
 		en: {
-			days: ["六", "一", "二", "三", "四", "五", "六"],
-			daysShort: ["六", "一", "二", "三", "四", "五", "六"],
-			daysMin: ["六", "一", "二", "三", "四", "五", "六"],
+			days: ["Six", "One", "Two", "Three", "Four", "Five", "Six"],
+			daysShort: ["Six", "One", "Two", "Three", "Four", "Five", "Six"],
+			daysMin: ["Six", "One", "Two", "Three", "Four", "Five", "Six"],
 			months: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"],
 			monthsShort: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"],
-			today: "今天",
-			clear: "刷新",
+			today: "Today",
+			clear: "Refresh",
 			titleFormat: "yyyy - MM "
 		}
 	};

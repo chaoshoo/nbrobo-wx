@@ -8,12 +8,12 @@ import java.util.Date;
 public abstract class DateSupport {
 
 	/**
-	 * 将字符日期按照指定的格式转换为日期型
+	 * Converts the character date to a date in the specified format
 	 * 
 	 * @param date
-	 *            日期字符串
+	 *            Date string
 	 * @param format
-	 *            日期格式
+	 *            Date format
 	 * @return
 	 * @author tangshengyu
 	 * @version falvm
@@ -44,12 +44,12 @@ public abstract class DateSupport {
 	}
 
 	/**
-	 * 将日期转为指定格式的字符串
+	 * A string that will be converted to a specified format
 	 * 
 	 * @param date
-	 *            日期
+	 *            Date,
 	 * @param format
-	 *            日期格式
+	 *            Date format
 	 * @return
 	 * @author tangshengyu
 	 * @version falvm
@@ -91,7 +91,7 @@ public abstract class DateSupport {
 		return calendar;
 	}
 	/**
-	 * 获取月的最大值
+	 * Get the maximum value of the month
 	 * 
 	 * @param strDate
 	 * @return

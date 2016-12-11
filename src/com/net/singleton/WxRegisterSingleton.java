@@ -7,7 +7,7 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
 
 /**
- * 下拉列表字典--单例模式
+ * Drop down list dictionary--Singleton pattern
  * 
  * @author yc 2011-3-28
  * @Version CECTManegeServer
@@ -33,7 +33,7 @@ public class WxRegisterSingleton {
 	}
 
 	/**
-	 * 加载数据
+	 * Load data
 	 */
 	private void loadData() {
 		// TODO Auto-generated method stub
@@ -47,7 +47,7 @@ public class WxRegisterSingleton {
 	}
 
 	/**
-	 * 重新加载
+	 * Reload
 	 */
 	public void reloadData() {
 
@@ -57,7 +57,7 @@ public class WxRegisterSingleton {
 	}
 
 	/**
-	 * 根据type获取下拉列表
+	 * according totypeGets the drop - down list
 	 * 
 	 * @param type
 	 * @return

@@ -5,7 +5,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 import java.util.List;
 
 /**
- * 微信自定义菜单实体
+ * WeChat custom menu entity
  */
 public class Menu {
 
@@ -19,36 +19,36 @@ public class Menu {
     public static final String LOCATION_SELECT = "location_select";
 
 	/**
-	 * 菜单标题，不超过16个字节，子菜单不超过40个字节
+	 * menu title，not exceeding16Bytes，Sub menu does not exceed40Bytes
 	 */
 	private String name;
 
 	/**
-	 * 菜单的响应动作类型
-	 * click:点击推事件
-	 * view:跳转URL
-	 * scancode_push：扫码推事件
-	 * scancode_waitmsg：扫码推事件
-	 * pic_sysphoto：弹出系统拍照发图
-	 * pic_photo_or_album：弹出拍照或者相册发
-	 * pic_weixin：弹出微信相册发图器
-	 * location_select：弹出地理位置选择器
+	 * Response action type
+	 * click:Click push events
+	 * view:JumpURL
+	 * scancode_push：Sweep push event
+	 * scancode_waitmsg：Sweep push event
+	 * pic_sysphoto：Pop up system to take pictures
+	 * pic_photo_or_album：Pop up a photo or a photo album
+	 * pic_weixin：Pop up WeChat photo album
+	 * location_select：Pop-up location selector
 	 * 
 	 */
 	private String type;
 
 	/**
-	 * 点击类型菜单KEY值，用于消息接口推送，不超过128字节 
+	 * Click type menuKEYvalue，Push for message interface，not exceeding128byte 
 	 */
 	private String key;
 
 	/**
-	 * 网页链接，用户点击菜单可打开链接，不超过256字节
+	 * Web link，The user can click on the menu to open the link，not exceeding256byte
 	 */
 	private String url;
 
 	/**
-	 * 二级菜单
+	 * Two level menu
 	 */
     @JSONField(name = "sub_button")
 	private List<Menu> subButtons;
@@ -61,11 +61,11 @@ public class Menu {
     }
 
     /**
-     * 构造函数
+     * Constructor
      *
-     * @param name  菜单名称
-     * @param type  菜单类型
-     * @param val   KEY值/URL
+     * @param name  Menu name
+     * @param type  Menu type
+     * @param val   KEYvalue/URL
      */
     public Menu(String name, String type, String val) {
         this.name = name;

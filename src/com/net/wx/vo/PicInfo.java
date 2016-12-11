@@ -1,12 +1,12 @@
 package com.net.wx.vo;
 
 /**
- * 弹出微信相册发图器或拍照的照片信息
+ * Pop up WeChat photo albums or photo photo
  */
 public class PicInfo {
 
     /**
-     * 图片的MD5值，开发者若需要，可用于验证接收到图片
+     * PictureMD5value，If developers need，Can be used to verify the reception to the picture
      */
     private String picMd5Sum;
 

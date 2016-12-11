@@ -6,12 +6,12 @@ import com.net.jfinal.JFinalEntity;
 import com.net.jfinal.TableBind;
 @TableBind(name="vip_questions")
 public class VipQuestionsEntity  extends JFinalEntity implements java.io.Serializable{
-	private	String	vip_code	;//	会员编码
-	private	String	doctor_code	;//	医生编码
-	private	String	title	;//	问题标题
-	private	String	content	;//	问题描述
-	private	String	attachement	;//	问题附件
-	private	Date	create_time	;//	创建时间
+	private	String	vip_code	;//	Member code
+	private	String	doctor_code	;//	Doctor code
+	private	String	title	;//	Problem title
+	private	String	content	;//	Problem description
+	private	String	attachement	;//	Problem attachment
+	private	Date	create_time	;//	Created time
 	public String getVip_code() {
 		return vip_code;
 	}

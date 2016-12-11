@@ -15,33 +15,33 @@ import com.net.wx.vo.ReceiveMsg;
 
 
 /**
- * 微信消息内容处理器
+ * WeChat message content processor
  */
 public class XMLHandler extends DefaultHandler2 {
 
     private static final Logger log = LoggerFactory.getLogger(XMLHandler.class);
 
 	/**
-	 * 消息实体定义
+	 * Message entity definition
 	 */
 	private ReceiveMsg msg = new ReceiveMsg();
 
     /**
-     * 图片信息
+     * Picture information
      */
     private PicInfo picInfo;
 
     private List<PicInfo> picList;
 
     /**
-     * 节点属性值
+     * Node attribute value
      */
     private String attrVal;
 
 	/**
-	 * 获取消息实体对象
+	 * Get message entity object
      *
-     * @return 带数据的消息实体
+     * @return Message entity with data
 	 */
 	public ReceiveMsg getMsgVO() {
 		return this.msg;
@@ -66,7 +66,7 @@ public class XMLHandler extends DefaultHandler2 {
 
         if (log.isInfoEnabled()) {
             if (!"xml".equals(qName)) {
-                log.info("当前节点值[{}]: {}", qName, attrVal);
+                log.info("Current node value[{}]: {}", qName, attrVal);
             }
         }
         if(StringUtils.equals(qName, "MsgID") || StringUtils.equals(qName, "MsgId")){
@@ -272,7 +272,7 @@ public class XMLHandler extends DefaultHandler2 {
     }
 
     /**
-     * 清除当前VO对象缓存数据
+     * Clear currentVOObject cache data
      */
     public void clear() {
         this.picInfo = null;

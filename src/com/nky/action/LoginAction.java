@@ -40,7 +40,7 @@ public class LoginAction extends WxBaseAction {
 
 	@RequestMapping("/toLogin")
 	public String toLogin(HttpServletRequest request) {
-		String tel = request.getParameter("tel");// 用来获取找回密码的手机号，有就显示 ，没有就是空
+		String tel = request.getParameter("tel");// Mobile phone number used to retrieve the password，Have on display ，Nothing is empty
 		if (tel == null) {
 			tel = "";
 		}
@@ -182,12 +182,12 @@ public class LoginAction extends WxBaseAction {
 		Data data = new Data();
 		String tel = request.getParameter("tel");
 		String type = request.getParameter("type");
-		String result = "系统异常";
+		String result = "Abnormal system";
 		if (type != null && type.equals("register")) {
 			// 验证手机号是否已经注册
 			if (vipService.isExistTel(tel)) {
 				data.setCode(0);
-				data.setMsg("手机号码已经注册,不能重复注册");
+				data.setMsg("Mobile phone number has been registered,Cannot duplicate registration");
 				return data;
 			}
 			result = ApiInterface.registMessage(tel);
@@ -204,7 +204,7 @@ public class LoginAction extends WxBaseAction {
 	}
 
 	/**
-	 * 跳转到找回密码
+	 * Jump to retrieve password
 	 */
 	@RequestMapping(value = "/findPSW")
 	public String findPSW(HttpServletRequest request) {
@@ -218,7 +218,7 @@ public class LoginAction extends WxBaseAction {
 	}
 
 	/**
-	 * 修改密码
+	 * Change password
 	 */
 	@RequestMapping(value = "/updatePWD")
 	@ResponseBody
@@ -233,7 +233,7 @@ public class LoginAction extends WxBaseAction {
 			String result = ApiInterface.checkmessage(tel, rand);
 			if (!ApiInterface.isSuccess(result)) {
 				data.setCode(0);
-				data.setMsg("验证码错误");
+				data.setMsg("Verification code error");
 				return data;
 			}
 			Db.update("update t_vip set login_password=? where mobile=?", pwdmd5, tel);
@@ -244,14 +244,14 @@ public class LoginAction extends WxBaseAction {
 		} catch (Exception e) {
 			e.printStackTrace();
 			data.setCode(0);
-			data.setMsg("系统异常");
+			data.setMsg("Abnormal system");
 		}
 
 		return data;
 	}
 
 	/**
-	 * 注册
+	 * register
 	 */
 	@RequestMapping(value = "/toRegister")
 	public String toRegister(HttpServletRequest request) {
@@ -271,13 +271,13 @@ public class LoginAction extends WxBaseAction {
 		String result = ApiInterface.checkmessage(tel, rand);
 		if (!ApiInterface.isSuccess(result)) {
 			data.setCode(0);
-			data.setMsg("验证码错误");
+			data.setMsg("Verification code error");
 			return data;
 		}
 		// 验证手机号是否已经注册
 		if (vipService.isExistTel(tel)) {
 			data.setCode(0);
-			data.setMsg("手机号码已经注册,不能重复注册");
+			data.setMsg("Mobile phone number has been registered,Cannot duplicate registration");
 			return data;
 		}
 		try {
@@ -306,12 +306,12 @@ public class LoginAction extends WxBaseAction {
 				data.setCode(1);
 			} else {
 				data.setCode(0);
-				data.setMsg("注册失败，请联系管理员");
+				data.setMsg("Registeration failed，Please contact administrator");
 			}
 		} catch (Exception e) {
 			log.error(e.getMessage(), e);
 			data.setCode(0);
-			data.setMsg("注册出现异常，请联系管理员");
+			data.setMsg("Registration abnormal，Please contact administrator");
 		}
 		return data;
 	}

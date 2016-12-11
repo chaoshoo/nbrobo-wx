@@ -9,7 +9,7 @@ import sun.misc.BASE64Decoder;
 public class Common {
 
 	/**
-	 * 产生随机字符串
+	 * Generate random string
 	 */
 	public static String randString(int length) {
 		Random r = new Random();
@@ -24,13 +24,13 @@ public class Common {
 		return new String(buf);
 	}
 	/**
-	 * base64图片解码
+	 * base64Picture decoding
 	 * @param imgStr
 	 * @return
 	 */
 	public String GenerateImage(String imgStr)
-    {//对字节数组字符串进行Base64解码并生成图片
-        if (imgStr == null) //图像数据为空
+    {//Array of byte arrayBase64Decode and generate pictures
+        if (imgStr == null) //Image data is empty
             return "";
         BASE64Decoder decoder = new BASE64Decoder();
         try 
@@ -40,12 +40,12 @@ public class Common {
             for(int i=0;i<b.length;++i)
             {
                 if(b[i]<0)
-                {//调整异常数据
+                {//Adjust exception data
                     b[i]+=256;
                 }
             }
             //生成jpeg图片
-            String imgFilePath = "headimg/"+System.currentTimeMillis()+".jpg";//新生成的图片
+            String imgFilePath = "headimg/"+System.currentTimeMillis()+".jpg";//Newly generated pictures
             OutputStream out = new FileOutputStream(imgFilePath);    
             out.write(b);
             out.flush();

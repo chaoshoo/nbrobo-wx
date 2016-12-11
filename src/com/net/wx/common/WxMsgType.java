@@ -1,60 +1,60 @@
 package com.net.wx.common;
 
 /**
- * 微信消息的类型
+ * WeChat message type
  */
 public enum WxMsgType {
     /**
-     * 文本消息
+     * Text message
      */
     text,
     /**
-     * 图像消息
+     * Image message
      */
     image,
     /**
-     * 语音消息
+     * Voice message
      */
     voice,
     /**
-     * 视频消息
+     * Video message
      */
     video,
     /**
-     * 地理位置消息
+     * Location information
      */
     location,
     /**
-     * 链接消息
+     * Link message
      */
     link,
     /**
-     * 音乐消息
+     * information about the music
      */
     music,
     /**
-     * 多图文消息
+     * Multi graphic message
      */
     news,
     /**
-     * 群发消息中的图文消息
+     * Message in the mass message
      */
     mpnews,
     /**
-     * 群发消息中的视频消息
+     * Mass message in the video message
      */
     mpvideo,
     
     /**
-     * 用户订阅事件
+     * User subscription event
      */
     subscribe,
     /**
-     * 退订事件
+     * Unsubscribe events
      */
     unsubscribe,
     /**
-     * 点击事件
+     * Click event
      */
     CLICK;
 }

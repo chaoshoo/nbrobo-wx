@@ -31,7 +31,7 @@ public class JdbcSql {
 	 * 
 	 * @param sqlid
 	 * @param map
-	 * @param returnParams  返回的参数结果集
+	 * @param returnParams  Returned parameter result set
 	 * @return
 	 */
 	public static String getAutoSql(String sqlid,Map<String,Object> map,List<Object> returnParams){

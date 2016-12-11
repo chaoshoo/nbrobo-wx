@@ -25,7 +25,7 @@ public class HttpClient {
 	
 	public static final String GET_URL = ServiceConstants.nkyapi_url; 
 	/**
-	 * 拼接成一个url然后自动请求该url
+	 * Splice into oneurlAnd then automatically request theurl
 	 * @param content
 	 * @param wxid
 	 * @return
@@ -45,7 +45,7 @@ public class HttpClient {
 			connection.connect();
 			// 发送数据到服务器并使用Reader读取返回的数据 
 			 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream())); 
-			 String lines; //定义返回值
+			 String lines; //Define return value
 			while ((lines = reader.readLine()) != null) {
 				System.out.println(lines);
 			}
@@ -106,7 +106,7 @@ public class HttpClient {
 		for (int i = 0; i < keys.size(); i++) {
 			String key = keys.get(i);
 			String value = map.get(key);
-			if (StringUtils.isNotEmpty(value)) {// 去除空值
+			if (StringUtils.isNotEmpty(value)) {// Removal of null
 				try {
 					prestr = prestr + "&" + key + "=" + java.net.URLEncoder.encode(value , "UTF-8");
 				} catch (UnsupportedEncodingException e) {
@@ -131,7 +131,7 @@ public class HttpClient {
 			connection.connect();
 			// 发送数据到服务器并使用Reader读取返回的数据 
 			 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream(),"utf-8")); 
-			 String lines; //定义返回值
+			 String lines; //Define return value
 			 String result = "";
 			while ((lines = reader.readLine()) != null) {
 				result+=lines;
@@ -150,7 +150,7 @@ public class HttpClient {
 	}
 	
 	/**
-	 * 拼接成一个url然后自动请求该url
+	 * Splice into oneurlAnd then automatically request theurl
 	 * @param content
 	 * @param wxid
 	 * @return
@@ -166,7 +166,7 @@ public class HttpClient {
 			connection.connect();
 			// 发送数据到服务器并使用Reader读取返回的数据 
 			 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream(),"utf-8")); 
-			 String lines; //定义返回值
+			 String lines; //Define return value
 			 String result = "";
 			while ((lines = reader.readLine()) != null) {
 				result+=lines;

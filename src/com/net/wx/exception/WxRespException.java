@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.net.wx.common.WxErrCode;
 
 /**
- * 微信响应错误异常
+ * WeChat response error exception
  */
 public class WxRespException extends Exception {
 
@@ -14,11 +14,11 @@ public class WxRespException extends Exception {
 	 */
 	private static final long serialVersionUID = 1L;
 	/**
-     * 错误代码
+     * error code
      */
     private final int errCode;
     /**
-     * 错误中文描述
+     * Error description in Chinese
      */
     private final String errMesg;
     // 临时JSON对象
@@ -31,13 +31,13 @@ public class WxRespException extends Exception {
     }
 
     /**
-     * 将消息转成JSON对象
-     * @param message   消息
-     * @return  error对象
+     * Turn message intoJSONobject
+     * @param message   Message
+     * @return  errorobject
      */
     protected static String convertMesg(String message) {
         if (null == message || message.isEmpty()) {
-            throw new RuntimeException("网络通讯异常,请检查!!!");
+            throw new RuntimeException("Network communication exception,Please check!!!");
         }
         String err_desc = "";
         error = JSON.parseObject(message);
@@ -46,7 +46,7 @@ public class WxRespException extends Exception {
     }
 
     /**
-     * 获取错误代码
+     * Get error code
      *
      * @return errCode
      */
@@ -55,7 +55,7 @@ public class WxRespException extends Exception {
     }
 
     /**
-     * 获取错误描述
+     * Get an error description
      *
      * @return  errmsg
      */

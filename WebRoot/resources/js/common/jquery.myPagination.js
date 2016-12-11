@@ -34,17 +34,17 @@
 					}
 				},
 				info : {
-					first : '首页',
-					last : '尾页',
-					next : '下一页',
-					prev : '上一页',
+					first : 'home page',
+					last : 'Shadowe',
+					next : 'next page',
+					prev : 'Previous page',
 					first_on : true,
 					last_on : true,
 					next_on : true,
 					prev_on : true,
 					msg_on : true,
 					link : '#',
-					msg : '<span>&nbsp;&nbsp;跳{currText}/{sumPage}页</span>',
+					msg : '<span>jump{currText}/{sumPage}page</span>',
 					text : {
 						width : '22px'
 					}
@@ -227,16 +227,16 @@
 			}
 			function isCode(val) {
 				if (val < 1) {
-					alert("输入值不能小于1");
+					alert("Input value cannot be less than1");
 					return false
 				}
 				var patrn = /^[0-9]{1,8}$/;
 				if (!patrn.exec(val)) {
-					alert("请输入正确的数字");
+					alert("Please enter the correct number.");
 					return false
 				}
 				if (val > pageCount) {
-					alert("输入值不能大于总页数");
+					alert("The input value cannot be greater than the total number of pages");
 					return false
 				}
 				return true
@@ -338,7 +338,7 @@
 								cache : false,
 								timeout : 60000,
 								error : function() {
-									alert("访问服务器超时！")
+									alert("Access server timeout！")
 								},
 								success : function(data) {
 									loadPageCount({
@@ -355,15 +355,15 @@
 			}
 			function checkParam() {
 				if (currPage < 1) {
-					alert("配置参数错误\n错误代码:-1");
+					alert("Configuration parameter error\nerror code:-1");
 					return false
 				}
 				if (currPage > pageCount) {
-					alert("配置参数错误\n错误代码:-2");
+					alert("Configuration parameter error\nerror code:-2");
 					return false
 				}
 				if (pageSize < 2) {
-					alert("配置参数错误\n错误代码:-3");
+					alert("Configuration parameter error\nerror code:-3");
 					return false
 				}
 				return true

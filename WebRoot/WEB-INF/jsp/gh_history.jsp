@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>环球健康管理平台</title>
+<title>Residents health management service platform</title>
 <meta name="meituan_check">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -28,10 +28,10 @@
 <header class="navbar">
   <div class="nav-wrap-left"> <a class="react back" href="<%=path %>/index/homepage.html"><i class="text-icon icon-back"></i></a> </div>
   <span class="nav-header h1">
-	挂号列表
+	Registration list
   </span> 
   <div class="nav-wrap-right"> <a class="react headSearch" href="javascript:void(0)"> 
-  <font style="font-weight:bold;font-style:italic;">&nbsp;&nbsp;</font>
+  <font style="font-weight:bold;font-style:italic;"></font>
   </a> </div></header>
 
 <div class="cur-control-con">
@@ -42,13 +42,13 @@
        </div>
        <div id="nodata">
        <span class="weui_cell">
-       <div  class="weui_cell_bd weui_cell_primary"><span>无挂号记录</span></div>
+       <div  class="weui_cell_bd weui_cell_primary"><span>No registration records</span></div>
        </span>
        </div>
        <div class="weui-infinite-scroll" id="loadingdiv">
 	  <div class="infinite-preloader"></div>
-	    <!-- 正在加载... -->
-	    <span  id="loading">上拉加载更多</span>
+	    <!-- Being loaded... -->
+	    <span  id="loading">Pull up load more</span>
 	</div>
   </div>
 </div>
@@ -60,7 +60,7 @@ var inityiyuan = false;
 $(document).ready(function(e) {
 	   $("#pageno").val(0);
 	history();
-	var loading = false;  //状态标记
+	var loading = false;  //State mark
 
 	$(document.body).infinite().on("infinite", function() {
 	  if(loading) return;
@@ -68,7 +68,7 @@ $(document).ready(function(e) {
 	  setTimeout(function() {
 		  yiyuan();
 	    loading = false;
-	  }, 1500);   //模拟延迟
+	  }, 1500);   //Simulation delay
 	});
 });
 
@@ -113,7 +113,7 @@ function history(){
 }
 
 function orderinfo(orderid){
-	window.location='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx595d88175949ba23&redirect_uri=http://wx.nbrobo.com/guahao/orderinfo.html?orderid='+orderid+'&response_type=code&scope=snsapi_base&state=123#wechat_redirect';
+	window.location='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxfd65d5401333bc07&redirect_uri=http://wx.nbrobo.com/guahao/orderinfo.html?orderid='+orderid+'&response_type=code&scope=snsapi_base&state=123#wechat_redirect';
 }
 
 </script>

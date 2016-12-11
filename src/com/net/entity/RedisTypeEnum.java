@@ -1,7 +1,7 @@
 package com.net.entity;
 
 /**
- * redis缓存主键
+ * redisCache primary key
  * @author lenovo
  *
  */

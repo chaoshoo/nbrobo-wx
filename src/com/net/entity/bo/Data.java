@@ -6,7 +6,7 @@ import java.util.List;
 public class Data {
 
 	/**
-	 * 操作代码 1:成功 ,0:失败
+	 * Operation code 1:Success ,0:fail
 	 */
 	private Integer code=1;
 	

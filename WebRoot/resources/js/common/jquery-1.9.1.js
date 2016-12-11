@@ -9626,7 +9626,7 @@ $.extend({
 	}
 });
 /**
- * 得到根路径
+ * Get root path
  * 
  * @returns
  */
@@ -9639,5 +9639,5 @@ function getAppBasePath() {
 		return "";
 	}
 }
-var titleInfo="提示信息";
+var titleInfo="Prompt information";
 var timeoutValue=2000;

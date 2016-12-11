@@ -9,7 +9,7 @@
 <html lang="zh-cmn-Hans" class="">
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-<title>环球健康管理平台</title>
+<title>Residents health management service platform</title>
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
     <meta name="MobileOptimized" content="240">
@@ -34,33 +34,33 @@ body{background:#fff;}
 			<a class="react back" href="<%=path %>/index/toLogin.html"><i
 				class="text-icon icon-back"></i></a>
 		</div>
-  <span class="nav-header h1" >找回密码</span> 
+  <span class="nav-header h1" >Retrieve password</span> 
   <div class="nav-wrap-right"> <a class="react headSearch" href="javascript:void(0)"> 
-  <font style="font-weight:bold;font-style:italic;">&nbsp;&nbsp;</font>
+  <font style="font-weight:bold;font-style:italic;"></font>
   </a> </div>
   </header>
 
   <div  class="resetpwd-container">     
         <div class="message-account">
     <div class="form-item">
-        <input type="text" placeholder="手机号码"  class="ruc-input-register-name" id="tel" name="tel" value="${tel}" >
+        <input type="text" placeholder="Phone number"  class="ruc-input-register-name" id="tel" name="tel" value="${tel}" >
     </div>
-    <!--手机收到的验证码-->
+    <!--Verification code received by mobile phone-->
     <div class="form-item">
-        <input type="text" placeholder="手机验证码" class="ruc-input-register-auth" id="auth" name="auth">
-        <a id="getmessage" href="javascript:;" onclick="message();" id="ruc-send-auth-code-btn" style="vertical-align: middle;">获取验证码</a>
+        <input type="text" placeholder="Cell phone verification code" class="ruc-input-register-auth" id="auth" name="auth">
+        <a id="getmessage" href="javascript:;" onclick="message();" id="ruc-send-auth-code-btn" style="vertical-align: middle;">Get verification code</a>
     </div>
     
-    <!--输入密码-->
+    <!--Input password-->
     <div class="form-item">
-        <input placeholder="新密码" id="ruc-register-password-field" class="ruc-input-register-password" type="password" name="password">
+        <input placeholder="New password" id="ruc-register-password-field" class="ruc-input-register-password" type="password" name="password">
         <i class="icon-ok"></i>
     </div>
     <div class="form-item">
-        <input placeholder="确认密码" id="ruc-register-password-field-confirm" class="ruc-input-register-password" type="password" name="password">
+        <input placeholder="Confirm password" id="ruc-register-password-field-confirm" class="ruc-input-register-password" type="password" name="password">
         <i class="icon-ok"></i>
     </div>
-    <div class="next-prove-reset" onclick="changepwd();"><div>确认修改</div></div>
+    <div class="next-prove-reset" onclick="changepwd();"><div>Confirm modification</div></div>
 </div>
       
     </div>
@@ -76,9 +76,9 @@ $(document).ready(function(e) {
 function message(){
 	var tel = $("#tel").val();
 	if(isEmpty(tel)){
-		$.alert('电话号码为空');
+		$.alert('Phone number is empty');
 	} else if(!istel(tel)){
-		$.alert('请输入有效的手机号码');
+		$.alert('Please enter a valid phone number');
 	}else{
 		$.ajax({
 			url:"getMessage.json?type=changepwd&ttt="+new Date().getTime(),
@@ -88,7 +88,7 @@ function message(){
 			success:function(data){
 				if(data.code == 1){
 					$("#getmessage").hide();
-					$.toast("&nbsp;&nbsp;请查收短信", function() {
+					$.toast("Please check SMS", function() {
 						console.log('close');
 			        });
 				}else{
@@ -105,13 +105,13 @@ function message(){
 		var password1 = $("#ruc-register-password-field").val(); 
 		var password2 = $("#ruc-register-password-field-confirm").val(); 
 		if(!istel(tel)){
-			$.alert('请输入有效的手机号码!');	
+			$.alert('Please enter a valid phone number!');	
 		}else if( isEmpty(auth)){
-			$.alert("请输入验证码！");
+			$.alert("Please enter verification code！");
 		}else if(password1.length < 6  ){
-			$.alert('密码长度至少为6位!');
+			$.alert('Password length is at least6position!');
 		}else if(password1 != password2){
-			$.alert('两次输入密码不一致!');
+			$.alert('Two password inputs are not consistent!');
 		}else {
 			$.ajax({
 				url:"updatePWD.json?ttt="+new Date().getTime(),
@@ -120,7 +120,7 @@ function message(){
 				data:"tel="+tel+"&password="+password1+"&rand="+auth,
 				success:function(data){
 					if(data.code == 1){
-						$.alert("密码修改成功", function() {
+						$.alert("Password modification done", function() {
 							  location.href = "toLogin.html";
 							});
 						

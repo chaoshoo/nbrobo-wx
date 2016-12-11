@@ -20,7 +20,7 @@ import com.net.wx.util.AesException;
 import com.net.wx.vo.MPAct;
 
 /**
- * Servlet环境接入
+ * ServletEnvironmental access
  * @author zhaidong
  */
 public abstract class WxServletSupport extends HttpServlet implements WxWebSupport {
@@ -44,10 +44,10 @@ public abstract class WxServletSupport extends HttpServlet implements WxWebSuppo
     }
 
     /**
-     * 处理微信接收URL验证
+     * WeChat receiveURLVerification
      *
-     * @param req  请求
-     * @param resp 响应
+     * @param req  request
+     * @param resp response
      * @throws ServletException
      * @throws IOException
      */
@@ -65,21 +65,21 @@ public abstract class WxServletSupport extends HttpServlet implements WxWebSuppo
                 out.print(echo);
             } else {
                 out.print("error");
-                log.error("微信接入验证URL时失败!!!");
-                log.error("微信服务器echoStr值: {}", this.wxBase.getEchostr());
-                log.error("SHA1签名echoStr值: {}", echo);
+                log.error("WeChat access authenticationURLWhen failure!!!");
+                log.error("WeChat serverechoStrvalue: {}", this.wxBase.getEchostr());
+                log.error("SHA1autographechoStrvalue: {}", echo);
             }
         } catch (AesException e) {
-            log.error("微信接入验证URL时出现异常!!!");
+            log.error("WeChat access authenticationURLWhen there is abnormal!!!");
             log.error(e.getLocalizedMessage(), e);
         }
     }
 
     /**
-     * 处理微信普通消息
+     * Deal with WeChat general news
      *
-     * @param req  请求
-     * @param resp 响应
+     * @param req  request
+     * @param resp response
      * @throws ServletException
      * @throws IOException
      */
@@ -91,7 +91,7 @@ public abstract class WxServletSupport extends HttpServlet implements WxWebSuppo
         try {
             result = this.wxBase.handler();
         } catch (Exception e) {
-            log.error("解析微信消息时出现异常!!!");
+            log.error("Abnormal analysis of WeChat news!!!");
             log.error(e.getLocalizedMessage(), e);
         }
         // 响应设置

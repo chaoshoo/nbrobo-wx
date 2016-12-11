@@ -30,7 +30,7 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * 微信公众平台开发者API接口实现
+ * WeChat Public Platform DeveloperAPIInterface implementation
  */
 public class WxApiImpl implements WxApi {
 
@@ -39,9 +39,9 @@ public class WxApiImpl implements WxApi {
     private MPAct mpAct;
 
     /**
-     * 微信公众平台接口构建
+     * WeChat public platform interface
      *
-     * @param mpAct 公众号信息
+     * @param mpAct Public information
      */
     public WxApiImpl(MPAct mpAct) {
         this.mpAct = mpAct;
@@ -71,7 +71,7 @@ public class WxApiImpl implements WxApi {
             result = SimpleHttpReq.get(url);
         } catch (IOException e) {
         	e.printStackTrace();
-            log.error("刷新ACCESS_TOKEN时出现异常!!!");
+            log.error("RefreshACCESS_TOKENWhen there is abnormal!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -90,7 +90,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.get(url);
         } catch (IOException e) {
-            log.error("获取微信服务器IP时出现异常!!!");
+            log.error("Get WeChat serverIPWhen there is abnormal!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -112,7 +112,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.get(url);
         } catch (IOException e) {
-            log.error("获取当前自定义菜单时出现异常!!!");
+            log.error("Gets exception when you get the current custom menu!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -147,7 +147,7 @@ public class WxApiImpl implements WxApi {
         buttons.put("button", Arrays.asList(menus));
         String btn_json = JSONObject.toJSONString(buttons, null_filter);
         if (log.isInfoEnabled()) {
-            log.info("创建的微信自定义菜单: {}", btn_json);
+            log.info("Created by WeChat custom menu: {}", btn_json);
         }
         // 提交并创建菜单
         String url = String.format(WxApiUrl.CUSTOM_MENU_API, "create", getAccessToken());
@@ -156,7 +156,7 @@ public class WxApiImpl implements WxApi {
             result = SimpleHttpReq.post(url, SimpleHttpReq.APPLICATION_JSON, btn_json);
         } catch (IOException e) {
         	e.printStackTrace();
-            log.error("创建自定义菜单时出现异常!!!");
+            log.error("Exception when creating a custom menu!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -175,7 +175,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.get(url);
         } catch (IOException e) {
-            log.error("删除微信自定义菜单时出现异常!!!");
+            log.error("Exception occurred while deleting WeChat custom menu!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -195,7 +195,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.post(url, SimpleHttpReq.APPLICATION_JSON, data);
         } catch (IOException e) {
-            log.error("创建微信分组时出现异常!!!");
+            log.error("Exception when creating the WeChat group!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -216,7 +216,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.get(url);
         } catch (IOException e) {
-            log.error("获取所有分组时失败!!!");
+            log.error("Failed to get all packets!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -240,7 +240,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.post(url, SimpleHttpReq.APPLICATION_JSON, data);
         } catch (IOException e) {
-            log.error("修改分组名称时出现异常!!!");
+            log.error("Exception when modifying a group name!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -260,7 +260,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.post(url, SimpleHttpReq.APPLICATION_JSON, data);
         } catch (IOException e) {
-            log.error("获取用户所在分组时出现异常!!!");
+            log.error("Get exception when the user is in group!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -282,7 +282,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.post(url, SimpleHttpReq.APPLICATION_JSON, data);
         } catch (IOException e) {
-            log.error("移动用户分组时出现异常!!!");
+            log.error("Abnormal when the mobile user group!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -301,7 +301,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.get(url);
         } catch (IOException e) {
-            log.error("获取关注用户列表时出现异常!!!");
+            log.error("Get attention to the user list when the exception occurs!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -324,7 +324,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.get(url);
         } catch (IOException e) {
-            log.error("获取用户信息时出现异常!!!");
+            log.error("When the user information to get abnormal!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -369,7 +369,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.post(url, SimpleHttpReq.APPLICATION_JSON, custom_msg);
         } catch (IOException e) {
-            log.error("发送客服消息时出现异常!!!");
+            log.error("Exception occurs when the customer service message is sent!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -392,7 +392,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.post(api_url, SimpleHttpReq.APPLICATION_JSON, template_msg);
         } catch (IOException e) {
-            log.error("发送模板消息时出现异常!!!");
+            log.error("Exception when sending a template message!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -416,7 +416,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.upload(url, file);
         } catch (IOException e) {
-            log.error("上传多媒体文件时出现异常!!!");
+            log.error("Exception when uploading a multimedia file!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -443,7 +443,7 @@ public class WxApiImpl implements WxApi {
         try {
             SimpleHttpReq.download(url, file);
         } catch (IOException e) {
-            log.error("下载多媒体文件时出现异常!!!");
+            log.error("Exception when downloading multimedia files!!!");
             log.error(e.getLocalizedMessage(), e);
         }
     }
@@ -461,7 +461,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.post(url, SimpleHttpReq.APPLICATION_JSON, upnews_msg);
         } catch (IOException e) {
-            log.error("上传群发图文消息时出现异常!!!");
+            log.error("Upload mass text messages appear abnormal!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -482,7 +482,7 @@ public class WxApiImpl implements WxApi {
     	try {
     		result = SimpleHttpReq.post(url, SimpleHttpReq.APPLICATION_JSON, updatenews_msg);
     	} catch (IOException e) {
-    		log.error("上传群发图文消息时出现异常!!!");
+    		log.error("Upload mass text messages appear abnormal!!!");
     		log.error(e.getLocalizedMessage(), e);
     	}
     	
@@ -503,7 +503,7 @@ public class WxApiImpl implements WxApi {
     	try {
     		result = SimpleHttpReq.post(url, SimpleHttpReq.APPLICATION_JSON, updatenews_msg);
     	} catch (IOException e) {
-    		log.error("上传群发图文消息时出现异常!!!");
+    		log.error("Upload mass text messages appear abnormal!!!");
     		log.error(e.getLocalizedMessage(), e);
     	}
     	
@@ -525,7 +525,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.post(url, SimpleHttpReq.APPLICATION_JSON, upvideo_msg);
         } catch (IOException e) {
-            log.error("上传群发消息中的视频时出现异常!!!");
+            log.error("An exception occurs when the video is uploaded to the mass.!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -549,7 +549,7 @@ public class WxApiImpl implements WxApi {
         if (null != group_id
                 && !group_id.isEmpty()
                 && !to_users.isEmpty()) {
-            throw new RuntimeException("群发消息只能选择一种模式");
+            throw new RuntimeException("Group message can only choose a model");
         }
 
         String url = "";
@@ -564,7 +564,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.post(url, SimpleHttpReq.APPLICATION_JSON, send_msg);
         } catch (IOException e) {
-            log.error("发送群消息时出现异常!!!");
+            log.error("Exception when sending a group message!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -586,7 +586,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.post(url, SimpleHttpReq.APPLICATION_JSON, del_msg);
         } catch (IOException e) {
-            log.error("删除群发消息时出现异常!!!");
+            log.error("Exception occurs when deleting a group message!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -619,7 +619,7 @@ public class WxApiImpl implements WxApi {
         try {
             sign = SHA1.calculate(String.format(sign_param, ticket, nonce, time, url));
         } catch (AesException e) {
-            log.error("生成JSTICKET的签名时出现异常!!!");
+            log.error("generateJSTICKETAn exception occurs when the signature is signed!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -642,7 +642,7 @@ public class WxApiImpl implements WxApi {
         try {
             result = SimpleHttpReq.get(token_url);
         } catch (IOException e) {
-            log.error("刷新JSTICKET时出现异常!!!");
+            log.error("RefreshJSTICKETWhen there is abnormal!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 

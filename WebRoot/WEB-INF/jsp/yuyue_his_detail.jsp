@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>环球健康管理平台</title>
+<title>Residents health management service platform</title>
 <meta name="meituan_check">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -40,16 +40,16 @@
 <body id="account"> 
 <header class="navbar">
   <div class="nav-wrap-left"> <a class="react back" onclick="history.go(-1)"><i class="text-icon icon-back"></i></a> </div>
-  <span class="nav-header h1">预约详情</span>
+  <span class="nav-header h1">Appointment details</span>
  <div class="nav-wrap-right"> <a class="react headSearch" href="javascript:void(0)"> 
-  <font style="font-weight:bold;font-style:italic;">&nbsp;&nbsp;</font>
+  <font style="font-weight:bold;font-style:italic;"></font>
   </a> </div>
 </header>
 <div><a class="my-account" href="#" onclick="doctor(${doctor.id})">
         <img class="avater" src="${doctor.pic}">
         <div class="user-info more more-weak">    
-            <p class="uname">${doctor.name}<i class="level-icon level2"></i><span class="user-number">工号 ${doctor.code}</span></p>
-            <p> ${officename}&nbsp;${titlename}</p>
+            <p class="uname">${doctor.name}<i class="level-icon level2"></i><span class="user-number">Job number ${doctor.code}</span></p>
+            <p> ${officename}${titlename}</p>
             <p style=" margin-top:10px;">${hospitalname}</p>
         </div>
 </a></div>
@@ -57,21 +57,21 @@
 <dl id="yuyuelist" class="list">
 <!-- 
   <dd><a class="react" href="#">
-    <div> <i class="text-icon order-jiudian order-icon">约</i>预约号 <span class="green">20151544</span>
+    <div> <i class="text-icon order-jiudian order-icon">about</i>Reservation number <span class="green">20151544</span>
     </div> 
-    </a> <span class="yuyue">未视频</span> </dd>
+    </a> <span class="yuyue">No video</span> </dd>
  -->
 </dl>
 <!-- 
 <dl class="list">
   <dd><a class="react" href="#">
-    <div> <i class="text-icon order-lottery order-icon">信</i>其他信息 </div>
-    </a> <span class="yuyue">注释</span> </dd>
+    <div> <i class="text-icon order-lottery order-icon">letter</i>Other information </div>
+    </a> <span class="yuyue">Notes</span> </dd>
 </dl>
  -->
 <div class="xiangqing-footer">
-<a class="xiangqing-footer-left" href="#"  onclick="vdialog('liuyan','${doctor.code}')">留言</a>
-<a class="xiangqing-footer-right" href="#" onclick="vdialog('yeyue','${doctor.code}')">预约</a>
+<a class="xiangqing-footer-left" href="#"  onclick="vdialog('liuyan','${doctor.code}')">Leave a message</a>
+<a class="xiangqing-footer-right" href="#" onclick="vdialog('yeyue','${doctor.code}')">make an appointment</a>
 </div>
 <script  type="text/javascript">
 $(document).ready(function(e){
@@ -87,13 +87,13 @@ function yuyuelist(){
 			var yuyuelisthtml = "";
 			$.each(data, function(i, item){
 				yuyuelisthtml += '<dd><a class="react" href="#">'
-								+'<div> <i class="text-icon order-jiudian order-icon">约</i>预约时间 <span class="green">'+item.ORDER_TIMESTR+'</span>';
+								+'<div> <i class="text-icon order-jiudian order-icon">about</i>Appointment time <span class="green">'+item.ORDER_TIMESTR+'</span>';
 								if(item.ISZD=='2' || item.ISDEAL){
-									yuyuelisthtml += ' </div> </a> <span class="yuyue">医生拒绝</span> </dd>';
+									yuyuelisthtml += ' </div> </a> <span class="yuyue">Doctor refused</span> </dd>';
 								}else if(item.CREATE_TIMESTR==undefined){
-									yuyuelisthtml += ' </div> </a> <span class="yuyue">未视频</span> </dd>';
+									yuyuelisthtml += ' </div> </a> <span class="yuyue">No video</span> </dd>';
 								}else{
-									yuyuelisthtml += ' </div> </a> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;视频时间&nbsp;&nbsp;'+item.CREATE_TIMESTR+'</span> </dd>';
+									yuyuelisthtml += ' </div> </a> <span>Video time'+item.CREATE_TIMESTR+'</span> </dd>';
 								}
 				            
 			 });

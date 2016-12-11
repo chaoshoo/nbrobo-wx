@@ -13,7 +13,7 @@ import com.net.wx.util.SimpleHttpReq;
 import com.net.wx.vo.OauthAct;
 
 /**
- * 微信公众平台开发者API接口实现
+ * WeChat Public Platform DeveloperAPIInterface implementation
  */
 public class WxOauthApiImpl implements WxOauthApi {
 
@@ -22,9 +22,9 @@ public class WxOauthApiImpl implements WxOauthApi {
     private OauthAct oauthAct;
 
     /**
-     * 微信登录授权接口构建
+     * WeChat login authorization interface construction
      *
-     * @param mpAct 公众号信息
+     * @param mpAct Public information
      */
     public WxOauthApiImpl(OauthAct oauthAct) {
         this.oauthAct = oauthAct;
@@ -64,7 +64,7 @@ public class WxOauthApiImpl implements WxOauthApi {
             result = SimpleHttpReq.get(url);
         } catch (IOException e) {
         	e.printStackTrace();
-            log.error("刷新ACCESS_TOKEN时出现异常!!!");
+            log.error("RefreshACCESS_TOKENWhen there is abnormal!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -83,7 +83,7 @@ public class WxOauthApiImpl implements WxOauthApi {
 		try {
 			result = SimpleHttpReq.get(url);
 		} catch (IOException e) {
-			 log.error("检验授权凭证(access_token)出现异常!!!");
+			 log.error("Inspection authorization certificate(access_token)Abnormal appearance!!!");
 	         log.error(e.getLocalizedMessage(), e);
 	         return false;
 		}
@@ -102,7 +102,7 @@ public class WxOauthApiImpl implements WxOauthApi {
 		try {
 			result = SimpleHttpReq.get(url);
 		} catch (IOException e) {
-			 log.error("获取用户个人信息时出现异常!!!");
+			 log.error("Get the user's personal information when abnormal!!!");
 	         log.error(e.getLocalizedMessage(), e);
 		}
 		if (result.isEmpty()

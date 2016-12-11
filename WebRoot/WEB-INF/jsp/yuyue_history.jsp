@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>环球健康管理平台</title>
+<title>Residents health management service platform</title>
 <meta name="meituan_check">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -29,21 +29,21 @@
 <header class="navbar">
   <div class="nav-wrap-left"> <a class="react back" href="<%=path %>/index/homepage.html"><i class="text-icon icon-back"></i></a> </div>
   <span class="nav-header h1">
-  预约记录
+  Reservation record
   </span>
   <div class="nav-wrap-right"> <a class="react headSearch" href="javascript:void(0)"> 
-  <font style="font-weight:bold;font-style:italic;">&nbsp;&nbsp;</font>
+  <font style="font-weight:bold;font-style:italic;"></font>
   </a> </div> </header>
 
 <div class="cur-control-con">
   <div class="weui_search_bar" id="search_bar">
     <form class="weui_search_outer">
       <div class="weui_search_inner"> <i class="weui_icon_search"></i>
-        <input type="search" class="weui_search_input" id="search_input" name="search_input" placeholder="搜索" value="${search_input}" required>
+        <input type="search" class="weui_search_input" id="search_input" name="search_input" placeholder="search" value="${search_input}" required>
         <a href="javascript:" class="weui_icon_clear" id="search_clear"></a> </div>
-      <label for="search_input" class="weui_search_text" id="search_text"> <i class="weui_icon_search"></i> <span>搜索</span> </label>
+      <label for="search_input" class="weui_search_text" id="search_text"> <i class="weui_icon_search"></i> <span>search</span> </label>
     </form>
-    <a href="javascript:" class="weui_search_cancel" id="search_cancel">取消</a> </div>
+    <a href="javascript:" class="weui_search_cancel" id="search_cancel">cancel</a> </div>
     <input type="hidden" name="pageno" id="pageno" value="0"/>
   <div class="weui_panel_con">
     <div id="yuyuelist" class="weui_cells weui_cells_access" style=" margin-top:0px;"> 
@@ -51,15 +51,15 @@
     <a class="weui_cell" href="javascript:;">
       <div class="weui_cell_hd"><img src="img/index_user_face.png" alt="" style="width:40px;margin-right:5px;display:block"></div>
       <div class="weui_cell_bd weui_cell_primary">
-        <p>医师甲</p>
+        <p>Physician a</p>
       </div>
-      <span class="weui_cell_ft">最近预约时间</span> </a> 
+      <span class="weui_cell_ft">Recent appointment time</span> </a> 
       -->
        </div>
         <div class="weui-infinite-scroll" id="loadingdiv">
 	  <div class="infinite-preloader"></div>
-	    <!-- 正在加载... -->
-	    <span  id="loading">上拉加载更多</span>
+	    <!-- Being loaded... -->
+	    <span  id="loading">Pull up load more</span>
 	</div>
   </div>
 </div>
@@ -67,14 +67,14 @@
 $(document).ready(function(e){
 	 $("#pageno").val(0);
 	yuyuelist();
-	var loading = false;  //状态标记
+	var loading = false;  //State mark
 	$(document.body).infinite().on("infinite", function() {
 	  if(loading) return;
 	  loading = true;
 	  setTimeout(function() {
 		  yuyuelist();
 	    loading = false;
-	  }, 1500);   //模拟延迟
+	  }, 1500);   //Simulation delay
 	});
 });
 function yuyuelist(){

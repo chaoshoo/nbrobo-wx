@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * 判断是否为空
+ * Whether the judgment is empty
  * 
  * huilet 2013-3-25
  * @author yuanc
@@ -14,7 +14,7 @@ public class PubMethod {
 
 
 	/**
-	 * 此处需要考虑空模式的应用，传统意义上面不含元素的空数组是不为空的
+	 * Consider the application of space mode，Traditionally, empty arrays are not empty.
 	 * 
 	 * @return boolean
 	 * @deprecated
@@ -26,7 +26,7 @@ public class PubMethod {
 
 
 	/**
-	 * 判断空
+	 * Judgment empty
 	 * 
 	 * @param Value
 	 * @return

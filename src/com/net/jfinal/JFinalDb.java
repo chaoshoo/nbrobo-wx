@@ -47,7 +47,7 @@ public class JFinalDb extends Db{
 			}
 		}
 		if(paras.size() < 1){
-			throw new Exception("删除必须要条件");
+			throw new Exception("Delete must condition");
 		}
 		return Db.update(sql.toString(), paras.toArray());
 	}
@@ -116,7 +116,7 @@ public class JFinalDb extends Db{
 		}
 	}
 	/**
-	 * 利用对象声明的字段 进行反射
+	 * Field using object declarations To reflect
 	 * @param record
 	 * @param clazz
 	 * @return
@@ -146,7 +146,7 @@ public class JFinalDb extends Db{
 		return t;
 	}
 	/**
-	 * 利用record的column 进行反射
+	 * utilizerecordThecolumn To reflect
 	 * @param record
 	 * @param clazz
 	 * @return
@@ -165,7 +165,7 @@ public class JFinalDb extends Db{
 				try {
 					Reflections.setFieldValue(t, key.toLowerCase(), record.get(key));
 				} catch (Exception e) {
-					log.error(clazz.getName()+"类变量"+key.toLowerCase()+"没有set方法");
+					log.error(clazz.getName()+"Class variable"+key.toLowerCase()+"NosetMethod");
 				}
 			}			
 		} catch (ClassNotFoundException e) {
@@ -239,7 +239,7 @@ public class JFinalDb extends Db{
 	 * 
 	 * @param pageNo
 	 * @param pageSize
-	 * @param sql   动态变量组合用 ${where} 代替
+	 * @param sql   Dynamic variable combination ${where} replace
 	 * @param mapwhere
 	 * @param orderstr
 	 * @return
@@ -253,12 +253,12 @@ public class JFinalDb extends Db{
 	}
 	/**
 	 * 
-	 * @param pageNo   页数
-	 * @param pageSize  每页大小
-	 * @param sql  sql 语句
-	 * @param mapwhere  需要组装的参数
-	 * @param orderstr  排序
-	 * @param params  固定参数
+	 * @param pageNo   The number of pages
+	 * @param pageSize  Page size
+	 * @param sql  sql Sentence
+	 * @param mapwhere  Parameters to be assembled
+	 * @param orderstr  sort
+	 * @param params  Fixed parameter
 	 * @return
 	 * @throws Exception
 	 */
@@ -321,7 +321,7 @@ public class JFinalDb extends Db{
 		return l;
 	}
 
-	/**************针对JdbcSql的处理***************/
+	/**************In the light ofJdbcSqlTreatment***************/
 	public static int executeBySqlid(String sqlid,Object paras){
 		return Db.update(JdbcSql.getSql(sqlid), paras);
 	}

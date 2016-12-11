@@ -3,7 +3,7 @@ package com.net;
 import java.util.ResourceBundle;
 
 /**
- * 服务常量
+ * Service constant
  * @author hiveview
  *
  */

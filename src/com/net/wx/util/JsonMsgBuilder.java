@@ -9,23 +9,23 @@ import com.net.wx.vo.Template;
 
 
 /**
- * Json工具类
+ * JsonTool class
  */
 public class JsonMsgBuilder {
 
     private final StringBuffer msgBuf = new StringBuffer("{");
 
     /**
-     * 创建
+     * Establish
      */
     public static JsonMsgBuilder create() {
         return new JsonMsgBuilder();
     }
 
     /**
-     * 创建消息体前缀
+     * Create message body prefix
      *
-     * @param msg   客服消息实体
+     * @param msg   Customer service message entity
      */
     void msgPrefix(OutPutMsg msg) {
         msgBuf.append("\"touser\":\"")
@@ -41,9 +41,9 @@ public class JsonMsgBuilder {
     }
 
     /**
-     * 文本客服消息
+     * Text customer service message
      *
-     * @param msg   客服消息实体
+     * @param msg   Customer service message entity
      */
     public JsonMsgBuilder text(OutPutMsg msg) {
         msgPrefix(msg);
@@ -56,9 +56,9 @@ public class JsonMsgBuilder {
     }
 
     /**
-     * 图像客服消息
+     * Image customer service message
      *
-     * @param msg   客服消息实体
+     * @param msg   Customer service message entity
      */
     public JsonMsgBuilder image(OutPutMsg msg) {
         msgPrefix(msg);
@@ -71,9 +71,9 @@ public class JsonMsgBuilder {
     }
 
     /**
-     * 语音客服消息
+     * Voice customer service
      *
-     * @param msg   客服消息实体
+     * @param msg   Customer service message entity
      */
     public JsonMsgBuilder voice(OutPutMsg msg) {
         msgPrefix(msg);
@@ -86,9 +86,9 @@ public class JsonMsgBuilder {
     }
 
     /**
-     * 视频客服消息
+     * Video customer service
      *
-     * @param msg   客服消息实体
+     * @param msg   Customer service message entity
      */
     public JsonMsgBuilder video(OutPutMsg msg) {
         msgPrefix(msg);
@@ -110,9 +110,9 @@ public class JsonMsgBuilder {
     }
 
     /**
-     * 音乐客服消息
+     * Music customer service
      *
-     * @param msg   客服消息实体
+     * @param msg   Customer service message entity
      */
     public JsonMsgBuilder music(OutPutMsg msg) {
         msgPrefix(msg);
@@ -137,9 +137,9 @@ public class JsonMsgBuilder {
     }
 
     /**
-     * 多图文客服消息
+     * Multi graphic customer service news
      *
-     * @param msg   客服消息实体
+     * @param msg   Customer service message entity
      */
     public JsonMsgBuilder news(OutPutMsg msg) {
         msgPrefix(msg);
@@ -170,13 +170,13 @@ public class JsonMsgBuilder {
     }
 
     /**
-     * 模板消息
+     * Template message
      *
-     * @param openId    接收者
-     * @param templateId    模板ID
-     * @param topColor  顶部颜色
-     * @param url   链接地址
-     * @param templates 模板数据
+     * @param openId    Recipient
+     * @param templateId    TemplateID
+     * @param topColor  Top color
+     * @param url   Link address
+     * @param templates Template data
      */
     public JsonMsgBuilder template(String openId, String templateId,
                                    String topColor, String url, Template... templates) {
@@ -195,9 +195,9 @@ public class JsonMsgBuilder {
     }
 
     /**
-     * 上传多图文消息
+     * Upload multiple pictures and text messages
      *
-     * @param articles2s    图文消息
+     * @param articles2s    Graphic message
      */
     public JsonMsgBuilder uploadNews(Article2... articles2s) {
         msgBuf.append("\"articles\":[");
@@ -219,9 +219,9 @@ public class JsonMsgBuilder {
     }
     
     /**
-     * 更新永久图文素材
+     * Update permanent graphic material
      *
-     * @param articles2s    图文消息
+     * @param articles2s    Graphic message
      */
     public JsonMsgBuilder updateNews(String updateMediaId,int index,Article2 art2) {
     	msgBuf.append("\"media_id\":\"").append(updateMediaId).append("\",");
@@ -244,11 +244,11 @@ public class JsonMsgBuilder {
 	}
 
     /**
-     * 上传视频
+     * Upload video
      *
-     * @param mediaId   多媒体ID
-     * @param title 视频标题
-     * @param description   视频描述
+     * @param mediaId   Multi-MediaID
+     * @param title Video title
+     * @param description   Video description
      */
     public JsonMsgBuilder uploadVideo(String mediaId, String title, String description) {
         msgBuf.append("\"media_id\":\"").append(mediaId).append("\",");
@@ -258,9 +258,9 @@ public class JsonMsgBuilder {
     }
 
     /**
-     * 群发消息
+     * Mass message
      *
-     * @param msg 输出消息实体
+     * @param msg Output message entity
      */
     public JsonMsgBuilder sendAll(OutPutMsg msg) {
         if (msg.getToUsers().isEmpty()) {

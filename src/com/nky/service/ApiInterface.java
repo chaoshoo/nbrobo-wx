@@ -56,7 +56,7 @@ public class ApiInterface {
 				map.put("msg", obj.getJSONObject("message").getString("msg"));
 			}else{
 				map.put("success", "false");
-				map.put("msg", "系统异常");
+				map.put("msg", "Abnormal system");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -81,11 +81,11 @@ public class ApiInterface {
 				return jb.get("message").toString();
 			}
 		}else{
-			return "系统异常";
+			return "Abnormal system";
 		}
 	}
 	/**
-	 * 注册
+	 * register
 	 * @param tel
 	 * @return
 	 */
@@ -96,7 +96,7 @@ public class ApiInterface {
 		return analyze(result);
 	}
 	/**
-	 * 修改密码
+	 * Change password
 	 * @param tel
 	 * @return
 	 */
@@ -107,7 +107,7 @@ public class ApiInterface {
 		return analyze(result);
 	}
 	/**
-	 * 验证短信码
+	 * Verify SMS code
 	 * @param tel
 	 * @return
 	 */
@@ -263,7 +263,7 @@ public class ApiInterface {
 		} catch (Exception e) {
 			e.printStackTrace();
 			map.put("success", "false");
-			map.put("msg", "系统异常");
+			map.put("msg", "Abnormal system");
 		}
 		return map;
 	}
@@ -288,7 +288,7 @@ public class ApiInterface {
 				map.put("msg", obj.getString("msg"));
 			}else{
 				map.put("success", "false");
-				map.put("msg", "系统异常");
+				map.put("msg", "Abnormal system");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -301,7 +301,7 @@ public class ApiInterface {
 		params.put("orderid", orderid);
 		params.put("operator", vip_code);
 		if(StringUtils.isEmpty(cancelreason)){
-			params.put("cancelreason", "无理由");
+			params.put("cancelreason", "No reason");
 		}else{
 			params.put("cancelreason", cancelreason);
 		}
@@ -320,7 +320,7 @@ public class ApiInterface {
 				map.put("msg", obj.getString("msg"));
 			}else{
 				map.put("success", "false");
-				map.put("msg", "系统异常");
+				map.put("msg", "Abnormal system");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -359,7 +359,7 @@ public class ApiInterface {
 			e.printStackTrace();
 			JSONObject json = new JSONObject();
 			json.put("code", "1");
-			json.put("message", "调用接口异常");
+			json.put("message", "Call interface exception");
 			return json;
 		}
 	}

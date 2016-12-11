@@ -4,13 +4,13 @@ package com.net.wx.core;
 import com.net.wx.exception.WxRespException;
 
 /**
- * 微信登录授权接口设计
+ * WeChat login authorization interface design
  */
 public interface WxOauthApi {
 	
 	/**
 	 * @Title: getAccessToken
-	 * @Description: 获取微信登录授权的accessToken
+	 * @Description: Get WeChat login authorizationaccessToken
 	 * @param @throws WxRespException    
 	 * @return String    
 	 * @throws 
@@ -19,7 +19,7 @@ public interface WxOauthApi {
 
 	/**
 	 * @Title: checkAccessToken
-	 * @Description: 检查accessToken是否有效
+	 * @Description: inspectaccessTokenWhether effective
 	 * @param @throws WxRespException    
 	 * @return boolean    
 	 * @throws 
@@ -28,7 +28,7 @@ public interface WxOauthApi {
 	
 	/**
 	 * @Title: oauthUserInfo
-	 * @Description: 授权后的用户信息
+	 * @Description: Authorized user information
 	 * @param @throws WxRespException    
 	 * @return String[openid,nickname,province,city,country,headimgurl]    
 	 * @throws 

@@ -12,75 +12,75 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 /**
- * 消息工具类
+ * Message tool class
  * @author andaywgz
  *
- * 2014-1-25 下午08:44:19
+ * 2014-1-25 Afternoon08:44:19
  */
 public class MessageUtil {
 
 	/**
-	 * 返回消息类型：文本
+	 * Return message type：text
 	 */
 	public static final String RESP_MESSAGE_TYPE_TEXT = "text";
 
 	/**
-	 * 返回消息类型：音乐
+	 * Return message type：Music
 	 */
 	public static final String RESP_MESSAGE_TYPE_MUSIC = "music";
 
 	/**
-	 * 返回消息类型：图文
+	 * Return message type：Image & Text
 	 */
 	public static final String RESP_MESSAGE_TYPE_NEWS = "news";
 
 	/**
-	 * 请求消息类型：文本
+	 * Request message type：text
 	 */
 	public static final String REQ_MESSAGE_TYPE_TEXT = "text";
 
 	/**
-	 * 请求消息类型：图片
+	 * Request message type：picture
 	 */
 	public static final String REQ_MESSAGE_TYPE_IMAGE = "image";
 
 	/**
-	 * 请求消息类型：链接
+	 * Request message type：link
 	 */
 	public static final String REQ_MESSAGE_TYPE_LINK = "link";
 
 	/**
-	 * 请求消息类型：地理位置
+	 * Request message type：geographical position
 	 */
 	public static final String REQ_MESSAGE_TYPE_LOCATION = "location";
 
 	/**
-	 * 请求消息类型：音频
+	 * Request message type：audio frequency
 	 */
 	public static final String REQ_MESSAGE_TYPE_VOICE = "voice";
 
 	/**
-	 * 请求消息类型：推送
+	 * Request message type：Push
 	 */
 	public static final String REQ_MESSAGE_TYPE_EVENT = "event";
 
 	/**
-	 * 事件类型：subscribe(订阅)
+	 * Event type：subscribe(Subscribe)
 	 */
 	public static final String EVENT_TYPE_SUBSCRIBE = "subscribe";
 
 	/**
-	 * 事件类型：unsubscribe(取消订阅)
+	 * Event type：unsubscribe(unsubscribe)
 	 */
 	public static final String EVENT_TYPE_UNSUBSCRIBE = "unsubscribe";
 
 	/**
-	 * 事件类型：CLICK(自定义菜单点击事件)
+	 * Event type：CLICK(Custom menu click event)
 	 */
 	public static final String EVENT_TYPE_CLICK = "CLICK";
 
 	/**
-	 * 解析微信发来的请求（XML）
+	 * Resolve the request from WeChat（XML）
 	 * 
 	 * @param request
 	 * @return

@@ -7,56 +7,56 @@ import com.alibaba.fastjson.JSONObject;
 import com.nky.Constants;
 
 /**
- * 微信登录授权信息
+ * WeChat login authorization information
  */
 public class OauthAct {
 
 	/**
-	 * 授权应用Id
+	 * License applicationId
 	 */
 	private String oauthAppId;
 
 	/**
-	 * 授权应用密钥
+	 * License application key
 	 */
 	private String oauthAppSecret;
 	/**
-	 * 公众号应用Id
+	 * Public number applicationId
 	 */
 	private String appId;
 	
 	/**
-	 * 公众号应用密钥
+	 * Public key
 	 */
 	private String appSecret;
 	
 	/**
-	 * 获取accessToken的票据
+	 * ObtainaccessTokenBill
 	 */
 	private String code;
 
 	/**
-	 * 应用凭证
+	 * Application certificate
 	 */
 	private String accessToken;
 	
 	/**
-	 * 当accessToken超时时,用refreshToken来刷新accessToken
+	 * WhenaccessTokenSuper from time to time,userefreshTokenTo refreshaccessToken
 	 */
 	private String refreshToken;
 	
 	/**
-	 * 授权的用户ID
+	 * Authorized userID
 	 */
 	private String openId;
 
 	/**
-	 * 凭证有效时间(秒)
+	 * Certificate valid time(second)
 	 */
 	private long expiresIn;
 	
 	/**
-	 * 用户授权的作用域
+	 * User authorization scope
 	 */
 	private String scope;
 	
@@ -120,9 +120,9 @@ public class OauthAct {
 	}
 
 	/**
-     * 解析微信服务器返回消息生成高级API或服务的凭证
+     * WeChat server to parse the return message generation advancedAPICertificate of service or service
      *
-     * @param result    返回消息
+     * @param result    Return message
      */
     public void createAccessToken(String result) {
 

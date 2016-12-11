@@ -9,9 +9,9 @@ import com.jfinal.plugin.activerecord.Record;
 import com.nky.entity.OfficeEntity;
 
 /**
- * 科室单例.
+ * Department single case.
  * @author Ken
- * @version 2016年8月24日
+ * @version 2016year8month24day
  */
 public class OfficeSingleton {
 
@@ -25,7 +25,7 @@ public class OfficeSingleton {
 	private static Boolean LOCK = new Boolean(true);
 
 	/**
-	 * 获取单例.
+	 * Obtain a single case.
 	 */
 	public static OfficeSingleton getInstance() {
 		if (instance == null) {
@@ -35,14 +35,14 @@ public class OfficeSingleton {
 	}
 
 	/**
-	 * 获取所有科室.
+	 * Get all department.
 	 */
 	public Map<String, OfficeEntity> getAll() {
 		return OFFICE_MAP;
 	}
 
 	/**
-	 * 获取某一个科室.
+	 * Get a department.
 	 */
 	public OfficeEntity getEntitybykey(String code) {
 		OfficeEntity office = OFFICE_MAP.get(code);
@@ -59,7 +59,7 @@ public class OfficeSingleton {
 	}
 
 	/**
-	 * 加载数据
+	 * Load data
 	 */
 	private void loadData() {
 		synchronized (LOCK) {
@@ -77,7 +77,7 @@ public class OfficeSingleton {
 	}
 
 	/**
-	 * 重新加载
+	 * Reload
 	 */
 	public void reload() {
 		loadData();

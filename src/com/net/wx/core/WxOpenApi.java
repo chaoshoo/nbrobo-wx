@@ -6,104 +6,104 @@ import com.net.wx.vo.MPAct;
 
 
 /**
- * 微信开放平台API接口设计
+ * WeChat open platformAPIinterface design
  */
 public interface WxOpenApi {
 
     /**
-     * 设置公众号信息
-     * @param mpAct 公众号信息
+     * Set public information
+     * @param mpAct Public information
      */
     void setMpAct(MPAct mpAct);
 
     /**
-     * 设置凭证
-     * @param ticket    凭证
+     * Set credentials
+     * @param ticket    voucher
      */
     void setTicket(String ticket);
 
     /**
-     * 获取公众号服务组件的令牌
-     * @return 令牌
+     * Token for obtaining public service component
+     * @return token
      * @throws WxRespException
      */
     String getComponentToken() throws WxRespException;
 
     /**
-     * 刷新公众号服务组件的令牌
+     * Refresh token for public service component
      * @throws WxRespException
      */
     void refreshComponentToken() throws WxRespException;
 
     /**
-     * 获取公众号预授权码
-     * @return  预授权码
+     * Access to public pre authorization code
+     * @return  Pre authorization code
      * @throws WxRespException
      */
     String getPreAuthCode() throws WxRespException;
 
     /**
-     * 创建公众号预授权码
+     * Create public number pre authorization code
      * @throws WxRespException
      */
     void createPreAuthCode() throws WxRespException;
 
     /**
-     * 使用授权码换取授权公众号的授权信息<pre/>
-     * 并换取authorizer_access_token和authorizer_refresh_token
-     * @param authCode  授权码
-     * @return  授权信息
+     * Use the authorization code in exchange for authorization information of the public number<pre/>
+     * And in exchange forauthorizer_access_tokenandauthorizer_refresh_token
+     * @param authCode  Authorization code
+     * @return  Authorization information
      * @throws WxRespException
      */
     AuthInfo queryAuth(String authCode) throws WxRespException;
 
     /**
-     * 获取授权公众号的令牌
+     * Access to a token of the public number
      *
-     * @param authAppId         授权方appid
-     * @param authRefreshToken  授权方的刷新令牌
-     * @return  令牌
+     * @param authAppId         Authorized partyappid
+     * @param authRefreshToken  Authorized party refresh token
+     * @return  token
      * @throws WxRespException
      */
     String getAuthAccessToken(String authAppId, String authRefreshToken) throws WxRespException;
 
     /**
-     * 刷新授权公众号的令牌
+     * Refresh the public number of the token
      *
-     * @param authAppId         授权方appid
-     * @param authRefreshToken  授权方的刷新令牌
+     * @param authAppId         Authorized partyappid
+     * @param authRefreshToken  Authorized party refresh token
      * @throws WxRespException
      */
     void refreshAuthAccessToken(String authAppId, String authRefreshToken) throws WxRespException;
 
     /**
-     * 获取授权方的账户信息
+     * Access to the authorized party account information
      *
-     * @param authAppId 授权方appid
-     * @return  权方的账户信息
+     * @param authAppId Authorized partyappid
+     * @return  The right side of the account information
      * @throws WxRespException
      */
     AuthInfo getAuthorizerInfo(String authAppId) throws WxRespException;
 
     /**
-     * 获取授权方的选项设置信息
+     * Gets the option setting information for the Licensor
      *
-     * @param authAppId     授权方appid
-     * @param optionName    选项名称(location_report,voice_recognize,customer_service)
-     * @return  选项值
+     * @param authAppId     Authorized partyappid
+     * @param optionName    Option name(location_report,voice_recognize,customer_service)
+     * @return  Option value
      * @throws WxRespException
      */
     String getAuthorizerOption(String authAppId, String optionName) throws WxRespException;
 
     /**
-     * 设置授权方的选项设置信息
+     * Set options for the authorized party to set information
      *
-     * @param authAppId     授权方appid
-     * @param optionName    设置的选项名称
-     * @param optionValue   设置的选项值
-     *                      ocation_report(地理位置上报) 0关闭 1进入会话时上报 2每5s上报
-     *                      voice_recognize（语音识别） 0关闭 1开启
-     *                      customer_service（客服开关） 0关闭 1开启
+     * @param authAppId     Authorized partyappid
+     * @param optionName    Set the option name
+     * @param optionValue   Set the option value
+     *                      ocation_report(Geographical position report) 0Close 1Report to the session 2each5sReport
+     *                      voice_recognize（speech recognition） 0Close 1open
+     *                      customer_service（Customer service switch） 0Close 1open
      * @throws WxRespException
      */
     void setAuthorizerOption(String authAppId, String optionName, String optionValue) throws WxRespException;

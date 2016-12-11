@@ -239,7 +239,7 @@ public class GuaHaoAction extends WxBaseAction{
 	@RequestMapping("/paysuccess")
 	@ResponseBody
 	public String paysuccess(HttpServletRequest request,String orderid){
-		log.info("支付成功订单号："+orderid);
+		log.info("Pay successful order number："+orderid);
 		try {
 			Db.update("update vip_reg set status='3' ,payrtime=? where orderid=?",DateUtil.nowDateForStr("yyyy-MM-dd HH:mm:ss"),orderid);
 		} catch (Exception e) {

@@ -1,68 +1,68 @@
 package com.net.wx.vo;
 
 /**
- * 微信消息实体基类
+ * WeChat message entity base class
  */
 public abstract class BaseMsg {
 
 	/**
-	 * 消息唯一ID(64位整型)
+	 * Message onlyID(64short)
 	 */
 	protected long msgId;
 
 	/**
-	 * 消息创建时间 （整型） 
+	 * Message creation time （integer） 
 	 */
 	protected long createTime;
 
 	/**
-	 * 消息类型(text, image, video, voice, location, link,event)
+	 * Message type(text, image, video, voice, location, link,event)
 	 */
 	protected String msgType;
 
 	/**
-	 * 消息事件:
-	 * subscribe:订阅
-	 * unsubscribe:取消订阅
-	 * SCAN:关注后场景扫描
-	 * LOCATION:主动上传位置
-	 * VIEW,CLICK:菜单点击事件
-	 * TEMPLATESENDJOBFINISH:模板消息推送
+	 * Message event:
+	 * subscribe:Subscribe
+	 * unsubscribe:unsubscribe
+	 * SCAN:Post scene scan
+	 * LOCATION:Active upload location
+	 * VIEW,CLICK:Menu click event
+	 * TEMPLATESENDJOBFINISH:Template message push
 	 */
 	protected String event;
 
 	/**
-	 * 接收消息用户ID
+	 * Receive message userID
 	 */
 	protected String toUserName;
 
 	/**
-	 * 消息来自用户ID
+	 * Message from userID
 	 */
 	protected String fromUserName;
 
 	/**
-	 * 文本消息内容
+	 * Text message content
 	 */
 	protected String content;
 
 	/**
-	 * 多媒体消息ID(微信服务器有效时间为3天)
+	 * Multimedia messagesID(WeChat server effective time for3day)
 	 */
 	protected String mediaId;
 
 	/**
-	 * 链接,文章消息标题
+	 * link,Article message title
 	 */
 	protected String title;
 
 	/**
-	 * 详细描述
+	 * Detailed description
 	 */
 	protected String description;
 
 	/**
-	 * 视频消息缩略图的媒体id
+	 * Video message thumbnail mediaid
 	 */
 	protected String thumbMediaId;
     public long getMsgId() {

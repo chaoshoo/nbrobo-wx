@@ -5,8 +5,8 @@ import java.util.Random;
 /**
  * 
  * ClassName: RandomUtil <br/>
- * Function: 生成随机数工具类. <br/>
- * date: 2016年6月20日 下午4:38:40 <br/>
+ * Function: Generating random number of tools. <br/>
+ * date: 2016year6month20day Afternoon4:38:40 <br/>
  *
  * @author Administrator
  * @version 
@@ -18,11 +18,11 @@ public class RandomUtil {
 	public static final String NUMBERCHAR = "0123456789";
 
 	/**
-	 * 返回一个定长的随机字符串(只包含大小写字母、数字)
+	 * Returns a fixed length random string(Only contains letters、number)
 	 * 
 	 * @param length
-	 *            随机字符串长度
-	 * @return 随机字符串
+	 *            Random string length
+	 * @return Random string
 	 */
 	public static String generateString(int length) {
 		StringBuffer sb = new StringBuffer();
@@ -34,11 +34,11 @@ public class RandomUtil {
 	}
 
 	/**
-	 * 返回一个定长的随机纯字母字符串(只包含大小写字母)
+	 * Returns a fixed length random string(Only contains letters)
 	 * 
 	 * @param length
-	 *            随机字符串长度
-	 * @return 随机字符串
+	 *            Random string length
+	 * @return Random string
 	 */
 	public static String generateMixString(int length) {
 		StringBuffer sb = new StringBuffer();
@@ -50,11 +50,11 @@ public class RandomUtil {
 	}
 	
 	/**
-	 * 返回一个定长的随机字符串(只包含数字)
+	 * Returns a fixed length random string(Only contains numbers)
 	 * 
 	 * @param length
-	 *            随机字符串长度
-	 * @return 随机字符串
+	 *            Random string length
+	 * @return Random string
 	 */
 	public static String generateNumber(int length) {
 		StringBuffer sb = new StringBuffer();
@@ -66,33 +66,33 @@ public class RandomUtil {
 	}
 
 	/**
-	 * 返回一个定长的随机纯大写字母字符串(只包含大小写字母)
+	 * Returns a fixed length random pure capital letter string(Only contains letters)
 	 * 
 	 * @param length
-	 *            随机字符串长度
-	 * @return 随机字符串
+	 *            Random string length
+	 * @return Random string
 	 */
 	public static String generateLowerString(int length) {
 		return generateMixString(length).toLowerCase();
 	}
 
 	/**
-	 * 返回一个定长的随机纯小写字母字符串(只包含大小写字母)
+	 * Returns a fixed length of the random lowercase character string(Only contains letters)
 	 * 
 	 * @param length
-	 *            随机字符串长度
-	 * @return 随机字符串
+	 *            Random string length
+	 * @return Random string
 	 */
 	public static String generateUpperString(int length) {
 		return generateMixString(length).toUpperCase();
 	}
 
 	/**
-	 * 生成一个定长的纯0字符串
+	 * Generating a fixed length of pure0Character string
 	 * 
 	 * @param length
-	 *            字符串长度
-	 * @return 纯0字符串
+	 *            String length
+	 * @return pure0Character string
 	 */
 	public static String generateZeroString(int length) {
 		StringBuffer sb = new StringBuffer();
@@ -103,13 +103,13 @@ public class RandomUtil {
 	}
 
 	/**
-	 * 根据数字生成一个定长的字符串，长度不够前面补0
+	 * Generates a fixed length string based on the number，The length is not enough to fill up0
 	 * 
 	 * @param num
-	 *            数字
+	 *            number
 	 * @param fixdlenth
-	 *            字符串长度
-	 * @return 定长的字符串
+	 *            String length
+	 * @return Fixed length string
 	 */
 	public static String toFixdLengthString(long num, int fixdlenth) {
 		StringBuffer sb = new StringBuffer();
@@ -117,18 +117,18 @@ public class RandomUtil {
 		if (fixdlenth - strNum.length() >= 0) {
 			sb.append(generateZeroString(fixdlenth - strNum.length()));
 		} else {
-			throw new RuntimeException("将数字" + num + "转化为长度为" + fixdlenth
-					+ "的字符串发生异常！");
+			throw new RuntimeException("Will number" + num + "Transform to length" + fixdlenth
+					+ "String exception！");
 		}
 		sb.append(strNum);
 		return sb.toString();
 	}
 
 	/**
-	 * 每次生成的len位数都不相同
+	 * Generated each timelenBits are not the same
 	 * 
 	 * @param param
-	 * @return 定长的数字
+	 * @return Fixed length number
 	 */
 	public static int getNotSimple(int[] param, int len) {
 		Random rand = new Random();
@@ -148,9 +148,9 @@ public class RandomUtil {
 	public static void main(String[] args) {
 		System.out.println("返回一个定长的随机字符串(只包含大小写字母、数字):" + generateString(10));
 		System.out
-				.println("返回一个定长的随机纯字母字符串(只包含大小写字母):" + generateMixString(10));
+				.println("Returns a fixed length random string(Only contains letters):" + generateMixString(10));
 		System.out
-		.println("返回一个定长的随机纯数字字符串:" + generateNumber(10));
+		.println("Returns a fixed length of a random string.:" + generateNumber(10));
 		System.out.println("返回一个定长的随机纯大写字母字符串(只包含大小写字母):"
 				+ generateLowerString(10));
 		System.out.println("返回一个定长的随机纯小写字母字符串(只包含大小写字母):"

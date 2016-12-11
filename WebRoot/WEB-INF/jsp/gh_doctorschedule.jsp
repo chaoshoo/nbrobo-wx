@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>环球健康管理平台</title>
+<title>Residents health management service platform</title>
 <meta name="meituan_check">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -43,9 +43,9 @@
 <body id="account">
 <header class="navbar">
   <div class="nav-wrap-left"> <a class="react back" onclick="history.go(-1)"><i class="text-icon icon-back"></i></a> </div>
-  <span class="nav-header h1"> 医生排班列表 </span> 
+  <span class="nav-header h1"> The doctor schedule list </span> 
   <div class="nav-wrap-right"> <a class="react headSearch" href="javascript:void(0)"> 
-  <font style="font-weight:bold;font-style:italic;">&nbsp;&nbsp;</font>
+  <font style="font-weight:bold;font-style:italic;"></font>
   </a> </div></header>
 <div class="cur-control-con" >
  <input type="hidden" name="hosid" id="hosid" value="${hosid}">
@@ -88,9 +88,9 @@ function list(){
 					    +'<p class="weui_media_desc">'+item.validflagstr+'</p>'
 					    +'</div><div class="weui_media_ft"> <span class="weui_media_ft_time">￥'+item.orderfee+'</span> ';
 					    if(item.validflag=='1' || item.validflag=='7'  ){
-					    	doctorlist += '<span class="weui_media_ft_btn" onclick="yuyue('+item.validflag+',\''+item.scheduleid+'\',\''+item.outpdate+'\',\''+item.timeinterval+'\',\''+item.orderfee+'\');">挂号</span> </div>';
+					    	doctorlist += '<span class="weui_media_ft_btn" onclick="yuyue('+item.validflag+',\''+item.scheduleid+'\',\''+item.outpdate+'\',\''+item.timeinterval+'\',\''+item.orderfee+'\');">Register</span> </div>';
 					    }else{
-					    	doctorlist += '<span class="weui_media_ft_disbtn" >挂号</span> </div>';
+					    	doctorlist += '<span class="weui_media_ft_disbtn" >Register</span> </div>';
 					    }
 					    doctorlist += '</span>';
 					    x = x+1;
@@ -100,7 +100,7 @@ function list(){
 				//alert('未查询到该医生排班记录');
 				doctorlist += '<span class="weui_media_box weui_media_appmsg" >'
 				    +'<div class="weui_media_bd">'
-				    +'<h4 class="weui_media_title">未查询到该医生排班记录</h4>'
+				    +'<h4 class="weui_media_title">The doctor did not inquire into the scheduling records</h4>'
 				    +'</div></span>';
 				$("#doctorlist").html(doctorlist);
 			}

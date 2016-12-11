@@ -11,7 +11,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>环球健康管理平台</title>
+<title>Residents health management service platform</title>
 <meta name="renderer" content="webkit">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
@@ -587,47 +587,47 @@ a {
 			<a href="<%=path%>/index/toLogin.html" class="react back"><i
 				class="text-icon icon-back"></i></a>
 		</div>
-		<span class="nav-header h1">注册</span>
+		<span class="nav-header h1">register</span>
 		<div class="nav-wrap-right">
 			<a class="react headSearch" href="#" onclick="message();"> <font
-				style="font-weight: bold; font-style: italic;">&nbsp;&nbsp;</font>
+				style="font-weight: bold; font-style: italic;"></font>
 			</a>
 		</div>
 	</header>
 
 	<div class="wrapper">
 		<div class="ruc-register-container">
-			<!--注册手机号-->
+			<!--Registered phone number-->
 			<div class="form-item">
-				<input placeholder="请输入手机号码" class="ruc-input-register-name"
+				<input placeholder="Please enter your mobile phone number" class="ruc-input-register-name"
 					id="tel" name="tel" type="tel"><a id="getmessage"
 					href="javascript:;" onclick="message()" id="ruc-send-auth-code-btn"
-					style="background: #1cd39b !important; border-radius: 15px; line-height: 30px; padding: 0px 15px; color: #fff; margin: 5px 5px 5px 0px;">获取验证码</a>
+					style="background: #1cd39b !important; border-radius: 15px; line-height: 30px; padding: 0px 15px; color: #fff; margin: 5px 5px 5px 0px;">Get verification code</a>
 			</div>
-			<!--手机收到的验证码-->
+			<!--Verification code received by mobile phone-->
 			<div class="form-item">
-				<input placeholder="请输入验证码" class="ruc-input-register-auth"
+				<input placeholder="Please enter verification code" class="ruc-input-register-auth"
 					id="rand" name="rand" type="text">
 			</div>
-			<!--设置身份证号-->
+			<!--Set ID number-->
 			<div class="form-item">
-				<input placeholder="请输入身份证号" class="ruc-input-register-nickname"
+				<input placeholder="Please enter your ID number." class="ruc-input-register-nickname"
 					id="idcard" name="idcard" type="text"> <i class="icon-ok"></i>
 			</div>
-			<!--输入密码-->
+			<!--Input password-->
 			<div class="form-item">
-				<input placeholder="密码(至少6位)" class="ruc-input-register-password"
+				<input placeholder="Password(at least6position)" class="ruc-input-register-password"
 					id="password" name="password" type="password"> <i
 					class="icon-ok"></i>
 			</div>
 			<div class="form-item">
-				<input placeholder="重复输入密码" class="ruc-input-register-password"
+				<input placeholder="Repeat input password" class="ruc-input-register-password"
 					id="password2" name="password2" type="password"> <i
 					class="icon-ok"></i>
 			</div>
-			<!--注册按钮-->
+			<!--Register button-->
 			<div class="form-item button-container">
-				<div id="ruc_regist_btn" class="input-item-btn" onclick="regist();">注册</div>
+				<div id="ruc_regist_btn" class="input-item-btn" onclick="regist();">register</div>
 			</div>
 			<div class="input-item-error-text"></div>
 			<div class="ruc-regist-sending-mask"></div>
@@ -640,9 +640,9 @@ a {
 	function message() {
 		var tel = $("#tel").val();
 		if (isEmpty(tel)) {
-			$.alert('电话号码为空');
+			$.alert('Phone number is empty');
 		} else if (!istel(tel)) {
-			$.alert('请输入有效的手机号码');
+			$.alert('Please enter a valid phone number');
 		} else {
 			$.ajax({
 				url : "getMessage.json?type=register&ttt="
@@ -653,7 +653,7 @@ a {
 				success : function(data) {
 					if (data.code == 1) {
 						$("#getmessage").hide();
-						$.toast("&nbsp;&nbsp;请查收短信", function() {
+						$.toast("Please check SMS", function() {
 							console.log('close');
 						});
 					} else {
@@ -671,19 +671,19 @@ a {
 		var idcard = $("#idcard").val();
 		var rand = $("#rand").val();
 		if (!istel(tel)) {
-			$.alert('请输入有效的手机号码！');
+			$.alert('Please enter a valid phone number！');
 		} else if (isEmpty(rand)) {
-			$.alert("验证码未填写！");
+			$.alert("Verification code is not completed！");
 		} else if (isEmpty(idcard)) {
-			$.alert("身份证号码未填写！");
+			$.alert("ID NO. is empty！");
 		} else if (!(idcard.length == 15 || idcard.length == 18)) {
-			$.alert("请输入正确的身份证号码！");
+			$.alert("Please enter the correct ID number！");
 		} else if (isEmpty(password)) {
-			$.alert("密码未填写！");
+			$.alert("Password is empty！");
 		} else if (password.length < 6) {
-			$.alert("密码长度需要大与6位！");
+			$.alert("Password length must be longer than6position！");
 		} else if (password != password2) {
-			$.alert("两次输入密码不一致！");
+			$.alert("Two password inputs are not consistent！");
 		} else {
 			$.ajax({
 				url : "register.json?ttt=" + new Date().getTime(),
@@ -693,11 +693,11 @@ a {
 						+ "&idcard=" + idcard,
 				success : function(data) {
 					if (data.code == 1) {
-						$.toast("&nbsp;&nbsp;注册成功", function() {
+						$.toast("Registered", function() {
 							location.href = "toLogin.html";
 						});
 					} else {
-						$.toast("&nbsp;&nbsp;注册失败", "cancel", function() {
+						$.toast("Registeration failed", "cancel", function() {
 							console.log('close');
 						});
 					}

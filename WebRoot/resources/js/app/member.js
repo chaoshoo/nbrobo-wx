@@ -4,9 +4,9 @@ var member = {
 		var memberUID = $("#memberUID").val();
 		var memSex = "";
 		if($("input[name=sex]:eq(0)").attr("checked")=="checked"){
-			memSex = "男";
+			memSex = "male";
 		}else{
-			memSex = "女";
+			memSex = "female";
 		}
 		var memYear = $("#memberYear").children('option:selected').val();
 		var memMonth = $("#memberMonth").children('option:selected').val();
@@ -17,11 +17,11 @@ var member = {
 		var memImg =  $("#checkSrc").val();
 		var memberId = $("#memberId").val();
 		
-		returnflag = "no";//标志位，当为no时，表示不return,为yes时则return;
-		checkNull(memberName,"请输入合法姓名！(字母，数字或汉子)","name");
-		checkNull(memberUID,"请输入合法社保号或身份证号，以逗号隔开！","memberUniqueId");
-		checkNull(memWeight,"请填写合法体重！","weight");
-		checkNull(memHeight,"请填写合法身高！","height");
+		returnflag = "no";//Flag bit，should benotime，No representationreturn,byyesWhenreturn;
+		checkNull(memberName,"Please enter a valid name！(Letter，Number or Chinese)","name");
+		checkNull(memberUID,"Please enter a legal social security number or ID number，Separated by a comma！","memberUniqueId");
+		checkNull(memWeight,"Please input valid weight！","weight");
+		checkNull(memHeight,"Please input valid height！","height");
 		
 		if(returnflag=="yes"){
 			return;
@@ -34,13 +34,13 @@ var member = {
 			+ '&memHeight=' + memHeight + '&memImg=' + memImg + '&flag=' + flag + '&memberId=' + memberId + '&memberUID=' + memberUID,
 			success : function(msg){
 				if(msg=="insertSuccess"){
-					alert("添加成功！");
+					alert("Added！");
 					// location.reload();
 				}else if(msg=="updateSuccess"){
-					alert("修改成员信息成功！");
+					alert("Member information Changed！");
 					 parent.location.reload();
 				}else if(msg=="fail"){
-					alert("操作失败！");
+					alert("operation failed！");
 				}
 				
 			}
@@ -73,13 +73,13 @@ var member = {
 					history.go("-1");
 					parent.self.location(showContent('/member/index.do'));
 				}else if(msg=="other"){
-					$("#errormessage").html("添加成员账号或密码不正确");
+					$("#errormessage").html("Add account or password is incorrect");
 				}else if(msg == "my"){
-					$("#errormessage").html("主用户不能被添加");
+					$("#errormessage").html("Primary user cannot be added");
 				}
 				
 				else {
-					$("#errormessage").html("成员已经添加");
+					$("#errormessage").html("Member added");
 				}
 			}
 		});
@@ -89,7 +89,7 @@ var member = {
 	},
 	
 	delMember : function(memberId){
-		if(confirm("删除成员？请谨慎操作！")){
+		if(confirm("Member deleted？Please proceed with caution！")){
 			$.ajax({
 				type : 'post',
 				dataType : 'text',
@@ -97,12 +97,12 @@ var member = {
 				data :'memberId=' + memberId,
 				success : function(msg){
 					if(msg=="success"){
-						alert("删除成功！");
+						alert("Deleted！");
 						location.reload();
 					}else if(msg=="fail"){
-						alert("删除失败！");
+						alert("Delete failed！");
 					}else if(msg=="warning"){
-						alert("不能删除主成员！");
+						alert("Master member cannot be deleted！");
 					}
 				}
 			})
@@ -116,7 +116,7 @@ var member = {
 		var ifOpenFlag ;
 		var memberId = $("#memberId").val();
 		if(memberId==""){
-			$("#registerMemberFirstTel").html("请先添加成员基本信息，再设置短信！");
+			$("#registerMemberFirstTel").html("Please add the basic information，Set SMS again！");
 		}else{
 			if($("#ifMessgae").attr("class")=="an_kg"){
 				ifOpenFlag = "close";
@@ -125,9 +125,9 @@ var member = {
 			}
 			var mobile = /^(13[0-9]{1}|15[^4,\D]{1}|18[0,5-9]{1})+\d{8}$/;
 			if(!mobile.test(memberTel)){
-				$("#registerMemberFirstTel").html("请输入正确的手机号码！");
+				$("#registerMemberFirstTel").html("Please enter the correct cell phone number.！");
 				return;
-			}else{// 手机号不为空时才去后台操作
+			}else{// The phone number is not empty before going to the background operation
 				$.ajax({
 				type : "post",
 				dataType : "text",
@@ -153,7 +153,7 @@ var member = {
 		var ifOpenFlag ;
 		var memberId = $("#memberId").val();
 		if(memberId==""){
-			$("#registerMemberFirstEmail").html("请先添加成员基本信息，再设置邮箱！");// 因为是修改成员信息，必须要有成员ID
+			$("#registerMemberFirstEmail").html("Please add the basic information，Set email again！");// Because it is a member of the modified information，There must be a memberID
 		}else{
 			if($("#ifEmail").attr("class")=="an_kg"){
 				ifOpenFlag = "close";
@@ -162,9 +162,9 @@ var member = {
 			}
 			var email = /^\S+@{1}\S+\.{1}(com|cn)$/;
 			if(!email.test(memberEmail)){
-				$("#registerMemberFirstEmail").html("请输入合法的邮箱！");
+				$("#registerMemberFirstEmail").html("Please enter a valid email address.！");
 				return;
-			}else{// 电话不为空时才去后台操作
+			}else{// The phone does not go to the background when it is empty.
 				$.ajax({
 					dataType : "text",
 					type : "post",
@@ -209,7 +209,7 @@ var member = {
 }
 var checkdata = {
 		/**
-		 * 将提示信息清空
+		 * Empty the message
 		 * 
 		 * @param obj
 		 */
@@ -218,14 +218,14 @@ var checkdata = {
 			$("#"+id+"Div").html("");
 		},
 		/**
-		 * 判断用户输入的信息为数字
+		 * Determine the user input information for the digital
 		 */
 		checkDataOff : function(id){
 			if(id=="memberWeight"||id=="memberHeight"){
 				var value=$("#"+id).val();
 				var ss= /^\d+$/;
 				if((!ss.exec(value))||(value==0)){
-					$("#"+id+"Div").html("请输入有效数字!");
+					$("#"+id+"Div").html("Please enter a valid number!");
 					return false;
 				}
 				return true;
@@ -234,8 +234,8 @@ var checkdata = {
 		}
 }
 /**
- * element为一个数组
- * attention为提示语言
+ * elementFor an array
+ * attentionPrompt language
  * @param element
  * @param attention
  * @returns

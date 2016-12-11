@@ -9,17 +9,17 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
 /**
- * 输入流与字符串处理工具
+ * Input stream and string processing tool
  */
 public class StreamTool {
 
     private static final Logger log = LoggerFactory.getLogger(StreamTool.class);
 
     /**
-     * 将字符串转换成输入流
+     * Converts a string into an input stream
      *
-     * @param str 字符串
-     * @return 输入流
+     * @param str Character string
+     * @return Input stream
      */
     public static InputStream toStream(String str) {
         InputStream stream = null;
@@ -27,17 +27,17 @@ public class StreamTool {
             // UTF-8 解决网络传输中的字符集问题
             stream = new ByteArrayInputStream(str.getBytes("UTF-8"));
         } catch (UnsupportedEncodingException e) {
-            log.error("转换输出Stream异常,不支持的字符集!!!");
+            log.error("Conversion outputStreamabnormal,Unsupported character set!!!");
             log.error(e.getLocalizedMessage(), e);
         }
         return stream;
     }
 
     /**
-     * 将输入流转换成字符串
+     * Converts an input stream into a string
      *
-     * @param is 输入流
-     * @return 字符串
+     * @param is Input stream
+     * @return Character string
      * @throws IOException
      */
     public static String toString(InputStream is) {
@@ -49,7 +49,7 @@ public class StreamTool {
                 str.append(new String(b, 0, n));
             }
         } catch (IOException e) {
-            log.error("读取输入流出现异常!!!");
+            log.error("Read input stream exception!!!");
             log.error(e.getLocalizedMessage(), e);
         }
         return str.toString();

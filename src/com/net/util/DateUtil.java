@@ -25,7 +25,7 @@ public class DateUtil extends DateSupport {
 	}
 
 	/**
-	 * 根据格式yyyy-MM-dd,获取当前日期
+	 * Based formatyyyy-MM-dd,Gets the current date
 	 * 
 	 * @author tangshengyu
 	 * @version falvm
@@ -45,7 +45,7 @@ public class DateUtil extends DateSupport {
 	}
 
 	/**
-	 * 根据当前日期获取当前月中的最后一天
+	 * Get the last day of the current month based on the current date
 	 * 
 	 * @return
 	 * @author tangshengyu
@@ -71,7 +71,7 @@ public class DateUtil extends DateSupport {
 	}
 
 	/**
-	 * 取当前年月日
+	 * Take current year
 	 * 
 	 * @return
 	 */
@@ -81,15 +81,15 @@ public class DateUtil extends DateSupport {
 	}
 
 	/**
-	 * 取指定时间
+	 * Take the specified time
 	 * 
 	 * @param from
-	 *            从今天开始 前几天为负值，后几天为正直
+	 *            Start from today. A few days ago.，Just after a few days
 	 * @param format
-	 *            格式化类型
+	 *            Format type
 	 *            
-	 *            例如取前一天getDate(-1, "YYYY_MM_DD")
-	 *            取后一天 getDate(1, "YYYY_MM_DD");
+	 *            For example, take the previous daygetDate(-1, "YYYY_MM_DD")
+	 *            One day after taking getDate(1, "YYYY_MM_DD");
 	 * @return
 	 */
 	public static String getDate(int from, String format) {
@@ -101,7 +101,7 @@ public class DateUtil extends DateSupport {
 	}
 
 	/**
-	 * 获取当前凌晨0点的时间
+	 * Get the current morning0Point of time
 	 * @return
 	 */
 	public static Date getCurrentZeroPoint(){
@@ -114,7 +114,7 @@ public class DateUtil extends DateSupport {
 	}
 
 	/**
-	 * 获取同比时间段
+	 * Get a period of time
 	 * yyyy-MM-dd hh:mm:ss
 	 * @param beginDay
 	 * @param endDay
@@ -144,7 +144,7 @@ public class DateUtil extends DateSupport {
 	}
 	
 	/**
-	 * 获取环比时间段
+	 * Get the chain period of time
 	 * @param beginDay
 	 * @param endDay
 	 * @return
@@ -187,7 +187,7 @@ public class DateUtil extends DateSupport {
 	        }  
 	        if(!(arg1 instanceof String))  
 	        {  
-	          throw new ConversionException("只支持字符串转换 !");  
+	          throw new ConversionException("Only support string conversion !");  
 	        }  
 	        String str = (String)arg1;  
 	        if(str.trim().equals(""))  
@@ -257,10 +257,10 @@ public class DateUtil extends DateSupport {
 	}
 	
 	/**
-     * 计算两个日期之间相差的天数
-     * @param smdate 较小的时间
-     * @param bdate  较大的时间
-     * @return 相差天数
+     * Calculate the number of days that the difference between the two dates
+     * @param smdate Less time
+     * @param bdate  Larger time
+     * @return return int
      * @throws ParseException
      */
     public static int daysBetween(Date begin,Date end) throws ParseException {
@@ -294,7 +294,7 @@ public class DateUtil extends DateSupport {
   	}
     
     /**
-	 * 根据用户生日计算年龄
+	 * According to the user's birthday to calculate the age
 	 */
 	public static int getAgeByBirthday(Date birthday) {
 		int age = 0;
@@ -329,7 +329,7 @@ public class DateUtil extends DateSupport {
 	}
 	
 	/**
-	 * 获取N天前后的时间
+	 * ObtainNDays before and after the day
 	 * @return
 	 */
 	public static String getDayTime(int n) {

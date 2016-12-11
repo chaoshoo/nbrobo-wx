@@ -9,14 +9,14 @@ import org.apache.commons.lang.builder.ToStringStyle;
 /**
  * 
  * <p>
- * <h2>PageData类实现分页信息的封装，可实现分页数据查询和显示。</h2>
+ * <h2>PageDataClass to achieve the package information page，Page data query and display can be achieved。</h2>
  * </p>
  * 
  * <p>
- * 分页查询数据时，查询前要指定每页数据行数和当前要查询的页码，然后DAO类查询出
- * 可查到的总数据行数，并记录在PageData类中，据此可以计算出总页数。如果
- * PageData的没有得到总行数和总页数，则在DAO查询时需要计算总函数和总页数，
- * 否则，不再计算总函数和总页数。
+ * Paging query data，To specify the number of lines and the current page data to check the page before the inquiry，ThenDAOClass query
+ * The total number of data rows can be found，And record inPageDataClass，We can calculate the total number of pages。If
+ * PageDataDo not get the total number and the total number of pages，InDAOCalculate the total function and the total number of pages need to query，
+ * otherwise，No longer calculate the total function and the total number of pages。
  * </p>
  * 
  */
@@ -40,20 +40,20 @@ public final class PageData {
 	//可能存储的数据是以键值对的形式存储的
 	private Map map;
 	
-	/**构造缺省的分页信息，当前页码为：1，页面大小
-	 * 为：SysConfig.getPageSize()配置的值，缺省为：10*/
+	/**Constructing default paging information，The current page：1，Page size
+	 * by：SysConfig.getPageSize()Configuration value，By default：10*/
 	public PageData() {
 		this(1);
 	}
 	
-	/**用指定的当前页码构造分页信息，当前页码不能小于1，页面大小
-	 * 为：SysConfig.getPageSize()配置的值，缺省为：10*/
+	/**With the specified current page paging information structure，The current number of not less than1，Page size
+	 * by：SysConfig.getPageSize()Configuration value，By default：10*/
 	public PageData(int currentPage) {
 		this(currentPage, 10);
 	}
 
-	/**用指定的当前页码和页面大小构造分页信息，当前页码不能小于1，页面大小
-	 * 不能小于1*/
+	/**With the specified current page number and page size of the paging information structure，The current number of not less than1，Page size
+	 * Can not be less than1*/
 	public PageData(int currentPage, int pageSize) {
 		if (currentPage > 0) {
 			this.currentPage = currentPage;
@@ -63,24 +63,24 @@ public final class PageData {
 		}
 	}
 
-	/**是否需要计算总行数和总页数*/
+	/**Whether you need to calculate the total number and the total number of pages*/
 	public boolean isFirstPage() {
 		return (rowCount < 0 && pageCount < 0);
 	}
 
-	/**取得当前页面*/
+	/**Get the current page*/
 	public int getCurrentPage() {
 		return currentPage;
 	}
 
-	/**设置当前页码，不能小于1*/
+	/**Set the current page number，Can not be less than1*/
 	public void setCurrentPage(int currentPage) {
 		if (currentPage >= 0) {
 			this.currentPage = currentPage;
 		}
 	}
 
-	/**取得总页数*/
+	/**The total number of pages*/
 	public int getPageCount() {
 		if (pageCount >= 0) {
 			return pageCount;
@@ -89,19 +89,19 @@ public final class PageData {
 		}
 	}
 
-	/**取得页面大小*/
+	/**Get page size*/
 	public int getPageSize() {
 		return pageSize;
 	}
 
-	/**设置页面大小，不能小于1*/
+	/**Set page size，Can not be less than1*/
 	public void setPageSize(int pageSize) {
 		if (pageSize > 0) {
 			this.pageSize = pageSize;
 		}
 	}
 
-	/**取得总行数*/
+	/**Get the number of head office*/
 	public int getRowCount() {
 		if (rowCount >= 0) {
 			return rowCount;
@@ -110,7 +110,7 @@ public final class PageData {
 		}
 	}
 
-	/**设置总行数，不能小于1，不要随意设置总行数*/
+	/**Set the number of head office，Can not be less than1，Do not set the number of head office*/
 	public void setRowCount(int rowCount) {
 		if (rowCount >= 0) {
 			this.rowCount = rowCount;
@@ -127,7 +127,7 @@ public final class PageData {
 	}
 
 	/**
-	 * 重置分页信息至初始状态,与resetAll的不同之处在于保留currentPage
+	 * Reset paging information to the initial state,andresetAllThe difference is to keepcurrentPage
 	 *
 	 */
 	public void reset() {
@@ -136,14 +136,14 @@ public final class PageData {
 //		currentPage = 1;
 	}
 	
-	/**重置分页信息至初始状态，当前页码回到第1页，并将引发重新计算总行数和总页数*/
+	/**Reset paging information to the initial state，Back to the current page number1page，And will lead to recalculate the total number and the total number of pages*/
 	public void resetAll() {
 		rowCount = -1;
 		pageCount = -1;
 		currentPage = 1;
 	}
 	
-    /**将分页信息对象转换成字符串*/
+    /**Converts a paging message object into a string*/
 	public String toString() {
     	return ToStringBuilder.reflectionToString(this,
     			ToStringStyle.MULTI_LINE_STYLE);

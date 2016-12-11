@@ -7,11 +7,11 @@ import com.net.jfinal.TableBind;
 @TableBind(name="office")
 public class OfficeEntity  extends JFinalEntity implements java.io.Serializable{
 	private Long id;
-	private String code;// '科室编码',
-	private String name;//  '科室名字',
-	private String pic;//  '科室图片',
-	private String des;//  '科室描述',
-	private String description;//  '描述',
+	private String code;// 'department code',
+	private String name;//  'department name',
+	private String pic;//  'Department pictures',
+	private String des;//  'Department description',
+	private String description;//  'description',
 	private Date create_time;
 	public Long getId() {
 		return id;

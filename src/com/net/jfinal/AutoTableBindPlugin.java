@@ -10,9 +10,9 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.activerecord.IDataSourceProvider;
 import com.jfinal.plugin.activerecord.Model;
 /***
- * 自动绑定model与数据库表
+ * Auto bindingmodelDatabase table
  * @author loyin
- *  2012-9-4 上午11:45:09
+ *  2012-9-4 morning11:45:09
  */
 public class AutoTableBindPlugin extends ActiveRecordPlugin {
 	private TableNameStyle tableNameStyle;

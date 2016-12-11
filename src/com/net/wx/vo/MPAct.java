@@ -7,81 +7,81 @@ import com.alibaba.fastjson.JSONObject;
 import com.nky.Constants;
 
 /**
- * 微信公众号信息
+ * WeChat public information
  */
 public class MPAct {
 
 	/**
-	 * 公众号原始ID
+	 * Public number originalID
 	 */
 	private String mpId;
 
 	/**
-	 * 公众号昵称
+	 * Public number
 	 */
 	private String nickName;
 
 	/**
-	 * 应用Id
+	 * applicationId
 	 */
 	private String appId;
 
 	/**
-	 * 应用密钥
+	 * Application key
 	 */
 	private String appSecret;
 
     /**
-     * 令牌
+     * token
      */
     private String token;
 
 	/**
-	 * AES安全加密密钥
+	 * AESSecure encryption key
 	 */
 	private String AESKey;
 
 	/**
-	 * 公众号类型
-	 * D:订阅号
-	 * E:企业号
-	 * S:服务号
+	 * Public number type
+	 * D:Subscription number
+	 * E:Enterprise number
+	 * S:Service number
 	 * 
 	 */
 	private String mpType;
 
 	/**
-	 * 是否认证
+	 * Whether authentication
 	 */
 	private boolean pass;
 
 	/**
-	 * 应用凭证
+	 * Application certificate
 	 */
 	private String accessToken;
 
 	/**
-	 * 凭证有效时间(秒)
+	 * Certificate valid time(second)
 	 */
 	private long expiresIn;
 
     /**
-     * 预授权码
+     * Pre authorization code
      */
     private String preAuthCode;
 
     /**
-     * 预授权码有效时间(秒)
+     * Pre authorization code effective time(second)
      */
     private long preAuthExpiresIn;
 
     /**
-     * JSAPI凭证
+     * JSAPIvoucher
      */
     private String jsTicket;
 
     /**
-     * JSAPI凭证有效时间(秒)
+     * JSAPICertificate valid time(second)
      */
     private long jsExpiresIn;
     
@@ -199,9 +199,9 @@ public class MPAct {
     }
 
     /**
-     * 解析微信服务器返回消息生成高级API或服务的凭证
+     * WeChat server to parse the return message generation advancedAPICertificate of service or service
      *
-     * @param result    返回消息
+     * @param result    Return message
      */
     public void createAccessToken(String result) {
 
@@ -233,9 +233,9 @@ public class MPAct {
     }
 
     /**
-     * 解析微信服务器返回消息生成预授权码
+     * Analysis of WeChat server to return the message generated pre authorization code
      *
-     * @param result    返回消息
+     * @param result    Return message
      */
     public void createPreAuthCode(String result) {
         JSONObject tmp = JSONObject.parseObject(result);
@@ -262,9 +262,9 @@ public class MPAct {
     }
 
     /**
-     * 解析微信服务器返回消息生成JSTICKET
+     * Analysis of WeChat server to return message generationJSTICKET
      *
-     * @param result    返回消息
+     * @param result    Return message
      */
     public void createJsTicket(String result) {
         JSONObject tmp = JSONObject.parseObject(result);

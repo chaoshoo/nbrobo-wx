@@ -15,9 +15,9 @@ import org.springframework.util.Assert;
 import com.net.jfinal.TableBind;
 
 /**
- * 反射工具类.
+ * Reflective tool class.
  * 
- * 提供调用getter/setter方法, 访问私有变量, 调用私有方法, 获取泛型类型Class, 被AOP过的真实类等工具函数.
+ * Provide callgetter/setterMethod, Access private variables, Call private method, Get generic typesClass, coverAOPReal class and other tools function.
  * 
  * @author shiwencai
  */
@@ -31,7 +31,7 @@ public class Reflections {
 	private static Logger logger = LoggerFactory.getLogger(Reflections.class);
 
 	/**
-	 * 调用Getter方法.
+	 * callGetterMethod.
 	 */
 	public static Object invokeGetter(Object obj, String propertyName) {
 		String getterMethodName = GETTER_PREFIX + StringUtils.capitalize(propertyName);
@@ -39,7 +39,7 @@ public class Reflections {
 	}
 
 	/**
-	 * 调用Setter方法, 仅匹配方法名。
+	 * callSetterMethod, Match method name only。
 	 */
 	public static void invokeSetter(Object obj, String propertyName, Object value) {
 		String setterMethodName = SETTER_PREFIX + StringUtils.capitalize(propertyName);
@@ -47,7 +47,7 @@ public class Reflections {
 	}
 
 	/**
-	 * 直接读取对象属性值, 无视private/protected修饰符, 不经过getter函数.
+	 * Direct read object attribute value, Ignoreprivate/protectedModifier, Not throughgetterfunction.
 	 */
 	public static Object getFieldValue(final Object obj, final String fieldName) {
 		Field field = getAccessibleField(obj, fieldName);
@@ -60,13 +60,13 @@ public class Reflections {
 		try {
 			result = field.get(obj);
 		} catch (IllegalAccessException e) {
-			logger.error("不可能抛出的异常{}", e.getMessage());
+			logger.error("An exception that is not possible.{}", e.getMessage());
 		}
 		return result;
 	}
 
 	/**
-	 * 直接设置对象属性值, 无视private/protected修饰符, 不经过setter函数.
+	 * Directly set object property values, Ignoreprivate/protectedModifier, Not throughsetterfunction.
 	 */
 	public static void setFieldValue(final Object obj, final String fieldName, final Object value) {
 		Field field = getAccessibleField(obj, fieldName);
@@ -78,13 +78,13 @@ public class Reflections {
 		try {
 			field.set(obj, value);
 		} catch (IllegalAccessException e) {
-			logger.error("不可能抛出的异常:{}", e.getMessage());
+			logger.error("An exception that is not possible.:{}", e.getMessage());
 		}
 	}
 
 	/**
-	 * 直接调用对象方法, 无视private/protected修饰符.
-	 * 用于一次性调用的情况，否则应使用getAccessibleMethod()函数获得Method后反复调用. 同时匹配方法名+参数类型，
+	 * Direct call object method, Ignoreprivate/protectedModifier.
+	 * For a single call.，Otherwise it should be usedgetAccessibleMethod()Obtain functionMethodAfter repeated calls. Simultaneous matching method name+Parameter type，
 	 */
 	public static Object invokeMethod(final Object obj, final String methodName, final Class<?>[] parameterTypes, final Object[] args) {
 		Method method = getAccessibleMethod(obj, methodName, parameterTypes);
@@ -100,9 +100,9 @@ public class Reflections {
 	}
 
 	/**
-	 * 直接调用对象方法, 无视private/protected修饰符，
-	 * 用于一次性调用的情况，否则应使用getAccessibleMethodByName()函数获得Method后反复调用.
-	 * 只匹配函数名，如果有多个同名函数调用第一个。
+	 * Direct call object method, Ignoreprivate/protectedModifier，
+	 * For a single call.，Otherwise it should be usedgetAccessibleMethodByName()Obtain functionMethodAfter repeated calls.
+	 * Only match function name，If there are more than one with the same name as the function call the first。
 	 */
 	public static Object invokeMethodByName(final Object obj, final String methodName, final Object[] args) {
 		Method method = getAccessibleMethodByName(obj, methodName);
@@ -118,9 +118,9 @@ public class Reflections {
 	}
 
 	/**
-	 * 循环向上转型, 获取对象的DeclaredField, 并强制设置为可访问.
+	 * Cycle up transition, Object of acquisitionDeclaredField, And mandatory set to be accessible.
 	 * 
-	 * 如向上转型到Object仍无法找到, 返回null.
+	 * As the transition to theObjectStill unable to find, Returnnull.
 	 */
 	public static Field getAccessibleField(final Object obj, final String fieldName) {
 		Validate.notNull(obj, "object can't be null");
@@ -138,10 +138,10 @@ public class Reflections {
 	}
 
 	/**
-	 * 循环向上转型, 获取对象的DeclaredMethod,并强制设置为可访问. 如向上转型到Object仍无法找到, 返回null.
-	 * 匹配函数名+参数类型。
+	 * Cycle up transition, Object of acquisitionDeclaredMethod,And mandatory set to be accessible. As the transition to theObjectStill unable to find, Returnnull.
+	 * Match function name+Parameter type。
 	 * 
-	 * 用于方法需要被多次调用的情况. 先使用本函数先取得Method,然后调用Method.invoke(Object obj, Object...
+	 * For methods that need to be called multiple times.. First use this function to achieveMethod,Then callMethod.invoke(Object obj, Object...
 	 * args)
 	 */
 	public static Method getAccessibleMethod(final Object obj, final String methodName, final Class<?>... parameterTypes) {
@@ -161,9 +161,9 @@ public class Reflections {
 	}
 
 	/**
-	 * 循环向上转型, 获取对象的DeclaredMethod,并强制设置为可访问. 如向上转型到Object仍无法找到, 返回null. 只匹配函数名。
+	 * Cycle up transition, Object of acquisitionDeclaredMethod,And mandatory set to be accessible. As the transition to theObjectStill unable to find, Returnnull. Only match function name。
 	 * 
-	 * 用于方法需要被多次调用的情况. 先使用本函数先取得Method,然后调用Method.invoke(Object obj, Object...
+	 * For methods that need to be called multiple times.. First use this function to achieveMethod,Then callMethod.invoke(Object obj, Object...
 	 * args)
 	 */
 	public static Method getAccessibleMethodByName(final Object obj, final String methodName) {
@@ -183,7 +183,7 @@ public class Reflections {
 	}
 
 	/**
-	 * 改变private/protected的方法为public，尽量不调用实际改动的语句，避免JDK的SecurityManager抱怨。
+	 * changeprivate/protectedThe method ispublic，As far as possible not to call the actual changes in the statement，avoidJDKTheSecurityManagerComplain。
 	 */
 	public static void makeAccessible(Method method) {
 		if ((!Modifier.isPublic(method.getModifiers()) || !Modifier.isPublic(method.getDeclaringClass().getModifiers())) && !method.isAccessible()) {
@@ -192,7 +192,7 @@ public class Reflections {
 	}
 
 	/**
-	 * 改变private/protected的成员变量为public，尽量不调用实际改动的语句，避免JDK的SecurityManager抱怨。
+	 * changeprivate/protectedThe member variable ispublic，As far as possible not to call the actual changes in the statement，avoidJDKTheSecurityManagerComplain。
 	 */
 	public static void makeAccessible(Field field) {
 		if ((!Modifier.isPublic(field.getModifiers()) || !Modifier.isPublic(field.getDeclaringClass().getModifiers()) || Modifier.isFinal(field.getModifiers()))
@@ -202,7 +202,7 @@ public class Reflections {
 	}
 
 	/**
-	 * 通过反射, 获得Class定义中声明的泛型参数的类型, 注意泛型必须定义在父类处 如无法找到, 返回Object.class. eg.
+	 * By reflection, GetClassTypes of generic parameters declared in the definition, Note that generics must be defined in the parent class. If unable to find, ReturnObject.class. eg.
 	 * public UserDao extends HibernateDao<User>
 	 * 
 	 * @param clazz The class to introspect
@@ -216,9 +216,9 @@ public class Reflections {
 
 
 	/**
-	 * 通过反射, 获得Class定义中声明的父类的泛型参数的类型. 如无法找到, 返回Object.class.
+	 * By reflection, GetClassType of generic parameter of a declared parent in a definition. If unable to find, ReturnObject.class.
 	 * 
-	 * 如public UserDao extends HibernateDao<User,Long>
+	 * aspublic UserDao extends HibernateDao<User,Long>
 	 * 
 	 * @param clazz clazz The class to introspect
 	 * @param index the Index of the generic ddeclaration,start from 0.
@@ -264,7 +264,7 @@ public class Reflections {
 	}
 
 	/**
-	 * 将反射时的checked exception转换为unchecked exception.
+	 * Will reflectchecked exceptionConvert tounchecked exception.
 	 */
 	public static RuntimeException convertReflectionExceptionToUnchecked(Exception e) {
 		if (e instanceof IllegalAccessException || e instanceof IllegalArgumentException || e instanceof NoSuchMethodException) {
@@ -278,7 +278,7 @@ public class Reflections {
 	}
 
 	/**
-	 * 获取接口的泛型类型，如果不存在则返回null
+	 * Gets the generic type of the interface，If there is no returnnull
 	 * 
 	 * @param clazz
 	 * @return
@@ -303,8 +303,8 @@ public class Reflections {
 	public static String getAnnotationTableBind(final Class<?> clazz) throws Exception{
 		TableBind table = clazz.getAnnotation(TableBind.class);
 		if(table == null || table.name().length() < 1){
-			logger.error("没有添加TableBind的注解");
-			throw new Exception("没有添加TableBind的注解");
+			logger.error("Not addedTableBindAnnotation");
+			throw new Exception("Not addedTableBindAnnotation");
 		}else{
 			return table.name();
 		}

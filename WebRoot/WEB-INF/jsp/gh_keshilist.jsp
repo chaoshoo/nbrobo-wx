@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>环球健康管理平台</title>
+<title>Residents health management service platform</title>
 <meta name="meituan_check">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -29,22 +29,22 @@
   <div class="nav-wrap-left"> <a class="react back" href="<%=path %>/index/homepage.html"><i class="text-icon icon-back"></i></a> </div>
   <span class="nav-header h1">
   <div class="yuyue-slide-control">
-    	科室列表
+    	Departments list
   </div>
   </span> 
   <div class="nav-wrap-right"> <a class="react headSearch" href="javascript:void(0)"> 
-  <font style="font-weight:bold;font-style:italic;">&nbsp;&nbsp;</font>
+  <font style="font-weight:bold;font-style:italic;"></font>
   </a> </div></header>
 <div class="cur-control-con">
   <div class="weui_search_bar" id="search_bar">
     <form class="weui_search_outer">
       <div class="weui_search_inner"> <i class="weui_icon_search"></i>     
-        <input type="search" class="weui_search_input" id="search_input" name="search_input" placeholder="输入医生名字" value="${search_input}" required>
+        <input type="search" class="weui_search_input" id="search_input" name="search_input" placeholder="Enter a doctor`s name" value="${search_input}" required>
         <a href="javascript:" class="weui_icon_clear" id="search_clear"></a> </div>
-      <label for="search_input" class="weui_search_text" id="search_text"> <i class="weui_icon_search"></i> <span>搜索医生</span> </label>
+      <label for="search_input" class="weui_search_text" id="search_text"> <i class="weui_icon_search"></i> <span>Search doctor</span> </label>
      <input type="hidden" name="hosid" id="hosid" value="${hosid}">
     </form>
-    <a href="javascript:" class="weui_search_cancel" id="search_cancel">取消</a> </div>
+    <a href="javascript:" class="weui_search_cancel" id="search_cancel">cancel</a> </div>
   <div class="weui_cells weui_cells_access" id="keshigrid"></div>
  
 </div>
@@ -82,7 +82,7 @@ function keshi(){
 					 });
 					$("#keshigrid").html(keshi);
 				}else{
-					$.alert('获取挂号网数据失败');
+					$.alert('Failed to get registeration data');
 				}
 			}
 		});

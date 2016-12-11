@@ -4,47 +4,47 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 输出消息实体
+ * Output message entity
  */
 public class OutPutMsg extends BaseMsg {
 
 	/**
-	 * 音乐链接
+	 * Music links
 	 */
 	private String musicUrl;
 
 	/**
-	 * 高质量音乐链接
+	 * High quality music links
 	 */
 	private String hQMusicUrl;
 
     /**
-     * 多图文消息
+     * Multi graphic message
      */
 	private List<Article> articles = new ArrayList<Article>();
 
     /**
-     * 用于群发消息中的分组ID
+     * Grouping in a group messageID
      */
     private String groupId;
 
     /**
-     * 用于群发消息中的用户ID,最多支持1000个
+     * User for mass messageID,Most support1000individual
      */
     private List<String> toUsers = new ArrayList<String>();
 
     /**
-     * 自定义回复内容<p/>
-     * 微信太坑人,在开放平台中,LOCATION事件居然可以回复消息<p/>
-     * 因此为后续扩展考虑,增加此字段
+     * Custom reply content<p/>
+     * WeChat too much,In an open platform,LOCATIONEvents actually can reply message<p/>
+     * Therefore, to consider the subsequent expansion,Add this field
      */
     private String customReply;
 
     /**
-     * 带基础参数的构造函数
-     * @param fromUserName 微信用户openId
-     * @param toUserName   微信公众号原始ID
-     * @param msgType   消息类型
+     * Constructor with basic parameters
+     * @param fromUserName WeChat useropenId
+     * @param toUserName   WeChat public number originalID
+     * @param msgType   Message type
      */
     public OutPutMsg(String fromUserName, String toUserName, String msgType) {
         this.fromUserName = toUserName;

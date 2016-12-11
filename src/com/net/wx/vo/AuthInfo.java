@@ -5,76 +5,76 @@ import com.alibaba.fastjson.annotation.JSONField;
 import java.util.List;
 
 /**
- * 微信开放平台授权公众号信息
+ * WeChat open platform license public information
  */
 public class AuthInfo {
     /**
-     * 授权方昵称
+     * Authorized party
      */
     @JSONField(name = "nick_name")
     private String nickName;
     /**
-     * 授权方appid
+     * Authorized partyappid
      */
     @JSONField(name = "authorizer_appid")
     private String appId;
     /**
-     * 授权方令牌（在授权的公众号具备API权限时<p/>才有此返回值）
+     * Authorized party token（In the authorized public numberAPIPermission time<p/>To return a value）
      */
     @JSONField(name = "authorizer_access_token")
     private String accessToken;
     /**
-     * 有效期（在授权的公众号具备API权限时<p/>才有此返回值）
+     * Term of validity（In the authorized public numberAPIPermission time<p/>To return a value）
      */
     @JSONField(name = "expires_in")
     private long expiresIn;
     /**
-     * 授权方头像
+     * Authorized party head
      */
     @JSONField(name = "head_img")
     private String headImg;
     /**
-     * 授权方公众号类型<p/>
-     * 0代表订阅号<p/>
-     * 1代表由历史老帐号升级后的订阅号<p/>
-     * 2代表服务号
+     * Type of authorized public<p/>
+     * 0Representative subscriber number<p/>
+     * 1Representative from the history of the old account after the upgrade of the subscription number<p/>
+     * 2Representative service number
      */
     @JSONField(name = "service_type_info")
     private String serTypeInfo;
     /**
-     * 授权方认证类型<p/>
-     * -1代表未认证<p/>
-     * 0代表微信认证<p/>
-     * 1代表新浪微博认证<p/>
-     * 2代表腾讯微博认证<p/>
-     * 3代表已资质认证通过但还未通过名称认证<p/>
-     * 4代表已资质认证通过、还未通过名称认证<p/>
-     * 但通过了新浪微博认证<p/>
-     * 5代表已资质认证通过、还未通过名称认证<p/>但通过了腾讯微博认证
+     * Type of authorized party certification<p/>
+     * -1Representative not certified<p/>
+     * 0WeChat certified<p/>
+     * 1Micro-blog certified Sina<p/>
+     * 2Micro-blog certified Tencent<p/>
+     * 3The representative has passed the qualification certification but has not yet passed the name authentication<p/>
+     * 4Representative has passed the qualification certification、Has not passed the name authentication<p/>
+     * Micro-blog Sina certified<p/>
+     * 5Representative has passed the qualification certification、Has not passed the name authentication<p/>But through the Tencent micro-blog certified
      */
     @JSONField(name = "verify_type_info")
     private String verTypeInfo;
     /**
-     * 授权方公众号的原始ID
+     * The original public number of the authorized partyID
      */
     @JSONField(name = "user_name")
     private String mpId;
     /**
-     * 授权方公众号所设置的微信号<p/>可能为空
+     * The micro signal set by the authorized party public number<p/>May be empty
      */
     @JSONField(name = "alias")
     private String alias;
     /**
-     * 刷新令牌（在授权的公众号具备API权限时<p/>才有此返回值）<p/><p/>
-     * 刷新令牌主要用于公众号服务获取和刷新已授权用户的access_token<p/><p/>
-     * 只会在授权时刻提供<p/>请妥善保存。 一旦丢失<p/>只能让用户重新授权<p/><p/>
-     * 才能再次拿到新的刷新令牌
+     * refresh token（In the authorized public numberAPIPermission time<p/>To return a value）<p/><p/>
+     * Refresh token is mainly used for public service access and refresh has authorized usersaccess_token<p/><p/>
+     * Will only be available at the time of authorization<p/>Please keep properly。 Once lost<p/>Only allow users to re authorize<p/><p/>
+     * In order to get a new refresh token
      */
     @JSONField(name = "authorizer_refresh_token")
     private String refreshToken;
 
     /**
-     * 公众号授权给开发者的权限集列表
+     * A list of permissions set for the developer by the public number
      */
     @JSONField(name = "func_info")
     private List<FunctionInfo> funs;
@@ -185,21 +185,21 @@ public class AuthInfo {
     }
 
     /**
-     * 公众号授权给开发者的权限集
+     * Permission set for the developer by the public number
      */
     public class FunctionInfo {
 
         /**
-         * 公众号授权给开发者的权限集列表[1-9]分别代表<p/>
-         * 1.消息与菜单权限集<p/>
-         * 2.用户管理权限集<p/>
-         * 3.帐号管理权限集<p/>
-         * 4.网页授权权限集<p/>
-         * 5.微信小店权限集<p/>
-         * 6.多客服权限集<p/>
-         * 7.业务通知权限集<p/>
-         * 8.微信卡券权限集<p/>
-         * 9.微信扫一扫权限集<p/>
+         * A list of permissions set for the developer by the public number[1-9]Respectively representative<p/>
+         * 1.Message and menu permission set<p/>
+         * 2.User management authority<p/>
+         * 3.Account management permission set<p/>
+         * 4.Web license set<p/>
+         * 5.WeChat store permission set<p/>
+         * 6.Multi customer service permission set<p/>
+         * 7.Service notification authority set<p/>
+         * 8.WeChat card set<p/>
+         * 9.WeChat sweep permission set<p/>
          */
         @JSONField(name = "funcscope_category")
         private String category;

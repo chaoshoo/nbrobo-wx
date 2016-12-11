@@ -17,9 +17,9 @@ public class StringUtil {
 	final static Pattern INT_PATTERN = Pattern.compile("^[-\\+]?[\\d]+$");    
 	final static SimpleDateFormat DATE_TIME_PATTERN = new SimpleDateFormat("yyyyMMddHHmmss");
 	/**
-	 * 判断一个字符串是不是整数
+	 * To determine whether a string is an integer
 	 * @param str
-	 * @return boolean 如果是整数，返回true；否则返回false
+	 * @return boolean If it is an integer，Returntrue；Otherwise returnfalse
 	 */
 	public static boolean isInteger(String str) {    
 		 return INT_PATTERN.matcher(str).matches();    
@@ -34,9 +34,9 @@ public class StringUtil {
 		return DATE_TIME_PATTERN.format(cal.getTime()) + cal.getTimeInMillis() ;
 	}
 	/**
-	 * 格式转换
-	 * @param usesecond  送入秒数
-	 * @return  返回  mm:dd  格式用时
+	 * format conversion
+	 * @param usesecond  Number of seconds
+	 * @return  Return  mm:dd  Format use
 	 */
 	public static String getTimeStr(int usesecond){
 		int minute = usesecond/60;
@@ -49,7 +49,7 @@ public class StringUtil {
 	
 	/**
 	 * 
-	 * removeDuplicate:通过HashSet踢除重复元素
+	 * removeDuplicate:adoptHashSetKick in addition to repeat elements
 	 * @author lujianmin
 	 * @param list
 	 * @return
@@ -63,12 +63,12 @@ public class StringUtil {
 	} 
 	
 	/**
-	 * getRandomString:生成指定长度的随机字符串
+	 * getRandomString:Generates a random string of the specified length
 	 * 
 	 * @param length
 	 * @return
 	 */
-	public static String getRandomString(int length) { // length表示生成字符串的长度
+	public static String getRandomString(int length) { // lengthRepresents the length of the generated string
 		String base = "abcdefghijklmnopqrstuvwxyz0123456789";
 		Random random = new Random();
 		StringBuffer sb = new StringBuffer();
@@ -80,7 +80,7 @@ public class StringUtil {
 	}
 	
 	/**
-	 * 从小到大排序 组成字符串用逗号分隔 ids暂只支持数字
+	 * Order from small to large Comma separated list of components idsTemporary support number
 	 * 
 	 * @param ids
 	 * @return

@@ -4,7 +4,7 @@ $(function() {
 	 * 
 	 * @requires jQuery
 	 * 
-	 * 将form表单元素的值序列化成对象
+	 * takeformValue sequence of form elements to object
 	 * 
 	 * @returns object
 	 */
@@ -23,10 +23,10 @@ $(function() {
 
 function formatterDateTime(date) {
     var datetime = date.getFullYear()
-            + "-"// "年"
+            + "-"// "year"
             + ((date.getMonth() + 1) > 10 ? (date.getMonth() + 1) : "0"
                     + (date.getMonth() + 1))
-            + "-"// "月"
+            + "-"// "month"
             + (date.getDate() < 10 ? "0" + date.getDate() : date
                     .getDate())
             + " "

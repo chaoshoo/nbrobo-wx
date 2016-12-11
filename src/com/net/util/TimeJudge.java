@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * 判断时间
+ * Judgment time
  * 
  * @author Administrator
  * 
@@ -21,12 +21,12 @@ public class TimeJudge {
 	}
 
 	/**
-	 * 判断时间是否在系统时间numDay天内
+	 * Judge whether the time is in the system timenumDayDays
 	 * 
 	 * @param date
-	 *            传入的时间
+	 *            Incoming time
 	 * @param numDay
-	 *            传入的天数
+	 *            Incoming days
 	 * @throws Exception
 	 */
 	public static boolean dayJudge(String date, int numDay)
@@ -56,7 +56,7 @@ public class TimeJudge {
 	}
 
 	/**
-	 * 得到当前系统的年月日
+	 * Get the date of the current system
 	 * 
 	 * @return
 	 */
@@ -67,8 +67,8 @@ public class TimeJudge {
 	}
 	
 	/**
-	 * 计算两个时间差
-	 * 返回为秒数
+	 * Calculate two time difference
+	 * Return to the number of seconds
 	 * @return
 	 */
 	public static long dateAndDate(Date beginDate, Date endDate) {
@@ -77,8 +77,8 @@ public class TimeJudge {
 	}
 	
 	/**
-	 * 计算两个时间差
-	 * 返回为秒数
+	 * Calculate two time difference
+	 * Return to the number of seconds
 	 * @return
 	 */
 	public static long dateAndDate(String beginDate, String endDate) {
@@ -97,8 +97,8 @@ public class TimeJudge {
 	}
 	
 	/**
-	 * 计算两个时间差
-	 * 返回为秒数
+	 * Calculate two time difference
+	 * Return to the number of seconds
 	 * @return
 	 */
 	public static long dateAndDate(String beginDate, Date endDate) {

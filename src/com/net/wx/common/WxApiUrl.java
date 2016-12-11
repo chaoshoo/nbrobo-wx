@@ -1,125 +1,125 @@
 package com.net.wx.common;
 
 /**
- * 微信所有的API地址
+ * WeChat allAPIaddress
  */
 public interface WxApiUrl {
 
     /**
-     * 微信API入口
+     * WeChatAPIEntrance
      */
     public static final String WX_API = "https://api.weixin.qq.com/cgi-bin";
     /**
-     * 微信开放平台入口
+     * WeChat open platform portal
      */
     public static final String WX_OPEN_API = "https://open.weixin.qq.com";
     /**
-     * 微信多媒体文件API入口
+     * WeChat multimedia fileAPIEntrance
      */
     public static final String MEDIA_API = "http://file.api.weixin.qq.com/cgi-bin/media";
     /**
-     * 令牌API入口
+     * tokenAPIEntrance
      */
     public static final String ACCESS_TOKEN_API = WX_API + "/token?grant_type=client_credential&appid=%1$s&secret=%2$s";
     /**
-     * 获取微信服务器IP
+     * Get WeChat serverIP
      */
     public static final String IP_LIST_API = WX_API + "/getcallbackip?access_token=%1$s";
     /**
-     * 自定义菜单API入口[create, get, delete]
+     * Custom menuAPIEntrance[create, get, delete]
      */
     public static final String CUSTOM_MENU_API = WX_API + "/menu/%1$s?access_token=%2$s";
     /**
-     * 分组管理API入口[create, get, getid, update]
+     * Grouping managementAPIEntrance[create, get, getid, update]
      */
     public static final String GROUPS_API = WX_API + "/groups/%1$s?access_token=%2$s";
     /**
-     * 用户分组API入口
+     * User groupingAPIEntrance
      */
     public static final String GROUPS_USER_API = WX_API + "/groups/members/update?access_token=%1$s";
     /**
-     * 微信用户信息API入口
+     * WeChat user informationAPIEntrance
      */
     public static final String USER_INFO_API = WX_API + "/user/info?access_token=%1$s&openid=%2$s&lang=%3$s";
     /**
-     * 公众号关注者API入口
+     * Public concernAPIEntrance
      */
     public static final String FOLLOWS_USER_API = WX_API + "/user/get?access_token=%1$s&next_openid=%2$s";
     /**
-     * 下载多媒体文件API入口
+     * Download multimedia filesAPIEntrance
      */
     public static final String MEDIA_DL_API = MEDIA_API + "/get?access_token=%1$s&media_id=%2$s";
     /**
-     * 上传多媒体文件API入口
+     * Upload multimedia filesAPIEntrance
      */
     public static final String MEDIA_UP_API = MEDIA_API + "/upload?type=%1$s&access_token=%2$s";
     /**
-     * 发送客服消息入口
+     * Send customer service information portal
      */
     public static final String CUSTOM_MESSAGE_API = WX_API + "/message/custom/send?access_token=%1$s";
     /**
-     * 网页授权请求地址
+     * Web authorization request address
      */
     public static final String WEB_OAUTH2 = WX_OPEN_API + "/connect/oauth2/authorize?appid=%1$s&redirect_uri=%2$s&response_type=code&scope=%3$s&state=%4$s#wechat_redirect";
     /**
-     * 检验授权凭证（access_token）是否有效
+     * Inspection authorization certificate（access_token）Whether effective
      */
     public static final String CHECK_OAUTH_TOKEN = "https://api.weixin.qq.com/sns/auth?access_token=%1$s&openid=%2$s";
     /**
-     * 网页授权获取TOKEN
+     * Web access authorizationTOKEN
      */
     public static final String OAUTH_TOKEN = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=%1$s&secret=%2$s&code=%3$s&grant_type=authorization_code";
     /**
-     * 网页授权获取刷新TOKEN
+     * Web access to refreshTOKEN
      */
     public static final String OAUTH_REFRESH_TOKEN = "https://api.weixin.qq.com/sns/oauth2/refresh_token?appid==%1$s&grant_type=refresh_token&refresh_token==%2$s";
     
     /**
-     * 网页授权取得用户信息地址
+     * Web license to obtain user information
      */
     public static final String OAUTH_USERINFO = "https://api.weixin.qq.com/sns/userinfo?access_token=%1$s&openid=%2$s";
     /**
-     * 发送模板消息地址
+     * Send template message address
      */
     public static final String TEMPLATE_MESSAGE_API = WX_API + "/message/template/send?access_token=%1$s";
     /**
-     * 上传图文素材地址
+     * Upload graphic material address
      */
     public static final String NEWS_UPLOAD_API = WX_API + "/media/uploadnews?access_token=%1$s";
     /**
-     * 上传永久图文素材地址
+     * Upload permanent graphic material address
      */
     public static final String NEWS_UPLOAD_PERPETUAL_API = WX_API + "/material/add_news?access_token=%1$s";
     /**
-     * 更新永久图文素材地址
+     * Update permanent graphic material address
      */
     public static final String NEWS_UPDATE_PERPETUAL_API = WX_API + "/material/update_news?access_token=%1$s";
     /**
-     * 删除永久素材地址
+     * Delete permanent material address
      */
     public static final String DEL_MEDIA_PERPETUAL_API = WX_API + "/material/del_material?access_token=%1$s";
     /**
-     * 多媒体永久素材地址
+     * Multimedia permanent material address
      */
     public static final String MEDIA_UPLOAD_PERPETUAL_API = WX_API + "/material/add_material?type=%1$s&access_token=%2$s";
     /**
-     * 分组群消息[sendall,send,delete]入口
+     * Packet group message[sendall,send,delete]Entrance
      */
     public static final String GROUP_NEWS_MESSAGE_API = WX_API + "/message/mass/%1$s?access_token=%2$s";
     /**
-     * 群发消息上传视频地址
+     * Mass message upload video address
      */
     public static final String MEDIA_UPVIDEO_API = MEDIA_API + "/uploadvideo?access_token=%1$s";
     /**
-     * 服务组件API入口
+     * Service componentAPIEntrance
      */
     public static final String COMPONENT_API = WX_API + "/component/%1$s?component_access_token=%2$s";
     /**
-     * 获取服务组件token地址
+     * Access service componentstokenaddress
      */
     public static final String COMPONENT_TOKEN_API = WX_API + "/component/api_component_token";
     /**
-     * 获取JSTICKET地址
+     * ObtainJSTICKETaddress
      */
     public static final String JSAPI_TICKET_URL = WX_API + "/ticket/getticket?type=jsapi&access_token=";
 }

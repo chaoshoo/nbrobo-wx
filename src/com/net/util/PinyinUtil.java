@@ -9,7 +9,7 @@ import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombi
 
 public class PinyinUtil {
 	/**
-	 * 得到 全拼
+	 * obtain full pinyin
 	 * 
 	 * @param src
 	 * @return
@@ -43,7 +43,7 @@ public class PinyinUtil {
 	}
 
 	/**
-	 * 得到中文首字母
+	 * Get the first letter in Chinese
 	 * 
 	 * @param str
 	 * @return
@@ -64,7 +64,7 @@ public class PinyinUtil {
 	}
 
 	/**
-	 * 将字符串转移为ASCII码
+	 * Transfer string toASCIIcode
 	 * 
 	 * @param cnStr
 	 * @return
@@ -81,7 +81,7 @@ public class PinyinUtil {
 
 	public static void main(String[] args) {
 
-		String cnStr = "家庭1";
+		String cnStr = "Family1";
 		System.out.println(getPingYin(cnStr));
 		System.out.println(getPinYinHeadChar(cnStr));
 	}

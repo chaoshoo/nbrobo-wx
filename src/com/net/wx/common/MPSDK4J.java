@@ -1,18 +1,18 @@
 package com.net.wx.common;
 
 /**
- * 微信公众平台JAVA SDK版本号声明
+ * WeChat public platformJAVA SDKVersion number declaration
  */
 public class MPSDK4J {
 
     /**
-     * 获取 mpsdk4j 的版本号，版本号的命名规范
+     * Obtain mpsdk4j Version number，Name specification for version number
      *
      * <pre>
-     * [大版本号].[质量号].[发布流水号]
+     * [Major version number].[Quality number].[Release the serial number]
      * </pre>
      *
-     * @return mpsdk4j 项目的版本号
+     * @return mpsdk4j Version number of the project
      */
     public static String version() {
         return String.format("%d.%s.%d", majorVersion(), releaseLevel(), minorVersion());

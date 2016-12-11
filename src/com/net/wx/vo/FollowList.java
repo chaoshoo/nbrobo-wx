@@ -6,27 +6,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 关注者列表
+ * List of followers
  */
 public class FollowList {
 
     /**
-     * 关注该公众账号的总用户数
+     * Pay attention to the total number of users of the public account
      */
 	private int total;
 
     /**
-     * 拉取的OPENID个数，最大值为10000
+     * Draw offOPENIDNumber，The maximum value is10000
      */
 	private int count;
 
     /**
-     * 列表数据，OPENID的列表
+     * List data，OPENIDList of
      */
 	private List<String> openIds = new ArrayList<String>();
 
     /**
-     * 拉取列表的后一个用户的OPENID
+     * After pulling the list of a user'sOPENID
      */
     @JSONField(name = "next_openid")
 	private String nextOpenId;

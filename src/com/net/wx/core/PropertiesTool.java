@@ -17,7 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Properties工具类
+ * PropertiesTool class
  *
  */
 public class PropertiesTool {
@@ -28,8 +28,8 @@ public class PropertiesTool {
     private File file;
 
     /**
-     * 构造函数
-     * @param propertiesName 文件名称
+     * Constructor
+     * @param propertiesName File name
      */
     public PropertiesTool(String propertiesName) {
         URL url = Thread.currentThread().getContextClassLoader().getResource(propertiesName);
@@ -43,15 +43,15 @@ public class PropertiesTool {
     }
 
     /**
-     * 构造函数
-     * @param file 文件
+     * Constructor
+     * @param file file
      */
     public PropertiesTool(File file) {
         this.propsLoad(file);
     }
 
     /**
-     * 辅助方法，根据file创建工具对象
+     * Auxiliary method，according tofileCreate tool object
      * @param file
      */
     private void propsLoad(File file) {
@@ -80,7 +80,7 @@ public class PropertiesTool {
     }
 
     /**
-     * 根据key获取value
+     * according tokeyObtainvalue
      * @param key
      * @return
      */
@@ -89,7 +89,7 @@ public class PropertiesTool {
     }
 
     /**
-     * 向properties文件写入键值对
+     * towardspropertiesThe key to the file write
      * @param keyName
      * @param keyValue
      */
@@ -100,7 +100,7 @@ public class PropertiesTool {
     }
 
     /**
-     * 批量更新properties的键值对
+     * Batch updatepropertiesThe key to
      * @param propertiesMap
      */
     public void batchWriteProperties(Map<String, String> propertiesMap) {
@@ -130,9 +130,9 @@ public class PropertiesTool {
     }
 
     /**
-     * 更新properties文件
-     * @param keyName 名称
-     * @param keyValue 值
+     * Updatepropertiesfile
+     * @param keyName Name
+     * @param keyValue value
      */
     public void updateProperties(String keyName,String keyValue) {
         Map<String, String> propertiesMap = new HashMap<String, String>();
@@ -141,7 +141,7 @@ public class PropertiesTool {
     }
 
     /**
-     * 批量更新键值对
+     * Batch update on key
      * @param propertiesMap
      */
     public void batchUpdateProperties(Map<String, String> propertiesMap) {

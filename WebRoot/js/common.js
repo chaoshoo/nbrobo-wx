@@ -1,5 +1,5 @@
 /**
- * 工具js
+ * tooljs
  */
 
 var dayTime = 24 * 60 * 60 * 1000;
@@ -7,7 +7,7 @@ var dayTime = 24 * 60 * 60 * 1000;
 var chart_http='http://sys.nbrobo.com/vipInspectData/chartall';
 
 /**
- * 计算年龄，birthday格式：1992-06-06
+ * Calculating age，birthdayformat：1992-06-06
  */
 function formatBirthday(birthday){
 	var str = birthday;
@@ -22,7 +22,7 @@ function formatBirthday(birthday){
 			if(age>100) {
 				return "";
 			}
-			return age+"岁";
+			return age+"year";
 		}else{
 			return "";
 		}
@@ -32,16 +32,16 @@ function formatBirthday(birthday){
 }
 
 /**
- * 时间格式转换
+ * Time format conversion
  * @param date
- * @param flag true:有时分秒，false：没有时分秒
+ * @param flag true:Sometimes every minute，false：Not every minute
  * @returns {String}
  */
 function formatterDateTime2(date, flag) {
 	var datetime = date.getFullYear()
-			+ "-"// "年"
+			+ "-"// "year"
 			+ ((date.getMonth() + 1) > 10 ? (date.getMonth() + 1) :
-					+ (date.getMonth() + 1)) + "-"// "月"
+					+ (date.getMonth() + 1)) + "-"// "month"
 			+ (date.getDate() < 10 ? "0" + date.getDate() : date.getDate())
 			+ " ";
 	if (flag) {
@@ -59,17 +59,17 @@ function formatterDateTime2(date, flag) {
 }
 
 /**
- * 时间格式转换,不显示秒
+ * Time format conversion,Does not display seconds
  * @param date
  * @returns {String}
  */
 function formatterDateTime(date) {
 	var datetime = date.getFullYear()
-			+ "年"// "年"
+			+ "year"// "year"
 			+ ((date.getMonth() + 1) > 10 ? (date.getMonth() + 1) :
-					+ (date.getMonth() + 1)) + "月"// "月"
+					+ (date.getMonth() + 1)) + "month"// "month"
 			+ (date.getDate() < 10 ? "0" + date.getDate() : date.getDate())
-			+ "日";
+			+ "day";
 	
 		datetime += (date.getHours() < 10 ? "0" + date.getHours() : date
 				.getHours());
@@ -82,7 +82,7 @@ function formatterDateTime(date) {
 }
 
 /**
- * 判断是否为空，是返回true，否返回false
+ * Whether the judgment is empty，Is returntrue，No returnfalse
  * @param obj
  * @returns
  */
@@ -92,7 +92,7 @@ function isEmpty(obj){
 
 
 /**
- * 格式化空字符串，如果为空，返回""
+ * Format null string，If it is empty，Return""
  * @param str
  * @returns
  */
@@ -107,13 +107,13 @@ function formateStr(str){
 
 
 /**
- * 判断是否是正整数
+ * To determine whether a positive integer
  */
 function IsNum1(s)
 {
     if(s!=null){
         var r,re;
-        re = /\d*/i; //\d表示数字,*表示匹配多个数字
+        re = /\d*/i; //\dExpress number,*That matches the number of digits
         r = s.match(re);
         return (r==s)?true:false;
     }
@@ -121,7 +121,7 @@ function IsNum1(s)
 }
 
 /**
- * 判断是否为数字
+ * To determine whether or not to figure
  */
 function IsNum2(s)
 {

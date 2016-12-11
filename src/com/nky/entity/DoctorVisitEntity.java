@@ -6,12 +6,12 @@ import com.net.jfinal.JFinalEntity;
 import com.net.jfinal.TableBind;
 @TableBind(name="doctor_visit")
 public class DoctorVisitEntity extends JFinalEntity {
-	private	String	doctor_code	;//	医生编码
-	private	Long	visit_user	;//	被访问者id
-	private	Date	begin_time	;//	访问开始时间
-	private	Date	end_time	;//	访问结束时间
-	private	Date	create_time	;//	创建时间
-	private	String	content	;//	访问内容
+	private	String	doctor_code	;//	Doctor code
+	private	Long	visit_user	;//	Be visitorid
+	private	Date	begin_time	;//	Access start time
+	private	Date	end_time	;//	Access end time
+	private	Date	create_time	;//	Created time
+	private	String	content	;//	Access content
 	public String getDoctor_code() {
 		return doctor_code;
 	}

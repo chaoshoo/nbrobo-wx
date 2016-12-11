@@ -1,7 +1,7 @@
 package com.net.wx.common;
 
 /**
- * 微信通讯的错误代码
+ * WeChat communications error code
  */
 public class WxErrCode {
 
@@ -90,180 +90,180 @@ public class WxErrCode {
     public static final int UNOATH_API = 50001;
 
     /**
-     * 获取错误信息描述
+     * Get the wrong information
      *
-     * @param errCode   错误代码
-     * @return  错误描述
+     * @param errCode   error code
+     * @return  Error description
      */
     public static String getErrDesc(int errCode){
         switch (errCode) {
             case OK:
-                return "请求成功";
+                return "Request successfully";
             case SYS_BUSY:
-                return "系统繁忙";
+                return "System busy";
             case ERROR_SECRET:
-                return "获取access_token时AppSecret错误，或者access_token无效";
+                return "Obtainaccess_tokentimeAppSecreterror，perhapsaccess_tokeninvalid";
             case INVALID_CERTIFICATE:
-                return "不合法的凭证类型";
+                return "The type of document that is not valid";
             case INVALID_OPENID:
-                return "不合法的OpenID";
+                return "IllegalOpenID";
             case INVALID_MEDIATYPE:
-                return "不合法的媒体文件类型";
+                return "Illegal media file type";
             case INVALID_FILETYPE:
-                return "不合法的文件类型";
+                return "Illegal file type";
             case INVALID_FILESIZE:
-                return "不合法的文件大小";
+                return "Illegal file size";
             case INVALID_MEDIAID:
-                return "不合法的媒体文件id";
+                return "Illegal media fileid";
             case INVALID_MESGTYPE:
-                return "不合法的消息类型";
+                return "Illegal message type";
             case INVALID_IMAGESIZE:
-                return "不合法的图片文件大小";
+                return " Image size is not valid";
             case INVALID_VOICESIZE:
-                return "不合法的语音文件大小";
+                return "Illegal voice file size";
             case INVALID_VIDEOSIZE:
-                return "不合法的视频文件大小";
+                return "Illegal video file size";
             case INVALID_THUMBSIZE:
-                return "不合法的缩略图文件大小";
+                return "Thumbnail file size is not valid";
             case INVALID_APPID:
-                return "不合法的APPID";
+                return "IllegalAPPID";
             case INVALID_ACCESSTOKEN:
-                return "不合法的access_token";
+                return "Illegalaccess_token";
             case INVALID_MENUTYPE:
-                return "不合法的菜单类型";
+                return "Illegal menu type";
             case INVALID_BUTTONSIZE:
             case INVALID_BUTTONSIZE2:
-                return "不合法的按钮个数";
+                return "Number of illegal buttons";
             case INVALID_BUTTONNAMESIZE:
-                return "不合法的按钮名字长度";
+                return "Illegal button name length";
             case INVALID_BUTTONKEYSIZE:
-                return "不合法的按钮KEY长度";
+                return "Illegal buttonKEYlength";
             case INVALID_BUTTONURLSIZE:
-                return "不合法的按钮URL长度";
+                return "Illegal buttonURLlength";
             case INVALID_BUTTONVERSION:
-                return "不合法的菜单版本号";
+                return "Illegal menu version number";
             case INVALID_MENULEVEL:
-                return "不合法的子菜单级数";
+                return "Illegal sub menu series";
             case INVALID_SUBBUTTONSIZE:
-                return "不合法的子菜单按钮个数";
+                return "Number of not valid sub menu button";
             case INVALID_SUBMENUTYPE:
-                return "不合法的子菜单按钮类型";
+                return "Illegal sub menu button type";
             case INVALID_SUBBUTTONNAMESIZE:
-                return "不合法的子菜单按钮名字长度";
+                return "Name of sub menu button is not valid";
             case INVALID_SUBBUTTONKEYSIZE:
-                return "不合法的子菜单按钮KEY长度";
+                return "Illegal sub menu buttonKEYlength";
             case INVALID_SUBBUTTONURLSIZE:
-                return "不合法的子菜单按钮KEY长度";
+                return "Illegal sub menu buttonKEYlength";
             case INVALID_MENUUSER:
-                return "不合法的自定义菜单使用用户";
+                return "Illegal custom menu user";
             case INVALID_OAUTHCODE:
-                return "不合法的oauth_code";
+                return "Illegaloauth_code";
             case INVALID_REFRESHCODE:
-                return "不合法的refresh_token";
+                return "Illegalrefresh_token";
             case INVALID_OPENIDLIST:
-                return "不合法的openid列表";
+                return "Illegalopenidlist";
             case INVALID_OPENIDLENGTH:
-                return "不合法的openid列表长度";
+                return "IllegalopenidList length";
             case INVALID_REQUESTSTRING:
-                return "不合法的请求字符，不能包含\\uxxxx格式的字符";
+                return "Illegal request character，Cannot contain\\uxxxxCharacter format";
             case INVALID_PARAMETERS:
-                return "不合法的参数";
+                return "Illegal parameter";
             case INVALID_REQUESTSTYLE:
-                return "不合法的请求格式";
+                return "Illegal request form";
             case INVALID_URLLENGTH:
-                return "不合法的URL长度";
+                return "IllegalURLlength";
             case INVALID_GROUPID:
-                return "不合法的分组id";
+                return "Illegal groupid";
             case INVALID_GROUPNAME:
-                return "分组名字不合法";
+                return "Group name is not valid";
             case INVALID_MSGID:
-                return "不合法的消息ID";
+                return "Illegal newsID";
             case LOST_AESSTOKEN:
-                return "缺少access_token参数";
+                return "Lackaccess_tokenparameter";
             case LOST_APPID:
-                return "缺少appid参数";
+                return "Lackappidparameter";
             case LOST_REFRESHTOKEN:
-                return "缺少refresh_token参数";
+                return "Lackrefresh_tokenparameter";
             case LOST_APPSECRET:
-                return "缺少secret参数";
+                return "Lacksecretparameter";
             case LOST_MEDIAFILE_DATA:
-                return "缺少多媒体文件数据";
+                return "Lack of multimedia file data";
             case LOST_MEDIAID:
-                return "缺少media_id参数";
+                return "Lackmedia_idparameter";
             case LOST_SUBMENUS:
-                return "缺少子菜单数据";
+                return "Missing child menu data";
             case LOST_OAUTHCODE:
-                return "缺少oauth code";
+                return "Lackoauth code";
             case LOST_OPENID:
-                return "缺少openid";
+                return "Lackopenid";
             case ACCESSTOKEN_OVERTIME:
-                return "access_token超时";
+                return "access_tokenovertime";
             case REFRESHTOKEN_OVERTIME:
-                return "refresh_token超时";
+                return "refresh_tokenovertime";
             case OAUTHCODE_OVERTIME:
-                return "oauth code超时";
+                return "oauth codeovertime";
             case GET_REUEST:
-                return "需求GET请求";
+                return "demandGETrequest";
             case POST_REUEST:
-                return "需求POST请求";
+                return "demandPOSTrequest";
             case HTTPS_REUEST:
-                return "需求HTTPS请求";
+                return "demandHTTPSrequest";
             case FOLLOW_REUEST:
-                return "需要接收者关注";
+                return "Requires recipient attention";
             case FRIEND_REUEST:
-                return "需要好友关系";
+                return "Need good friends";
             case NULL_MEDIAFILE:
-                return "多媒体文件为空";
+                return "Multimedia file is empty";
             case NULL_POSTDATA:
-                return "POST的数据包为空";
+                return "POSTThe packet is empty";
             case NULL_NEWSDATA:
-                return "图文消息内容为空";
+                return "Message content is empty";
             case NULL_TEXTDATA:
-                return "文本消息内容为空";
+                return "Text message is empty";
             case MEDIASIZE_LIMIT_OVER:
-                return "多媒体文件大小超过限制";
+                return "Multimedia file size exceeds limit";
             case CONTENT_LIMIT_OVER:
-                return "消息内容超过限制";
+                return "Message content over limit";
             case TITLE_LIMIT_OVER:
-                return "标题字段超过限制";
+                return "Title field exceeds limit";
             case DIGEST_LIMIT_OVER:
-                return "描述字段超过限制";
+                return "Description fields exceed limits";
             case LINKURL_LIMIT_OVER:
-                return "链接字段超过限制";
+                return "Link fields exceed limits";
             case PICURL_LIMIT_OVER:
-                return "图片链接字段超过限制";
+                return "Picture link fields oversize";
             case VIOCE_PLAY_LIMIT_OVER:
-                return "语音播放时间超过限制";
+                return "Voice play time over limit";
             case NEWS_LIMIT_OVER:
-                return "图文消息超过限制";
+                return "Message oversize";
             case INTERFACE_LIMIT_OVER:
-                return "接口调用超过限制";
+                return "Interface calls over limit";
             case MENUSIZE_LIMIT_OVER:
-                return "创建菜单个数超过限制";
+                return "Create menu number more than limit";
             case REPLYTIME_LIMIT_OVER:
-                return "回复时间超过限制";
+                return "Reply time exceeds limit";
             case SYSTEM_GROUP:
-                return "系统分组，不允许修改";
+                return "System grouping，Not allowed to modify";
             case GROUPNAME_LIMIT_OVER:
-                return "分组名字过长";
+                return "Group name is too long";
             case GROUPSIZE_LIMIT_OVER:
-                return "分组数量超过上限";
+                return "Packet number exceeds the upper limit";
             case NOEXIST_MEDIAFILE:
-                return "不存在媒体数据";
+                return "There is no media data";
             case NOEXIST_MENUVERSION:
-                return "不存在的菜单版本";
+                return "A menu version does not exist";
             case NOEXIST_MENUDATA:
-                return "不存在的菜单数据";
+                return "Nonexistent menu data";
             case NOEXIST_USER:
-                return "不存在的用户";
+                return "Non existing user";
             case PARSE_XML_JSON_ERR:
-                return "解析JSON/XML内容错误";
+                return "analysisJSON/XMLContent error";
             case UNOAUTH_MODULE_API:
-                return "api功能未授权";
+                return "apiFunction not authorized";
             case UNOATH_API:
-                return "用户未授权该api";
+                return "The user does not authorize theapi";
             default:
-                return "未知异常";
+                return "Unknown anomaly";
         }
     }
 }

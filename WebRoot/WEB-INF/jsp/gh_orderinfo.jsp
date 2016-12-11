@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>环球健康管理平台</title>
+<title>Residents health management service platform</title>
 <meta name="meituan_check">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -37,10 +37,10 @@
 <header class="navbar">
   <div class="nav-wrap-left"> <a class="react back" href="<%=path %>/index/homepage.html" ><i class="text-icon icon-back"></i></a> </div>
   <span class="nav-header h1">
-  病人信息
+  Patient information
   </span> 
   <div class="nav-wrap-right"> <a class="react headSearch" href="javascript:void(0)"> 
-  <font style="font-weight:bold;font-style:italic;">&nbsp;&nbsp;</font>
+  <font style="font-weight:bold;font-style:italic;"></font>
   </a> </div></header>
 <form action="" id="patientform">
 <input type="hidden" name="hosid" id="hosid" value="${vipreg.hosid}">
@@ -55,85 +55,85 @@
 
 <div class="weui_cells weui_cells_form">
 <div class="weui_cell">
-    <div class="weui_cell_hd"><label class="weui_label">挂号医院</label></div>
+    <div class="weui_cell_hd"><label class="weui_label">Registered hospital</label></div>
     <div class="weui_cell_bd weui_cell_primary">
       <span>${hosname}</span>
     </div>
 </div>
 <div class="weui_cell">
-    <div class="weui_cell_hd"><label class="weui_label">科室</label></div>
+    <div class="weui_cell_hd"><label class="weui_label">Department</label></div>
     <div class="weui_cell_bd weui_cell_primary">
       <span>${deptname}</span>
     </div>
 </div>
 <div class="weui_cell">
-    <div class="weui_cell_hd"><label class="weui_label">医生</label></div>
+    <div class="weui_cell_hd"><label class="weui_label">Doctor</label></div>
     <div class="weui_cell_bd weui_cell_primary">
       <span>${docname}</span>
     </div>
 </div>
 <div class="weui_cell">
-    <div class="weui_cell_hd"><label class="weui_label">病人姓名</label></div>
+    <div class="weui_cell_hd"><label class="weui_label">Patient name</label></div>
     <div class="weui_cell_bd weui_cell_primary">
       <span>${vipreg.patientname}</span>
     </div>
   </div>
 <div class="weui_cell">
-    <div class="weui_cell_hd"><label class="weui_label">病人身份证号</label></div>
+    <div class="weui_cell_hd"><label class="weui_label">Patient ID No.</label></div>
     <div class="weui_cell_bd weui_cell_primary">
       <span>${vipreg.idcard}</span>
     </div>
   </div>
 
 <div class="weui_cell weui_cell_select">
-<div class="weui_cell_hd"><label class="weui_label">&nbsp;&nbsp;性别</label></div>
+<div class="weui_cell_hd"><label class="weui_label">Gender</label></div>
     <div class="weui_cell_bd weui_cell_primary">
       <select class="weui_select" id="patientsex" name="patientsex" >
-        <option value="">选择</option>
-        <option value="1">男</option>
-        <option value="2">女</option>
+        <option value="">Choose</option>
+        <option value="1">male</option>
+        <option value="2">female</option>
       </select>
     </div>
   </div>
     <div class="weui_cell">
-    <div class="weui_cell_hd"><label for="" class="weui_label">生日</label></div>
+    <div class="weui_cell_hd"><label for="" class="weui_label">Birthday</label></div>
     <div class="weui_cell_bd weui_cell_primary">
       <span>${vipreg.patientbirthday}</span>
     </div>
   </div>
 <div class="weui_cell">
-    <div class="weui_cell_hd"><label class="weui_label">联系电话</label></div>
+    <div class="weui_cell_hd"><label class="weui_label">Contact number</label></div>
     <div class="weui_cell_bd weui_cell_primary">
       <span>${vipreg.contactphone}</span>
     </div>
   </div>
 
  <div class="weui_cell">
-    <div class="weui_cell_hd"><label class="weui_label">详细地址</label></div>
+    <div class="weui_cell_hd"><label class="weui_label">Detailed address</label></div>
     <div class="weui_cell_bd weui_cell_primary">
       <span>${vipreg.familyaddress}</span>
     </div>
   </div>
  <div class="weui_cell">
-    <div class="weui_cell_hd"><label class="weui_label">挂号日期</label></div>
+    <div class="weui_cell_hd"><label class="weui_label">Date of registration</label></div>
     <div class="weui_cell_bd weui_cell_primary">
       <span>${vipreg.outpdate}</span>
     </div>
   </div>
   <div class="weui_cell" >
-    <div class="weui_cell_hd"><label class="weui_label">就诊号</label></div>
+    <div class="weui_cell_hd"><label class="weui_label">Registration number</label></div>
     <div class="weui_cell_bd weui_cell_primary">
       <span>${vipreg.serial}</span>
     </div>
   </div>
   <div class="weui_cell" >
-    <div class="weui_cell_hd"><label class="weui_label">挂号费</label></div>
+    <div class="weui_cell_hd"><label class="weui_label">Registration fee</label></div>
     <div class="weui_cell_bd weui_cell_primary">
       <span>${vipreg.orderfee}</span>
     </div>
   </div>
    <div class="weui_cell">
-    <div class="weui_cell_hd"><label class="weui_label">状态</label></div>
+    <div class="weui_cell_hd"><label class="weui_label">state</label></div>
     <div class="weui_cell_bd weui_cell_primary">
       <span>${statusstr}</span>
     </div>
@@ -142,7 +142,7 @@
 </form>
 
 <div class="xiangqing-footer" id="guahaodiv">
-<a id="guahaobtn" class="xiangqing-footer-center" href="#"  onclick="guahao('${vipreg.orderid}')"  style=" font-size:18px; border-radius:4px;"><span id="buttontxt">保存挂号</span></a>
+<a id="guahaobtn" class="xiangqing-footer-center" href="#"  onclick="guahao('${vipreg.orderid}')"  style=" font-size:18px; border-radius:4px;"><span id="buttontxt">Save registration</span></a>
 </div>
 <script>
 var status = '${vipreg.status}';
@@ -152,11 +152,11 @@ $(document).ready(function(e) {
 		$("#patientsex").val(sex);
 	}
 	if(status == '1'){
-		$("#buttontxt").html("确认挂号");
+		$("#buttontxt").html("Confirmation of registration");
 	}else if(status == '2' || status == '4' ){
-		$("#buttontxt").html("支付");
+		$("#buttontxt").html("payment");
 	}else if(status == '3' ){
-		$("#buttontxt").html("取消挂号");
+		$("#buttontxt").html("Cancel registration");
 	}else{
 		$("#guahaobtn").hide();
 	}
@@ -184,15 +184,15 @@ function guahao(orderid){
 							  orderpay(orderid);
 							});
 					}else{
-						$.toast("挂号失败","cancel");
+						$.toast("Registr failed","cancel");
 					}
 				}else if(status=='3'){
 					if(data.ret==0){
-						$.toast("取消挂号成功");
+						$.toast("Registration cancelled");
 						status = 5;
 						window.location='<%=path %>/guahao/history.html?';
 					}else{
-						$.toast("取消挂号失败","cancel");	
+						$.toast("Cancel registration failed","cancel");	
 					}
 				}
 			}
@@ -202,7 +202,7 @@ function guahao(orderid){
 function orderpay(orderid){
 	var url="<%=path%>/guahao/pay.json?tt="+new Date().getTime();
 	var orderfee = "${vipreg.orderfee}";
-	 $.confirm("挂号费用"+orderfee+"元", "确认支付", function() {
+	 $.confirm("Registration fee"+orderfee+"element", "Confirm payment", function() {
 		 $.ajax({
 				url:url,
 				type:"get",

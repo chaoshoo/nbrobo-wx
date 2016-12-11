@@ -5,15 +5,15 @@ import java.util.Arrays;
 import java.util.Formatter;
 
 /**
- * SHA1算法计算公众平台的消息签名接口
+ * SHA1A message signature interface for a public platform.
  */
 public class SHA1 {
 
     /**
-     * 用SHA1算法生成安全签名
+     * useSHA1Algorithm generating secure signature
      *
      * @param params [token, timestamp, nonce, encrypt]
-     * @return 安全签名
+     * @return Secure signature
      * @throws com.qq.weixin.mp.aes.AesException
      */
     public static String calculate(String... params) throws AesException {

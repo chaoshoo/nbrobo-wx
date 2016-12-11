@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>环球健康管理平台</title>
+<title>Residents health management service platform</title>
 <meta name="meituan_check">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -63,9 +63,9 @@
 			<a class="react back" onclick="history.go(-1)"><i
 				class="text-icon icon-back"></i></a>
 		</div>
-		<span class="nav-header h1"> 留言详情 </span>
+		<span class="nav-header h1"> Message details </span>
 		<div class="nav-wrap-right"> <a class="react headSearch" href="javascript:void(0)"> 
-  <font style="font-weight:bold;font-style:italic;">&nbsp;&nbsp;</font>
+  <font style="font-weight:bold;font-style:italic;"></font>
   </a> </div>
 	</header>
 
@@ -82,7 +82,7 @@
 			</div>
 			<div class="weui_media_ft">
 				<span class="weui_media_ft_time" style="width:200px;margin-top:30px;">${createtime}</span> <span
-					class="weui_media_ft_btn"  onclick="doctor('${doctorid}')">预约</span>
+					class="weui_media_ft_btn"  onclick="doctor('${doctorid}')">make an appointment</span>
 			</div></a>	
 			<div class="panel" style="padding:15px;">
 			<p class="uname"  style="text-align:center; font-size:18px; margin-bottom:10px;">${title}</p>
@@ -94,19 +94,19 @@
 	<div id="liuyanlist" class="cur-control-con">
 		<!-- 
   <div class=" replay-item">
-  <div class="replay-item-title">我&nbsp;星期天&nbsp;12：50</div>
-  <div class="replay-item-info">你好，我是谢晨！前几天在您这边检查了身体，感觉还可以，什么时候可以再来！</div>
+  <div class="replay-item-title">I Sunday12：50</div>
+  <div class="replay-item-info">Hello,，This is Xie Chen.！A few days ago, you had a physical check-up，Feeling can also，When can I come back！</div>
   </div>
   -->
 	</div>
 
 	<form id="liuyan_form" action="">
 		<div class="form-item">
-			<input type="text" placeholder="追加留言" class="ruc-input-register-auth"
+			<input type="text" placeholder="Additional message" class="ruc-input-register-auth"
 				id="answer_add" name="answer_add" style=" padding-left: 40px;">
 		</div>
 		<div class="next-prove-reset" onclick="liuyan()">
-			<div>提交留言</div>
+			<div>Submit comments</div>
 		</div>
 	</form>
 	<script>
@@ -130,7 +130,7 @@ function liuyandetail(){
 			var liuyanlisthtml = "";
 			$.each(data, function(i, item){   
 				liuyanlisthtml += '<div class=" replay-item">'
-					+'<div class="replay-item-title">'+item.DOCTORNAME+'&nbsp;&nbsp;'+item.CREATE_TIMESTR+'</div>'
+					+'<div class="replay-item-title">'+item.DOCTORNAME+''+item.CREATE_TIMESTR+'</div>'
 	               +'  <div class="replay-item-info">'+item.ANSWER_CONTENT+'</div>'
 	               +'</div>';
 
@@ -142,7 +142,7 @@ function liuyandetail(){
 function liuyan(){
 	var ask = $("#answer_add").val();
 	if(ask == ''){
-		$.alert("请输入追加留言内容。");
+		$.alert("Please enter an additional message content。");
 		return;
 	}
 	var questionid = '${questionid}';
@@ -157,13 +157,13 @@ function liuyan(){
 		success:function(data){
 			var doctorlist = "";
 			if(data.code == 1){
-				 $.toast(" 留言成功", function() {
+				 $.toast(" Message submitted", function() {
 					// window.location.href='<%=path%>/index/homepage.html';
 					  liuyandetail();
 					  $("#answer_add").val("");
 			        });
 			}else{
-				 $.toast(" 留言失败", "cancel", function() {
+				 $.toast(" Message failed", "cancel", function() {
 			          console.log('close');
 			        });
 			}

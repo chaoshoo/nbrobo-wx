@@ -1,65 +1,65 @@
 package com.net.wx.common;
 
 /**
- * 微信事件的类型
+ * WeChat event type
  */
 public enum WxEventType {
     /**
-     * 用户订阅事件
+     * User subscription event
      */
     subscribe,
     /**
-     * 退订事件
+     * Unsubscribe events
      */
     unsubscribe,
     /**
-     * 扫描事件
+     * Scan event
      */
     SCAN,
     /**
-     * 自动上传位置
+     * Auto upload location
      */
     LOCATION,
     /**
-     * 点击事件
+     * Click event
      */
     CLICK,
     /**
-     * 跳转事件
+     * Jump event
      */
     VIEW,
     /**
-     * 模板消息推送事件
+     * Template message push event
      */
     TEMPLATESENDJOBFINISH,
     /**
-     * 群发消息推送事件
+     * Mass message push event
      */
     MASSSENDJOBFINISH,
 
     // 以下事件微信iPhone5.4.1+, Android5.4+仅支持
     /**
-     * 扫码推事件
+     * Sweep push event
      */
     scancode_push,
     /**
-     * 扫码推事件且弹出“消息接收中”提示框
+     * Scan push events and pop“Message reception”prompt box
      */
     scancode_waitmsg,
     /**
-     * 弹出系统拍照发图
+     * Pop up system to take pictures
      */
     pic_sysphoto,
     /**
-     * 弹出拍照或者相册发图
+     * Pop up pictures or photo albums
      */
     pic_photo_or_album,
     /**
-     * 弹出微信相册发图器
+     * Pop up WeChat photo album
      */
     pic_weixin,
     /**
-     * 弹出地理位置选择器
+     * Pop-up location selector
      */
     location_select
 }

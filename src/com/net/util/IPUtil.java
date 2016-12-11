@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class IPUtil {
 	/**
-	 * 获取ip地址
+	 * Obtainipaddress
 	 * 
 	 * @param request
 	 * @return

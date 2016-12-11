@@ -10,7 +10,7 @@
     <param-value>classpath:spring/spring.xml</param-value>
   </context-param>  
 	
-	<!-- 编码格式为utf-8 -->
+	<!-- Encoding formatutf-8 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter
@@ -25,7 +25,7 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
-	<!-- 注入mvc的配置xml -->
+	<!-- injectionmvcConfigurationxml -->
 	<servlet>
 		<servlet-name>SpringMVCDispatcherServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet
@@ -45,7 +45,7 @@
     	<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 	
-		<!-- jfianl配置 -->
+		<!-- jfianlTo configure -->
   <filter>
 		<filter-name>jfinal</filter-name>
 		<filter-class>com.jfinal.core.JFinalFilter</filter-class>
@@ -59,7 +59,7 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
-	<!-- 自动装配ApplicationContext的配置信息 -->
+	<!-- automatic assemblyApplicationContextConfiguration information -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>

@@ -79,7 +79,7 @@ public class MemberAction extends WxBaseAction{
 				}
 				r.set("status", "ok");
 				if(!r.getStr("login_password").toLowerCase().equals(r.getStr("family_pwd").toLowerCase())){
-					r.set("status", "失效");
+					r.set("status", "Invalid");
 //					r.set("inspect_time","");
 //					r.set("inspect_name","");
 //					r.set("inspect_value","");
@@ -137,14 +137,14 @@ public class MemberAction extends WxBaseAction{
 					+ " union all select * from t_vip where  vip_code=?",mobile,mobile,md5pwd,vip.getVip_code());
 			if(li == null || li.size() !=2){
 				d.setCode(0);
-				d.setMsg("手机号、卡号或密码错误！");
+				d.setMsg("Cell number、Card number or password error！");
 				return d;
 			}
 			Record r1 = li.get(0);
 			Record r2 = li.get(1);
 			if(r1.get("vip_code").equals(r2.get("vip_code"))){
 				d.setCode(0);
-				d.setMsg("不能绑定自己的账号！");
+				d.setMsg("Can not bind your own account！");
 				return d;
 			}
 			//判断是否已经做过绑定 做个绑定就删除
@@ -167,7 +167,7 @@ public class MemberAction extends WxBaseAction{
 			e.printStackTrace();
 		}
 		d.setCode(0);
-		d.setMsg("绑定失败！");
+		d.setMsg("Bind failed！");
 		return d;
 	}
 }

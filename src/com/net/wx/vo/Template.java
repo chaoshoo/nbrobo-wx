@@ -1,28 +1,28 @@
 package com.net.wx.vo;
 
 /**
- * 微信模板消息
+ * WeChat template message
  */
 public class Template {
 
     /**
-     * 默认颜色(蓝色)
+     * Default color(blue)
      */
     @SuppressWarnings("unused")
 	private String DEFAULT_COLOR = "#119EF3";
 
     /**
-     * 模板字段名称
+     * Template field name
      */
     private String name;
 
     /**
-     * 显示颜色
+     * Display color
      */
     private String color;
 
     /**
-     * 显示数据
+     * Display data
      */
     private String value;
 
@@ -60,7 +60,7 @@ public class Template {
     }
 
     /**
-     * 组装模板数据
+     * Assembly template data
      */
     public String templateData() {
         StringBuffer data = new StringBuffer("\"" + name + "\":{");

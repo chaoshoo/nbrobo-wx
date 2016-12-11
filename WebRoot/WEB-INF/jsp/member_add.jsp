@@ -9,7 +9,7 @@
 <html lang="zh-cmn-Hans" class="">
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-<title>环球健康管理平台</title>
+<title>Residents health management service platform</title>
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="MobileOptimized" content="240">
@@ -22,9 +22,9 @@
 <body>
 <header class="navbar">
   <div class="nav-wrap-left"> <a class="react back" onclick="history.go(-1)"><i class="text-icon icon-back"></i></a> </div>
-  <span class="nav-header h1" style="font-size: 18px;" > 绑定成员 </span> 
+  <span class="nav-header h1" style="font-size: 18px;" > Bind member </span> 
   <div class="nav-wrap-right"> <a class="react headSearch" href="javascript:void(0)"> 
-  <font style="font-weight:bold;font-style:italic;">&nbsp;&nbsp;</font>
+  <font style="font-weight:bold;font-style:italic;"></font>
   </a> </div></header>
 
   
@@ -33,13 +33,13 @@
         <div class="message-account">
         
     <div class="form-item">
-        <input type="text"  placeholder="请输入对方电话号码或会员卡号" maxlength="18" id="mobile" name="mobile">
+        <input type="text"  placeholder="Please enter the phone number or membership card number" maxlength="18" id="mobile" name="mobile">
     </div>
     
 	<div class="form-item">
-        <input id="passwordid" placeholder="请输入对方登录密码" type="password" name="password">
+        <input id="passwordid" placeholder="Please enter a password for each other" type="password" name="password">
     </div>
-    <div class="next-prove-reset" onclick="memberadd()" ><div>提交绑定</div></div>
+    <div class="next-prove-reset" onclick="memberadd()" ><div>Submit binding</div></div>
 </div>
       </form>
     </div>
@@ -56,7 +56,7 @@ function memberadd(){
 	var formdata = $.serializeObject($("#yuyue_form"));;
 	var mobile = $("#mobile").val();
 	if(mobile == mymobile){
-		$.alert("亲，不能绑定自己手机号哦！");
+		$.alert("Dear，Can not bind your own phone number！");
 		return;
 	}
 	$.ajax({
@@ -67,7 +67,7 @@ function memberadd(){
 		success:function(data){
 			var doctorlist = "";
 			if(data.code == 1){
-				 $.toast("绑定成功", function() {
+				 $.toast("Bind successfully", function() {
 					   window.location.href='<%=path%>/index/homepage.html';
 			        });
 			}else{

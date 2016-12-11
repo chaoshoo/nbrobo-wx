@@ -33,16 +33,16 @@ $(function(){
 	SearchBox.inputInit(".ss_input");	
 });
 
-/*tab切换效果
+/*tabSwitching effect
 $(function(){
 	    var $div_li =$("div.tab_t ul li");
 	    $div_li.hover(function(){
-			$(this).addClass("selected")            //当前<li>元素高亮
-				   .siblings().removeClass("selected");  //去掉其他同辈<li>元素的高亮
-            var index =  $div_li.index(this);  // 获取当前点击的<li>元素 在 全部li元素中的索引。
-			$("div.tab_c > div")   	//选取子节点。不选取子节点的话，会引起错误。如果里面还有div 
-					.eq(index).show()   //显示 <li>元素对应的<div>元素
-					.siblings().hide(); //隐藏其他几个同辈的<div>元素
+			$(this).addClass("selected")            //current<li>Element highlight
+				   .siblings().removeClass("selected");  //Get rid of other peers<li>Highlight elements
+            var index =  $div_li.index(this);  // Gets the current Click<li>element stay AllliIndex in an element。
+			$("div.tab_c > div")   	//Select child node。If you don't select a child node，Can cause errors。If there isdiv 
+					.eq(index).show()   //display <li>Element correspondence<div>element
+					.siblings().hide(); //Hide other peers<div>element
 		}).hover(function(){
 			$(this).addClass("hover");
 		},function(){
@@ -50,7 +50,7 @@ $(function(){
 		})
 });*/
 
-/*tab焦点图效果开始*/
+/*tabFocus map effect*/
 $(function(){
 // 基本配置
 milktea(
@@ -96,8 +96,8 @@ milktea(
 });
 
 /*
- * 焦点图轮播函数
- * 使用方法：milktea(大图片,小图片,按钮,下一个,上一个,鼠标悬停区域,轮播间隔时间（毫秒）)
+ * Focus map carousel function
+ * Usage method：milktea(Big picture,Small picture,Button,Next,The previous,Mouse hover area,Carousel interval（Millisecond）)
  */
 function milktea(largeImages,smallImages,buttons,nextButton,previousButton,hover,interval) {
 	var L = $(largeImages),S = $(smallImages),B = $(buttons),H = $(hover);
@@ -136,7 +136,7 @@ function milktea(largeImages,smallImages,buttons,nextButton,previousButton,hover
 	});
 };
 
-/*tab焦点图效果结束*/
+/*tabFocus map effect*/
 $(function(){
 	$(".mod3 h3").toggle(function(){
 			$(this).parent().next(".con").toggle();
@@ -145,7 +145,7 @@ $(function(){
 		});
 });
 
-/*字符串去空格*/
+/*String to space*/
 String.prototype.trim=function() {  
 	    return this.replace(/(^\s*)|(\s*$)/g,'');  
 	};  

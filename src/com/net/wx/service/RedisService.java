@@ -26,7 +26,7 @@ public class RedisService {
 	private List<RedisTemplate<String, String>> redisTemplateList;
 
 	/**
-	 * 从缓存中删除指定的key
+	 * Delete the specified from the cachekey
 	 * @param keys
 	 */
 	public void del(final String... keys) {
@@ -49,7 +49,7 @@ public class RedisService {
 	}
 
 	/**
-	 * 重缓存中删除指定的key 模式匹配，效率低
+	 * Delete the specifiedkey pattern matching，Low efficiency
 	 * @param keys
 	 */
 	public void delByReg(final String... keys) {
@@ -75,7 +75,7 @@ public class RedisService {
 	}
 
 	/**
-	 * 判断一个键是否存在于缓存中
+	 * To determine if a key is present in the cache
 	 * @param key
 	 * @return
 	 */
@@ -101,7 +101,7 @@ public class RedisService {
 	}
 
 	/**
-	 * 向缓存中插入数据
+	 * Insert data into the cache
 	 * @param key
 	 * @param value
 	 * @param liveTime
@@ -137,7 +137,7 @@ public class RedisService {
 	}
 
 	/**
-	 * 从缓存中获取数据
+	 * Get data from the cache
 	 * @param key
 	 * @return
 	 */
@@ -187,7 +187,7 @@ public class RedisService {
 	}
 
 	/**
-	 * 清空缓存
+	 * wipe cache
 	 */
 	public void flushDB() {
 		for (RedisTemplate<String, String> redisTemplate : redisTemplateList) {
@@ -205,7 +205,7 @@ public class RedisService {
 	}
 
 	/**
-	 * 添加至有序集合
+	 * Add to ordered set
 	 * @param key
 	 * @param score
 	 * @param value
@@ -226,17 +226,17 @@ public class RedisService {
 	}
 
 	/**
-	 * 按条件获取有序集合元素子集
+	 * Acquisition of ordered set of subsets of elements
 	 * @param key
-	 *            有序集合key
+	 *            Ordered setkey
 	 * @param min
-	 *            范围最小值
+	 *            Minimum range
 	 * @param max
-	 *            范围最大值
+	 *            Maximum range
 	 * @param offset
-	 *            从第0ffset+1个元素起
+	 *            From the article0ffset+1One element
 	 * @param count
-	 *            返回上限
+	 *            Return cap
 	 * @return
 	 */
 	public Set<byte[]> zRangeByScore(final byte[] key, final double min, final double max, final long offset,
@@ -262,8 +262,8 @@ public class RedisService {
 	}
 
 	/**
-	 * 添加指定map至缓存
-	 * @param key map唯一标识
+	 * Add the specifiedmapTo cache
+	 * @param key mapUnique identifier
 	 * @param hashes
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -301,10 +301,10 @@ public class RedisService {
 	}
 
 	/**
-	 * 获取指定map中指定键对应的值列表
-	 * @param key map的唯一标识
-	 * @param fields 键数组
-	 * @return 值数组
+	 * Get the specifiedmapList of values corresponding to the specified key in the
+	 * @param key mapUnique identifier
+	 * @param fields Key array
+	 * @return Value array
 	 */
 	public List<byte[]> hMGet(final byte[] key, final byte[]... fields) {
 		List<byte[]> cacheValue = null;
@@ -379,7 +379,7 @@ public class RedisService {
 	}
 	
 	/**
-	 * 添加Object到缓存
+	 * AddObjectTo cache
 	 * 
 	 */
 	public void setObj(final byte[] key, final Object obj,final Long liveTime) {
@@ -403,8 +403,8 @@ public class RedisService {
 	}
 	
 	/**
-	 * 取Object
-	 * 如果Object属性改变，在反序列化时会出错，返回error
+	 * takeObject
+	 * IfObjectproperties changing，Error during serialization，Returnerror
 	 * @param key
 	 */
 	public Object getObj(final byte[] key){

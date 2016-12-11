@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import java.util.List;
 /**
- * 类查找
+ * Class lookup
  * 
  * huilet 2013-3-20
  * @author yuanc
@@ -16,17 +16,17 @@ import java.util.List;
 public class ClassSearcher {
 	private static List<File> classFiles = new ArrayList<File>();
 	/**
-	 * 递归查找文件
+	 * Recursive lookup file
 	 * @param baseDirName
-	 *            查找的文件夹路径
+	 *            Folder path to find
 	 * @param targetFileName
-	 *            需要查找的文件名
+	 *            File name to find
 	 */
 	public static List<File> findFiles(String baseDirName,
 			String targetFileName) {
 		/**
-		 * 算法简述： 从某个给定的需查找的文件夹出发，搜索该文件夹的所有子文件夹及文件，
-		 * 若为文件，则进行匹配，匹配成功则加入结果集，若为子文件夹，则进队列。 队列不空，重复上述操作，队列为空，程序结束，返回结果。
+		 * Algorithm description： Starting from a given search folder，Search for all sub folders and files in this folder，
+		 * If the document，Then match，Matching success is added to the result set，If you are a child folder，Then enter the queue。 Queue not empty，Repeat the above operation，Queue is empty，End of program，Return result。
 		 */
 		String tempName = null;
 		// 判断目录是否存在
@@ -50,8 +50,8 @@ public class ClassSearcher {
 		return classFiles;
 	}
 	/**
-	 * 通过父类查找
-	 * @param clazz 父类
+	 * Find by parent class
+	 * @param clazz The parent class
 	 * @return
 	 */
 	@SuppressWarnings("rawtypes")
@@ -101,12 +101,12 @@ public class ClassSearcher {
 		return className.replaceAll("/", ".");
 	}
 	/**
-	 * 通配符匹配
+	 * Wildcard matching
 	 * @param pattern
-	 *            通配符模式
+	 *            wildcard pattern
 	 * @param str
-	 *            待匹配的字符串
-	 * @return 匹配成功则返回true，否则返回false
+	 *            String to be matched
+	 * @return Matching success is returnedtrue，Otherwise returnfalse
 	 */
 	private static boolean wildcardMatch(String pattern, String str) {
 		int patternLength = pattern.length();

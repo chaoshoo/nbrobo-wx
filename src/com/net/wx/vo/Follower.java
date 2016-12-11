@@ -3,65 +3,65 @@ package com.net.wx.vo;
 import com.alibaba.fastjson.annotation.JSONField;
 
 /**
- * 微信订阅者信息
+ * WeChat subscriber information
  */
 public class Follower {
 
     /**
-     * 是否订阅(0 退订, 1 订阅)
+     * Whether to subscribe(0 Unsubscribe, 1 Subscribe)
      */
 	private int subscribe;
 
     /**
-     * 关注公众号唯一标识
+     * Concerned about the number of public signs only
      */
 	private String openId;
 
     /**
-     * 微信昵称
+     * WeChat Nick
      */
 	private String nickName;
 
     /**
-     * 性别(1 男, 2 女, 0 未知)
+     * Gender(1 male, 2 female, 0 Unknown)
      */
 	private int sex;
 
     /**
-     * 用户所在城市
+     * User City
      */
 	private String city;
 
     /**
-     * 用户所在国家
+     * User country
      */
 	private String country;
 
     /**
-     * 用户所在省份
+     * User Province
      */
 	private String province;
 
     /**
-     * 用户的语言，简体中文为zh_CN
+     * User language，Simplified Chinese forzh_CN
      */
 	private String language;
 
     /**
-     * 用户头像，最后一个数值代表正方形头像大小<br/>
-     * （有0、46、64、96、132数值可选，0代表640*640正方<br/>
-     * 形头像），用户没有头像时该项为空
+     * User profile，The last number represents the size of a square head.<br/>
+     * （Yes0、46、64、96、132Numerical optional，0representative640*640Square<br/>
+     * Shape head），The user has no head when the item is empty
      */
 	private String headImgUrl;
 
     /**
-     * 用户关注时间，为时间戳。如果用户曾多次关注，则取最后关注时间
+     * User attention time，Time stamp。If the user has a number of concerns，Take the last time
      */
     @JSONField(name = "subscribe_time")
 	private long subscribeTime;
 
     /**
-     * 只有在用户将公众号绑定到微信开放平台帐号后，才会出现该字段
+     * Only after the user is bound to the public number of WeChat open platform account，This field will appear
      */
 	private String unionid;
 

@@ -30,7 +30,7 @@ public class VipService {
 	private static final int paihangCount = 5;
 
 	/**
-	 * 用户登录
+	 * User login
 	 * 
 	 * @param tel
 	 * @param password
@@ -60,7 +60,7 @@ public class VipService {
 	}
 
 	/**
-	 * 修改openId
+	 * modifyopenId
 	 * 
 	 * @param pe
 	 * @return
@@ -77,7 +77,7 @@ public class VipService {
 	}
 
 	/**
-	 * 判断手机号是否存在登录表里面
+	 * To determine whether the existence of the phone number on the table inside
 	 */
 	public boolean isExistTel(String tel) {
 		List<Record> lits = Db.find("select * from t_vip where isvalid=1 and mobile ='" + tel + "' ");
@@ -85,7 +85,7 @@ public class VipService {
 	}
 
 	/**
-	 * 修改密码
+	 * Change password
 	 */
 	public void updatePWD(String pwd, String tel, String pwdold) {
 		String pwdmd5 = MD5Util.MD5(pwd, "utf-8");
@@ -95,7 +95,7 @@ public class VipService {
 	}
 
 	/**
-	 * 获取验证码 6位数
+	 * Get verification code 6digit
 	 */
 	public static String randString(int length) {
 		Random r = new Random();
@@ -116,7 +116,7 @@ public class VipService {
 	}
 
 	/**
-	 * 修改最后登录时间，新增药师登录日志
+	 * Modified last login time，New pharmacist login log
 	 * 
 	 * @param id
 	 */

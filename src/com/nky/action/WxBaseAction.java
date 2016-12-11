@@ -70,7 +70,7 @@ public class WxBaseAction {
 	}
 
 	/**
-	 * 返回Entity登录实体
+	 * ReturnEntityLogin entity
 	 * @param request
 	 * @return
 	 */

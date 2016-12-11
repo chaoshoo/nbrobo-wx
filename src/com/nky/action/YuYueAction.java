@@ -272,7 +272,7 @@ public class YuYueAction extends WxBaseAction{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			d.setCode(0);
-			d.setMsg("保存失败");
+			d.setMsg("Save failed");
 		}
 		return d;
 	}
@@ -298,7 +298,7 @@ public class YuYueAction extends WxBaseAction{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			d.setCode(0);
-			d.setMsg("保存失败");
+			d.setMsg("Save failed");
 		}
 		return d;
 	}
@@ -327,7 +327,7 @@ public class YuYueAction extends WxBaseAction{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			d.setCode(0);
-			d.setMsg("保存失败");
+			d.setMsg("Save failed");
 		}
 		return d;
 	}
@@ -447,7 +447,7 @@ public class YuYueAction extends WxBaseAction{
 				for (int i = listr.size()-1; i >= 0; i--) {
 					Map<String,Object> m = listr.get(i);
 					if(m.get("ANSWER_CODE") != null && m.get("ANSWER_CODE").toString().equals(vip.getVip_code())){
-						m.put("DOCTORNAME","我");
+						m.put("DOCTORNAME","I");
 					}
 					list0.add(m);
 				}

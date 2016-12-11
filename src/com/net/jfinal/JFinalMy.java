@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.jfinal.handler.Handler;
 /**
- * JFinal路由配置策略
+ * JFinalRouting configuration strategy
  * 
  * huilet 2013-5-14
  * @author yuanc

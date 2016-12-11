@@ -19,7 +19,7 @@ import com.jfinal.render.ViewType;
 import com.net.ServiceConstants;
 
 /**
- * API引导式配置
+ * APIBoot configuration
  * @author yuanhuaihao
  * company huilet
  * 2013-3-12
@@ -27,22 +27,22 @@ import com.net.ServiceConstants;
 public class NkyConfig extends JFinalConfig{
 	
 	/**
-	 * 配置常量
+	 * Configuration constants
 	 */
 	public void configConstant(Constants me) {
 		me.setDevMode(true);
-		me.setViewType(ViewType.JSP);  // 设置视图类型为Jsp，否则默认为FreeMarker
+		me.setViewType(ViewType.JSP);  // Set view typeJsp，Otherwise the default isFreeMarker
 	}
 
 	/**
-	 * 配置路由
+	 * Configuration route
 	 */
 	public void configRoute(Routes me) {
 		MyRoutesUtil.add(me);
 	}
 
 	/**
-	 * 配置插件
+	 * Configuration plug-in
 	 */
 	public void configPlugin(Plugins me) {
 		// 配置C3p0数据库连接池插件
@@ -56,14 +56,14 @@ public class NkyConfig extends JFinalConfig{
 	}
 
 	/**
-	 * 配置全局拦截器
+	 * Configure global interceptor
 	 */
 	public void configInterceptor(Interceptors me) {
 		
 	}
 
 	/**
-	 * 配置处理器
+	 * Configuration processor
 	 */
 	public void configHandler(Handlers me) {
 		me.add(new JFinalMy());

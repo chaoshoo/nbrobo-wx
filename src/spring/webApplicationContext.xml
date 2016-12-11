@@ -28,12 +28,12 @@
 	
 	<bean
 		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
-		<!-- 设置为true以忽略对Accept Header的支持 -->
+		<!-- Set totrueTo ignore the rightAccept HeaderSupport -->
 		<property name="ignoreAcceptHeader" value="true" />
-		<!-- 在没有扩展名时的默认展现形式 -->
+		<!-- The default display form when there is no extension -->
 		<property name="defaultContentType" value="text/html" />
 		<property name="order" value="1" />
-		<!-- 扩展名至mimeType的映射 -->
+		<!-- Extension tomimeTypeImage -->
 		<property name="mediaTypes">
 			<map>
 				<entry key="json" value="application/json" />

@@ -1,7 +1,7 @@
 package com.net.wx.util;
 
 /**
- * AES加密异常
+ * AESEncryption exception
  */
 public class AesException extends Exception {
 
@@ -29,29 +29,29 @@ public class AesException extends Exception {
 	private static String getMessage(int code) {
 		switch (code) {
 		case ValidateSignatureError:
-			return "签名验证错误";
+			return "Signature verification error";
 		case ParseXmlError:
-			return "xml解析失败";
+			return "xmlAnalytic failure";
 		case ComputeSignatureError:
-			return "sha加密生成签名失败";
+			return "shaEncryption generation signature failed";
 		case IllegalAesKey:
-			return "SymmetricKey非法";
+			return "SymmetricKeyillegal";
 		case ValidateAppidError:
-			return "appid校验失败";
+			return "appidCheck failed";
 		case EncryptAESError:
-			return "aes加密失败";
+			return "aesEncryption failed";
 		case DecryptAESError:
-			return "aes解密失败";
+			return "aesDecryption failure";
 		case IllegalBuffer:
-			return "解密后得到的buffer非法";
+			return "Obtained after decryptionbufferillegal";
 		case EncodeBase64Error:
-			return "base64加密错误";
+			return "base64Encryption error";
 		case DecodeBase64Error:
-			return "base64解密错误";
+			return "base64Decryption error";
 		case GenReturnXmlError:
-			return "xml生成失败";
+			return "xmlGeneration failed";
 		default:
-			return "未知异常";
+			return "Unknown anomaly";
 		}
 	}
 

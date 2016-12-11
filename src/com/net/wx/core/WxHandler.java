@@ -6,19 +6,19 @@ import com.net.wx.vo.ReceiveMsg;
 
 
 /**
- * 微信消息处理接口
+ * WeChat message processing interface
  */
 public interface WxHandler {
 
     /**
-     * 微信接入时URL验证
+     * WeChat access timeURLVerification
      *
-     * @param token     密钥
-     * @param signature 签名
-     * @param timestamp 时间戳
-     * @param nonce     随机字符
-     * @return  true或false
-     * @throws AesException 签名异常
+     * @param token     secret key
+     * @param signature autograph
+     * @param timestamp time stamp
+     * @param nonce     Random character
+     * @return  trueorfalse
+     * @throws AesException Signature anomaly
      */
     boolean check(String token,
                  String signature,
@@ -26,178 +26,178 @@ public interface WxHandler {
                  String nonce) throws AesException;
 
     /**
-     * 处理微信新功能的消息
+     * News to deal with the new features of WeChat
      *
-     * @param rm    接收到的消息
-     * @return  回复消息
+     * @param rm    Received message
+     * @return  Reply message
      */
     OutPutMsg def(ReceiveMsg rm);
 
     /**
-     * 处理文本消息
+     * Processing text messages
      *
-     * @param rm    接收到的消息
-     * @return  回复消息
+     * @param rm    Received message
+     * @return  Reply message
      */
     OutPutMsg text(ReceiveMsg rm,String dpid);
 
     /**
-     * 处理图像消息
+     * Image message processing
      *
-     * @param rm    接收到的消息
-     * @return  回复消息
+     * @param rm    Received message
+     * @return  Reply message
      */
     OutPutMsg image(ReceiveMsg rm);
 
     /**
-     * 处理音频消息
+     * Processing audio messages
      *
-     * @param rm    接收到的消息
-     * @return  回复消息
+     * @param rm    Received message
+     * @return  Reply message
      */
     OutPutMsg voice(ReceiveMsg rm);
 
     /**
-     * 处理视频消息
+     * Processing video messages
      *
-     * @param rm    接收到的消息
-     * @return  回复消息
+     * @param rm    Received message
+     * @return  Reply message
      */
     OutPutMsg video(ReceiveMsg rm);
 
     /**
-     * 处理主动上传地理位置消息
+     * Handle active upload location information
      *
-     * @param rm    接收到的消息
-     * @return  回复消息
+     * @param rm    Received message
+     * @return  Reply message
      */
     OutPutMsg location(ReceiveMsg rm);
 
     /**
-     * 处理链接消息
+     * Handle link messages
      *
-     * @param rm    接收到的消息
-     * @return  回复消息
+     * @param rm    Received message
+     * @return  Reply message
      */
     OutPutMsg link(ReceiveMsg rm);
 
     /**
-     * 处理菜单点击事件消息
+     * Handle menu click event messages
      *
-     * @param rm    接收到的消息
-     * @return  回复消息
+     * @param rm    Received message
+     * @return  Reply message
      */
     OutPutMsg eClick(ReceiveMsg rm, String dpid);
 
     /**
-     * 处理菜单视图事件消息
+     * Handle menu view event messages
      *
-     * @param rm    接收到的消息
+     * @param rm    Received message
      */
     void eView(ReceiveMsg rm);
 
     /**
-     * 处理订阅事件消息
+     * Handle subscription event messages
      *
-     * @param rm    接收到的消息
-     * @return  回复消息
+     * @param rm    Received message
+     * @return  Reply message
      */
     OutPutMsg eSub(ReceiveMsg rm);
 
     /**
-     * 处理退订事件消息
+     * To unsubscribe from the event message processing
      *
-     * @param rm    接收到的消息
+     * @param rm    Received message
      */
     void eUnSub(ReceiveMsg rm);
 
     /**
-     * 处理扫描事件消息
+     * Handle scan event messages
      *
-     * @param rm    接收到的消息
+     * @param rm    Received message
      */
     OutPutMsg eScan(ReceiveMsg rm);
 
     /**
-     * 处理自动上传地理事件消息
+     * Handle automatically upload geographic event messages
      *
-     * @param rm    接收到的消息
+     * @param rm    Received message
      */
     OutPutMsg eLocation(ReceiveMsg rm);
 
     /**
-     * 处理二维码扫描事件消息
+     * Handling two-dimensional code scanning event messages
      *
-     * @param rm    接收到的消息
-     * @return  回复消息
+     * @param rm    Received message
+     * @return  Reply message
      */
     OutPutMsg eScanCodePush(ReceiveMsg rm);
 
     /**
-     * 扫码推事件且弹出“消息接收中”提示框
+     * Scan push events and pop“Message reception”prompt box
      *
-     * @param rm    接收到的消息
-     * @return  回复消息
+     * @param rm    Received message
+     * @return  Reply message
      */
     OutPutMsg eScanCodeWait(ReceiveMsg rm);
 
     /**
-     * 处理弹出系统拍照发图的事件推送
+     * Handling the event push pop up system to take pictures
      *
-     * @param rm    接收到的消息
-     * @return  回复消息
+     * @param rm    Received message
+     * @return  Reply message
      */
     OutPutMsg ePicSysPhoto(ReceiveMsg rm);
 
     /**
-     * 处理弹出拍照或者相册发图的事件推送
+     * Handling events pop up pictures or photo albums sent to push the event
      *
-     * @param rm    接收到的消息
-     * @return  回复消息
+     * @param rm    Received message
+     * @return  Reply message
      */
     OutPutMsg ePicPhotoOrAlbum(ReceiveMsg rm);
 
     /**
-     * 处理弹出微信相册发图器的事件推送
+     * Handle events pop up WeChat photo albums
      *
-     * @param rm    接收到的消息
-     * @return  回复消息
+     * @param rm    Received message
+     * @return  Reply message
      */
     OutPutMsg ePicWeixin(ReceiveMsg rm);
 
     /**
-     * 处理弹出地理位置选择器的事件推送消息
+     * Event push message handling pop up location selector
      *
-     * @param rm    接收到的消息
-     * @return  回复消息
+     * @param rm    Received message
+     * @return  Reply message
      */
     OutPutMsg eLocationSelect(ReceiveMsg rm);
 
     /**
-     * 处理模板发送事件消息
+     * Processing template to send event messages
      *
-     * @param rm    接收到的消息
+     * @param rm    Received message
      */
     void eTemplateFinish(ReceiveMsg rm);
 
     /**
-     * 处理群发消息事件消息
+     * Dealing with mass news event messages
      *
-     * @param rm    接收到的消息
+     * @param rm    Received message
      */
     void eSendJobFinish(ReceiveMsg rm);
 
     /**
-     * 处理微信开放平台推送的Ticket事件消息<pre/>
-     * (只要回复"success"即可)
-     * @param rm    接收到的消息
+     * Handle WeChat open platform pushTicketEvent message<pre/>
+     * (Just reply"success"that will do)
+     * @param rm    Received message
      */
     void eComponentVerifyTicket(ReceiveMsg rm);
 
     /**
-     * 处理微信开放平台推送的取消授权公众号事件消息<pre/>
-     * (只要回复"success"即可)
-     * @param rm    接收到的消息
+     * Deal with WeChat open platform push the cancellation of the number of public events to cancel the event<pre/>
+     * (Just reply"success"that will do)
+     * @param rm    Received message
      */
     void eUnAuthorizerMP(ReceiveMsg rm);
 }

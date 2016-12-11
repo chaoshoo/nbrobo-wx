@@ -7,9 +7,9 @@ import com.net.jfinal.TableBind;
 
 @TableBind(name="t_vip_log")
 public class VipLogEntity  extends JFinalEntity implements java.io.Serializable{
-	  private String vip_code;// '会员编码',
-	  private Date create_time;// '创建时间',
-	  private String oper;// '操作内容',
+	  private String vip_code;// 'Member code',
+	  private Date create_time;// 'Created time',
+	  private String oper;// 'Operation content',
 	public String getVip_code() {
 		return vip_code;
 	}

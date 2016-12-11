@@ -9,7 +9,7 @@ import com.jfinal.plugin.activerecord.Db;
 public class DataSqlUtil {
 	
 	/**
-	 * 根据Map的key值和value值动态插入数据
+	 * according toMapThekeyValue andvalueValue dynamically inserted data
 	 * @param tableName
 	 * @param data
 	 * @return

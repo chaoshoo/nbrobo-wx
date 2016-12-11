@@ -1,22 +1,22 @@
 package com.net.wx.vo;
 
 /**
- * 微信分组信息
+ * WeChat group information
  */
 public class Group {
 
     /**
-     * 分组唯一ID
+     * Grouping uniqueID
      */
     private int id;
 
     /**
-     * 分组名称
+     * Group name
      */
     private String name;
 
     /**
-     * 用户统计
+     * User statistics
      */
     private int count;
 

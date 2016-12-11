@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>环球健康管理平台</title>
+<title>Residents health management service platform</title>
 <meta name="meituan_check">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -30,9 +30,9 @@
 <body id="account">
 <header class="navbar">
   <div class="nav-wrap-left"> <a class="react back" href="<%=path %>/index/homepage.html"><i class="text-icon icon-back"></i></a> </div>
-  <span class="nav-header h1"> 留言列表 </span> 
+  <span class="nav-header h1"> Message list </span> 
   <div class="nav-wrap-right"> <a class="react headSearch" href="javascript:void(0)"> 
-  <font style="font-weight:bold;font-style:italic;">&nbsp;&nbsp;</font>
+  <font style="font-weight:bold;font-style:italic;"></font>
   </a> </div>
   </header>
 <div class="cur-control-con" >
@@ -40,11 +40,11 @@
     <form class="weui_search_outer">
       <input type="hidden" name="type" id="type" value="liuyan"/>
       <div class="weui_search_inner"> <i class="weui_icon_search"></i>
-        <input type="search" class="weui_search_input" name="search_input" id="search_input" placeholder="搜索" value="${search_input}" required>
+        <input type="search" class="weui_search_input" name="search_input" id="search_input" placeholder="search" value="${search_input}" required>
         <a href="javascript:" class="weui_icon_clear" id="search_clear"></a> </div>
-      <label for="search_input" class="weui_search_text" id="search_text"> <i class="weui_icon_search"></i> <span>搜索</span> </label>
+      <label for="search_input" class="weui_search_text" id="search_text"> <i class="weui_icon_search"></i> <span>search</span> </label>
     </form>
-    <a href="javascript:" class="weui_search_cancel" id="search_cancel">取消</a> </div>
+    <a href="javascript:" class="weui_search_cancel" id="search_cancel">cancel</a> </div>
     <input type="hidden" name="pageno" id="pageno" value="0"/>
   <div class="weui_panel_con">
     <div id="liuyanlist" class="weui_panel_bd">
@@ -52,17 +52,17 @@
      <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg">
       <div class="weui_media_hd"> <img class="weui_media_appmsg_thumb" src="img/index_user_face.png" width="60" height="60"> </div>
       <div class="weui_media_bd">
-        <h4 class="weui_media_title">张医生</h4>
-        <p class="weui_media_desc">有问题找我</p>
+        <h4 class="weui_media_title">Dr. Zhang</h4>
+        <p class="weui_media_desc">Got a question, go to me</p>
       </div>
-      <div class="weui_media_ft"> <span class="weui_media_ft_time">今天上午</span> </div>
+      <div class="weui_media_ft"> <span class="weui_media_ft_time">This morning</span> </div>
       </a>
        -->
     </div>
     <div class="weui-infinite-scroll" id="loadingdiv">
 	  <div class="infinite-preloader"></div>
-	    <!-- 正在加载... -->
-	    <span  id="loading">上拉加载更多</span>
+	    <!-- Being loaded... -->
+	    <span  id="loading">Pull up load more</span>
 	</div>
   </div>
 </div>
@@ -76,14 +76,14 @@ $(document).ready(function(e) {
 		$(".cur-control-con").eq($(this).index()).fadeIn()
 	});
 	liuyanlist();
-	var loading = false;  //状态标记
+	var loading = false;  //State mark
 	$(document.body).infinite().on("infinite", function() {
 	  if(loading) return;
 	  loading = true;
 	  setTimeout(function() {
 		liuyanlist();
 	    loading = false;
-	  }, 1500);   //模拟延迟
+	  }, 1500);   //Simulation delay
 	});
 });
 function liuyanlist(){

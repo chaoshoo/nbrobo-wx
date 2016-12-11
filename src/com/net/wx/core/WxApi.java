@@ -17,7 +17,7 @@ import com.net.wx.vo.Template;
 import com.alibaba.fastjson.JSONObject;
 
 /**
- * 微信公众平台开发者API接口设计
+ * WeChat Public Platform DeveloperAPIinterface design
  */
 public interface WxApi {
 
@@ -31,222 +31,222 @@ public interface WxApi {
     public static final String MPVIDEO = "mpvideo";
 
 	/**
-	 * 创建ACCESS_TOKEN
+	 * EstablishACCESS_TOKEN
      *
-     * @return 高级API需要的access_token
+     * @return seniorAPINeededaccess_token
      * @throws org.elkan1788.osc.weixin.mp.exception.WxRespException
 	 */
 	String getAccessToken() throws WxRespException;
 
     /**
-     * 刷新过期的ACCESS_TOKE
+     * Refresh expiredACCESS_TOKE
      *
      * @throws org.elkan1788.osc.weixin.mp.exception.WxRespException
      */
 	void refreshAccessToken() throws WxRespException;
 
 	/**
-	 * 获取微信服务器IP列表
+	 * Get WeChat serverIPlist
      *
-	 * @return IP地址集合
+	 * @return IPAddress set
 	 * @throws org.elkan1788.osc.weixin.mp.exception.WxRespException
 	 */
 	List<String> getServerIp() throws WxRespException;
 
     /**
-     * 上传多媒体文件
-     * @param mediaType 媒体文件类型[image, voice, video]
-     * @param file      文件
-     * @param saveType  多媒体保存类型。1为永久微信服务器只保存5000个，0为临时微信服务器只保存3天
-     * @return  储存媒体ID
+     * Upload multimedia files
+     * @param mediaType Media file type[image, voice, video]
+     * @param file      file
+     * @param saveType  Multimedia storage type。1Save only for permanent WeChat server5000individual，0Save only for temporary WeChat servers3day
+     * @return  Storage mediaID
      * @throws org.elkan1788.osc.weixin.mp.exception.WxRespException
      */
 	JSONObject upMedia(String mediaType, File file,String saveType) throws WxRespException;
     
     /**
-     * 下载多媒体文件
+     * Download multimedia files
      *
-     * @param mediaId   多媒体ID
-     * @param file      本地存储位置[默认使用媒体ID作文件名]
+     * @param mediaId   Multi-MediaID
+     * @param file      Local storage location[Default use mediaIDComposition name]
      * @throws org.elkan1788.osc.weixin.mp.exception.WxRespException
      */
     void dlMedia(String mediaId, File file) throws WxRespException;
 
     /**
-     * 获取微信菜单
+     * Get WeChat menu
      *
-     * @return  微信菜单集合
+     * @return  WeChat menu set
      */
 	List<Menu> getMenu() throws WxRespException;
 
     /**
-     * 创建微信菜单
+     * Create WeChat menu
      *
-     * @param menus 微信菜单
-     * @return  true或false
+     * @param menus WeChat menu
+     * @return  trueorfalse
      */
 	boolean createMenu(Menu... menus) throws WxRespException;
 
 	/**
-	 * 删除自定义菜单
+	 * Delete custom menu
      *
-	 * @return true或false
+	 * @return trueorfalse
 	 */
 	boolean deleteMenu() throws WxRespException;
 
 	/**
-	 * 创建分组
+	 * Create group
      *
-	 * @param name 分组名称
-	 * @return 分组ID
+	 * @param name Group name
+	 * @return GroupingID
 	 */
 	int creatGroup(String name) throws WxRespException;
 
 	/**
-	 * 获取所有分组
+	 * Get all groups
      *
-	 * @return  Groups集合
+	 * @return  Groupsaggregate
 	 */
 	List<Group> getGroups() throws WxRespException;
 
 	/**
-	 * 重命名分组
+	 * Rename group
      *
-	 * @param id	分组ID
-	 * @param name	新的分组名称
-	 * @return true或false
+	 * @param id	GroupingID
+	 * @param name	New group name
+	 * @return trueorfalse
 	 */
 	boolean renGroup(int id, String name) throws WxRespException;
 
 	/**
-	 * 获取用户分组ID
+	 * Get user groupsID
      *
-	 * @param openId 	用户ID
-	 * @return 分组ID
+	 * @param openId 	userID
+	 * @return GroupingID
 	 */
 	int getGroupId(String openId) throws WxRespException;
 
 	/**
-	 * 移动用户分组
+	 * Mobile user group
      *
-	 * @param openId	用户ID
-	 * @param groupId	新分组ID
-	 * @return true或false
+	 * @param openId	userID
+	 * @param groupId	New groupingID
+	 * @return trueorfalse
 	 */
 	boolean move2Group(String openId, int groupId) throws WxRespException;
 
 	/**
-	 * 获取关注用户列表
+	 * Get attention to the user list
      *
-	 * @param	nextOpenId	 	拉取列表的后一个用户的OPENID
-	 * @return 关注用户ID列表
+	 * @param	nextOpenId	 	After pulling the list of a user'sOPENID
+	 * @return Focus on userIDlist
 	 */
 	FollowList getFollowerList(String nextOpenId) throws WxRespException;
 
 	/**
-	 * 获取关注者的信息
+	 * Get the attention of the information
      *
-	 * @param	openId	用户ID
-	 * @param 	lang	使用语言
-	 * @return 关注者的基本信息
+	 * @param	openId	userID
+	 * @param 	lang	Use language
+	 * @return The basic information of the concerned
 	 */
 	Follower getFollower(String openId, String lang) throws WxRespException;
 
     /**
-     * 发送客服消息
+     * Send customer service messages
      *
-     * @param msg       消息
-     * @return  false或true
+     * @param msg       Message
+     * @return  falseortrue
      * @throws org.elkan1788.osc.weixin.mp.exception.WxRespException
      */
 	boolean sendCustomerMsg(OutPutMsg msg) throws WxRespException;
 
     /**
-     * 发送模板消息
+     * Send template messages
      *
-     * @param openId        接收者ID
-     * @param templateId    模板ID
-     * @param topColor      顶部颜色
-     * @param url           跳转地址
-     * @param templates     模样数据
-     * @return false或true
+     * @param openId        RecipientID
+     * @param templateId    TemplateID
+     * @param topColor      Top color
+     * @param url           Jump address
+     * @param templates     Pattern data
+     * @return falseortrue
      * @throws org.elkan1788.osc.weixin.mp.exception.WxRespException
      */
 	boolean sendTemplateMsg(String openId, String templateId, String topColor, String url, Template... templates) throws WxRespException;
 
 	/**
-	 * 上传图文消息素材
+	 * Upload graphics and text message material
 	 *
-	 * @param articles2s 图文消息实体数组
-	 * @param saveType  图片的保存类型.1为永久,0为临时
-	 * @return [0 消息类型, 1 多媒体ID, 2 创建时间],直接返回多媒体ID
+	 * @param articles2s Graphic message entity array
+	 * @param saveType  Save type of image.1As permanent,0As temporary
+	 * @return [0 Message type, 1 Multi-MediaID, 2 Created time],Direct return to multimediaID
 	 * @throws org.elkan1788.osc.weixin.mp.exception.WxRespException
 	 */
 	String upNews(String saveType,Article2... articles2s) throws WxRespException;
 	
 	/**
-	 * 更新永久图文素材
+	 * Update permanent graphic material
 	 *
-	 * @param articles2s 图文消息实体数组
-	 * @param updateMediaId 需要修改的图文素材ID
-	 * @param index 修改多图文素材中的索引.单个图文素材为0
-	 * @return [errcode, errmsg].正确时errcode的值应为0
+	 * @param articles2s Graphic message entity array
+	 * @param updateMediaId Need to modify the graphic materialID
+	 * @param index Modify the index of multi graphic material.Single graphic material for0
+	 * @return [errcode, errmsg].Correct timeerrcodeThe value should be0
 	 * @throws org.elkan1788.osc.weixin.mp.exception.WxRespException
 	 */
 	int updateNews(String updateMediaId,int index,Article2 articles2s) throws WxRespException;
 	
 	/**
-	 * 删除永久素材
+	 * Delete permanent material
 	 *
-	 * @param mediaId 删除的素材Id
-	 * @return [errcode, errmsg].正确时errcode的值应为0
+	 * @param mediaId Deleted materialId
+	 * @return [errcode, errmsg].Correct timeerrcodeThe value should be0
 	 * @throws org.elkan1788.osc.weixin.mp.exception.WxRespException
 	 */
 	int delMedia(String mediaId) throws WxRespException;
 
 	/**
-	 * 上传群发消息中的视频文件
+	 * Upload video files in bulk messages
 	 *
-	 * @param mediaId	多媒体ID[需通过基础支持中的上传下载多媒体文件来得到]
-	 * @param title		标题
-	 * @param description	描述
-	 * @return [0 消息类型, 1 多媒体ID, 2 创建时间]
+	 * @param mediaId	Multi-MediaID[Need to upload and download multimedia files through the basic support to get]
+	 * @param title		Title
+	 * @param description	description
+	 * @return [0 Message type, 1 Multi-MediaID, 2 Created time]
 	 * @throws org.elkan1788.osc.weixin.mp.exception.WxRespException
 	 */
 	String[] upVideo(String mediaId, String title, String description) throws WxRespException;
 
 	/**
-	 * 群发消息[分组或指定用户]
+	 * Mass message[Group or user specified]
      *
-	 * @param msg	消息输出实体[groupId或toUsers, content, msgType, mediaId]
-	 * @return	消息ID
+	 * @param msg	Message output entity[groupIdortoUsers, content, msgType, mediaId]
+	 * @return	MessageID
 	 * @throws org.elkan1788.osc.weixin.mp.exception.WxRespException
 	 */
 	String sendAll(OutPutMsg msg) throws WxRespException;
 
 	/**
-	 * 删除群发消息<pre/>
+	 * Delete mass message<pre/>
 	 *
-	 * 只有已经发送成功的消息才能删除删除消息只是将消息的图文详情页失效，<pre/>
-	 * 已经收到的用户，还是能在其本地看到消息卡片。 另外，删除群发消息只能<pre/>
-	 * 删除图文消息和视频消息，其他类型的消息一经发送，无法删除。
-	 * @param msgId	发送消息的ID
-	 * @return	false或true
+	 * Only the message has been sent to delete the message to delete the message is only the message details page failure，<pre/>
+	 * Already received user，Or be able to see message cards in their local。 in addition，Delete group messages only<pre/>
+	 * Delete text message and video message，Other types of messages are sent，Cannot delete。
+	 * @param msgId	Send messageID
+	 * @return	falseortrue
 	 * @throws org.elkan1788.osc.weixin.mp.exception.WxRespException
 	 */
 	boolean delSendAll(String msgId) throws WxRespException;
 
     /**
-     * 获取JSAPI签名
+     * ObtainJSAPIautograph
      *
-     * @param url 使用jsapi页面地址
-     * @return  集合[url, ticket, nonce, timestamp, sign]
+     * @param url UsejsapiPage address
+     * @return  aggregate[url, ticket, nonce, timestamp, sign]
      * @throws org.elkan1788.osc.weixin.mp.exception.WxRespException
      */
     Map<String, Object> getJsAPISign(String url) throws WxRespException;
 
     /**
-     * 刷新过期的JSAPI TICKET
+     * Refresh expiredJSAPI TICKET
      *
      * @throws org.elkan1788.osc.weixin.mp.exception.WxRespException
      */

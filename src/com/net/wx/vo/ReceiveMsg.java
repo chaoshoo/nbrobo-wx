@@ -3,142 +3,142 @@ package com.net.wx.vo;
 import java.util.List;
 
 /**
- * 接收消息实体
+ * Receive message entity
  */
 public class ReceiveMsg extends BaseMsg {
 
 	/**
-	 * 图片链接
+	 * pictures linking
 	 */
 	private String picUrl;
 
 	/**
-	 * 音频格式(arm,wav,mp3)
+	 * Audio format(arm,wav,mp3)
 	 */
 	private String format;
 
 	/**
-	 * 语音识别结果,UTF-8编码
+	 * Speech recognition results,UTF-8Code
 	 */
 	private String recognition;
 
 	/**
-	 * 地图缩放大小
+	 * Map zoom size
 	 */
 	private int scale;
 
     /**
-     * 地理位置信息
+     * Location information
      */
 	private String label;
 
 	/**
-	 * 链接地址
+	 * Link address
 	 */
 	private String url;
 
 	/**
-	 * 事件KEY值
+	 * EventKEYvalue
 	 */
 	private String eventKey;
 
 	/**
-	 * 二维码的ticket或是开放平台中服务方的ComponentVerifyTicket
+	 * Two-dimensional codeticketOr the service side of an open platform.ComponentVerifyTicket
 	 */
 	private String ticket;
 
 	/**
-	 * 地理位置纬度
+	 * Geographical position latitude
 	 */
 	private double latitude;
 
 	/**
-	 * 地理位置经度 
+	 * Location longitude 
 	 */
 	private double longitude;
 
 	/**
-	 * 地理位置精度
+	 * Location accuracy
 	 */
 	private double precision;
 
     /**
-     * 扫描类型,一般是qcode
+     * Scan type,Generallyqcode
      */
     private String scanType;
 
     /**
-     * 扫描结果，即二维码对应的字符串信息
+     * Scan results，Two-dimensional code corresponding to the string information
      */
     private String scanResult;
 
     /**
-     * 发送的图片数量
+     * Send the number of pictures
      */
     private int count;
 
     /**
-     * 发送的图片列表
+     * Send a list of pictures
      */
     private List<PicInfo> picList;
 
     /**
-     * 朋友圈POI的名字，可能为空
+     * MomentsPOIName，May be empty
      */
     private String poiName;
 
 	/**
-	 * 微信发送消息状态（模板消息,群发消息）<pre/>
-     * 群发的结构，为“send success”或“send fail”或“err(num)”。但send success时，<pre/>
-     * 也有可能因用户拒收公众号的消息、系统错误等原因造成少量用户接收失败。err(num)是审核失败的具体原因，<pre/>
-     * 可能的情况如下：<pre/>
-     * err(10001), //涉嫌广告 <pre/>
-     * err(20001), //涉嫌政治 <pre/>
-     * err(20004), //涉嫌社会 <pre/>
-     * err(20002), //涉嫌色情 <pre/>
-     * err(20006), //涉嫌违法犯罪 <pre/>
-     * err(20008), //涉嫌欺诈 <pre/>
-     * err(20013), //涉嫌版权 <pre/>
-     * err(22000), //涉嫌互推(互相宣传) <pre/>
-     * err(21000), //涉嫌其他
+	 * WeChat sends message status（Template message,Mass message）<pre/>
+     * Mass structure，by“send success”or“send fail”or“err(num)”。butsend successtime，<pre/>
+     * It is possible for users to reject the public information、System error and other reasons caused a small amount of users to receive a failure。err(num)Is the specific reason for the failure of the audit，<pre/>
+     * Possible circumstances are as follows：<pre/>
+     * err(10001), //Suspected of advertising <pre/>
+     * err(20001), //Alleged political <pre/>
+     * err(20004), //Suspected of social <pre/>
+     * err(20002), //Suspected of pornography <pre/>
+     * err(20006), //Suspected of illegal crime <pre/>
+     * err(20008), //Suspected fraud <pre/>
+     * err(20013), //Alleged copyright <pre/>
+     * err(22000), //Suspected of mutual push(Mutual promotion) <pre/>
+     * err(21000), //Suspected of other
 	 */
 	private String status;
 
     /**
-     * group_id下粉丝数；或者openid_list中的粉丝数
+     * group_idNumber of fans；perhapsopenid_listNumber of fans in
      */
     private int totalCnt;
 
     /**
-     * 过滤（过滤是指特定地区、性别的过滤、用户设置拒收的过滤，
-     * 用户接收已超4条的过滤）后，准备发送的粉丝数，原则上，
+     * filter（Filtering is a specific area、Sex filtration、User set reject filter，
+     * User received over4Filtration of strip）Back，Number of fans ready to send，In principle，
      * FilterCount = SentCount + ErrorCount
      */
     private int filterCnt;
 
     /**
-     * 发送成功的粉丝数
+     * Send a number of successful fans
      */
     private int sentCnt;
 
     /**
-     * 发送失败的粉丝数
+     * The number of fans who failed to send
      */
     private int errorCnt;
 
     /**
-     * 服务appid
+     * serviceappid
      */
     private String appId;
 
     /**
-     * none,代表该消息推送给服务
-     * unauthorized,代表公众号取消授权
+     * none,On behalf of the message push to the service
+     * unauthorized,On behalf of the public to cancel the authorization
      */
     private String infoType;
 
     /**
-     * 取消授权的公众号
+     * To cancel the authorization of the public number
      */
     private String unAuthAppid;
 

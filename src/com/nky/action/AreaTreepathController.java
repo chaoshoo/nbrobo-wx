@@ -24,8 +24,8 @@ public class AreaTreepathController {
 
 	
 	/**
-	 * 三级区域查询
-	 * 地区
+	 * Three level area query
+	 * region
 	 */
 	@RequestMapping(value = "/area", method = RequestMethod.GET)
 	public @ResponseBody
@@ -53,8 +53,8 @@ public class AreaTreepathController {
 	}
 	
 	/**
-	 * 三级区域查询
-	 * 地区
+	 * Three level area query
+	 * region
 	 */
 	@RequestMapping(value = "/getTreepath", method = RequestMethod.GET)
 	public @ResponseBody

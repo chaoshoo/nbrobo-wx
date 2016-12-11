@@ -23,19 +23,19 @@ import com.jfinal.kit.StrKit;
  * @Project Name: yomeApi
  * @File Name: HttpUtil.java
  * @Package Name：com.yome.utils
- * @Description: HTTP工具类
+ * @Description: HTTPTool class
  *
  * @Author：lujianmin ljm_3331@126.com
- * @Date：2015年8月8日 下午3:38:37
- * @Copyright 2015, 武汉由米定制科技有限公司 All rights reserved.
+ * @Date：2015year8month8day Afternoon3:38:37
+ * @Copyright 2015, Wuhan custom Technology Co., Ltd. All rights reserved.
  * @version V1.0
  */
 public class HttpUtil {
 
 	/**
-	 * 使用Get方式获取数据
+	 * UseGetWay to get data
 	 * 
-	 * @param url   URL包括参数，http://HOST/XX?XX=XX&XXX=XXX
+	 * @param url   URLIncluding parameters，http://HOST/XX?XX=XX&XXX=XXX
 	 * @param charset
 	 * @return
 	 */
@@ -78,10 +78,10 @@ public class HttpUtil {
 	}
 
 	/**
-	 * POST请求，字符串形式数据
-	 * @param url 请求地址
-	 * @param param 请求数据
-	 * @param charset 编码方式
+	 * POSTrequest，String form data
+	 * @param url Request address
+	 * @param param Request data
+	 * @param charset Coding mode
 	 */
 	public static String sendPostUrl(String url, String param, String charset) {
 		PrintWriter out = null;
@@ -132,10 +132,10 @@ public class HttpUtil {
 		return result;
 	}
 	/**
-	 * POST请求，Map形式数据
-	 * @param url 请求地址
-	 * @param param 请求数据
-	 * @param charset 编码方式
+	 * POSTrequest，MapForm data
+	 * @param url Request address
+	 * @param param Request data
+	 * @param charset Coding mode
 	 */
 	public static String sendPost(String url, Map<String, String> param,
 			String charset) {

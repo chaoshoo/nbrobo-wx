@@ -1,36 +1,36 @@
 package com.net.wx.vo;
 
 /**
- * 高级群发消息的多图文
+ * Advanced mass news text
  */
 public class Articles2 {
 
     /**
-     * 缩略图的media_id
+     * Thumbnailmedia_id
      */
     private String mediaId;
     /**
-     * 图文消息作者
+     * Graphic message author
      */
     private String author;
     /**
-     * 标题
+     * Title
      */
     private String title;
     /**
-     * 图文消息页面点击“阅读原文”后的页面
+     * Graphic message page click“Read the original text”After the page
      */
     private String sourceUrl;
     /**
-     * 图文消息页面的内容，支持HTML标签
+     * Content message page，SupportHTMLLabel
      */
     private String content;
     /**
-     * 图文消息的描述
+     * Description of picture and text message
      */
     private String digest;
     /**
-     * 是否显示封面，1为显示，0为不显示
+     * Display cover，1In order to show，0In order not to show
      */
     private int showCover;
 

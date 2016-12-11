@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 区域
+ * region
  * 
  * @author liuchang
  * 
@@ -13,19 +13,19 @@ public class Area {
 	
 	private Long id;
 
-	/** 名称 */
+	/** Name */
 	private String name;
 
-	/** 全称 */
+	/** Full name */
 	private String full_name;
 
-	/** 树路径 */
+	/** Tree path */
 	private String tree_path;
 
-	/** 上级地区 */
+	/** Superior area */
 	private Integer parent;
 
-	/** 下级地区 */
+	/** Subordinate area */
 	private Set<Area> children = new HashSet<Area>();
 
 	public Long getId() {
@@ -37,104 +37,104 @@ public class Area {
 	}
 
 	/**
-	 * 获取名称
+	 * Get name
 	 * 
-	 * @return 名称
+	 * @return Name
 	 */
 	public String getName() {
 		return name;
 	}
 
 	/**
-	 * 设置名称
+	 * Set name
 	 * 
 	 * @param name
-	 *            名称
+	 *            Name
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	/**
-	 * 获取全称
+	 * Get full name
 	 * 
-	 * @return 全称
+	 * @return Full name
 	 */
 	public String getFull_name() {
 		return full_name;
 	}
 
 	/**
-	 * 设置全称
+	 * Set full name
 	 * 
 	 * @param fullName
-	 *            全称
+	 *            Full name
 	 */
 	public void setFull_name(String full_name) {
 		this.full_name = full_name;
 	}
 
 	/**
-	 * 获取树路径
+	 * Get tree path
 	 * 
-	 * @return 树路径
+	 * @return Tree path
 	 */
 	public String getTree_path() {
 		return tree_path;
 	}
 
 	/**
-	 * 设置树路径
+	 * Set tree path
 	 * 
 	 * @param treePath
-	 *            树路径
+	 *            Tree path
 	 */
 	public void setTree_path(String tree_path) {
 		this.tree_path = tree_path;
 	}
 
 	/**
-	 * 获取上级地区
+	 * Get higher area
 	 * 
-	 * @return 上级地区
+	 * @return Superior area
 	 */
 	public Integer getParent() {
 		return parent;
 	}
 
 	/**
-	 * 设置上级地区
+	 * Set up area
 	 * 
 	 * @param parent
-	 *            上级地区
+	 *            Superior area
 	 */
 	public void setParent(Integer parent) {
 		this.parent = parent;
 	}
 
 	/**
-	 * 获取下级地区
+	 * Get lower area
 	 * 
-	 * @return 下级地区
+	 * @return Subordinate area
 	 */
 	public Set<Area> getChildren() {
 		return children;
 	}
 
 	/**
-	 * 设置下级地区
+	 * Set lower area
 	 * 
 	 * @param children
-	 *            下级地区
+	 *            Subordinate area
 	 */
 	public void setChildren(Set<Area> children) {
 		this.children = children;
 	}
 
 	/**
-	 * 重写toString方法
+	 * RewritetoStringMethod
 	 * 
-	 * @return 全称
+	 * @return Full name
 	 */
 	@Override
 	public String toString() {

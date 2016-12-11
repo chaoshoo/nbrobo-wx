@@ -23,7 +23,7 @@ public class WxController extends WxSpringSupport{
 	private static final Logger log = LoggerFactory.getLogger(WxSpringSupport.class);
 	
 	/**
-	 * 登录
+	 * Sign in
 	 * @param request
 	 * @param response
 	 * @return

@@ -19,7 +19,7 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
 /**
- * 微信普通消息互动
+ * WeChat common message interaction
  */
 public class WxBase {
 
@@ -52,25 +52,25 @@ public class WxBase {
         try {
             xmlParser = factory.newSAXParser();
         } catch (ParserConfigurationException e) {
-            log.error("SAX解析配置文件失败!!!");
+            log.error("SAXParse configuration file failed!!!");
             log.error(e.getLocalizedMessage(), e);
         } catch (SAXException e) {
-            log.error("SAX异常!!!");
+            log.error("SAXabnormal!!!");
             log.error(e.getLocalizedMessage(), e);
         }
     }
 
     /**
-     * 微信基础功能参数初始化
+     * WeChat basic function parameter initialization
      *
-     * @param req 请求
+     * @param req request
      */
     public void init(HttpServletRequest req) {
         // 请求编码设置
         try {
             req.setCharacterEncoding("UTF-8");
         } catch (UnsupportedEncodingException e) {
-            log.error("设置微信服务器请求编辑时出现异常!!!");
+            log.error("When setting up the WeChat server request for editing!!!");
             log.error(e.getLocalizedMessage(), e);
         }
         // 获取各请求参数值
@@ -95,15 +95,15 @@ public class WxBase {
             InputStream wxInMsg = req.getInputStream();
             this.wxInMsg = wxInMsg;
         } catch (IOException e) {
-            log.error("接收微信消息时出现异常!!!");
+            log.error("Exception occurs when the WeChat message is received!!!");
             log.error(e.getLocalizedMessage(), e);
         }
     }
 
     /**
-     * 微信URL接入校验
+     * WeChatURLAccess check
      *
-     * @return 随机字符
+     * @return Random character
      * @throws AesException
      */
     public String check() throws AesException {
@@ -114,9 +114,9 @@ public class WxBase {
     }
 
     /**
-     * 微信消息处理
+     * WeChat news processing
      *
-     * @return 回复消息
+     * @return Reply message
      * @throws Exception
      */
     public String handler() throws Exception {
@@ -148,14 +148,14 @@ public class WxBase {
     }
 
     /**
-     * 处理普通的消息
+     * Handle common messages
      *
-     * @return 回复消息实体
+     * @return Reply message entity
      * @throws Exception
      */
     private OutPutMsg handlerMsg() throws Exception {
         if (log.isInfoEnabled()) {
-            log.info("[MPSDK4J-{}]处理普通消息...", MPSDK4J.version());
+            log.info("[MPSDK4J-{}]Handle common messages...", MPSDK4J.version());
         }
         OutPutMsg om = null;
         WxMsgType type = WxMsgType.valueOf(this.rm.getMsgType());
@@ -191,14 +191,14 @@ public class WxBase {
     }
 
     /**
-     * 处理事件推送消息
+     * Handle event push messages
      *
-     * @return 回复消息实体
+     * @return Reply message entity
      * @throws Exception
      */
     private OutPutMsg handlerEvent() throws Exception {
         if (log.isInfoEnabled()) {
-            log.info("[MPSDK4J-{}]处理事件推送消息...", MPSDK4J.version());
+            log.info("[MPSDK4J-{}]Handle event push messages...", MPSDK4J.version());
         }
         OutPutMsg om = null;
         WxEventType  type = WxEventType.valueOf(this.rm.getEvent());
@@ -254,14 +254,14 @@ public class WxBase {
 
 
     /**
-     * 处理微信开放平台的推送消息
+     * Handle WeChat open platform push messages
      *
-     * @return 默认返回"success"
+     * @return Default return"success"
      * @throws Exception
      */
     public String handlerPush() throws Exception {
         if (log.isInfoEnabled()) {
-            log.info("[MPSDK4J-{}]处理开放平台推送消息...", MPSDK4J.version());
+            log.info("[MPSDK4J-{}]Handle open platform push messages...", MPSDK4J.version());
         }
         this.rm = convert2VO(this.wxInMsg);
         String info_type = this.rm.getInfoType();
@@ -274,10 +274,10 @@ public class WxBase {
     }
 
     /**
-     * 将微信消息转换成接收消息VO对象
+     * Convert WeChat messages to receive messagesVOobject
      *
-     * @param msg 微信消息输入流
-     * @return 接收消息VO对象
+     * @param msg WeChat message input stream
+     * @return receive messagesVOobject
      * @throws ParserConfigurationException
      * @throws SAXException
      * @throws IOException
@@ -289,9 +289,9 @@ public class WxBase {
             IOException,
             AesException {
 
-        if (!this.aesEncrypt) { // 明文
+        if (!this.aesEncrypt) { // Express
             this.xmlParser.parse(msg, this.xmlHandler);
-        } else {// 密文
+        } else {// ciphertext
             String dcrp_msg = this.wxInMsgCrt.decryptMsg(this.msgSignature,
                     this.timeStamp, this.nonce, StreamTool.toString(msg));
             this.wxInMsg = StreamTool.toStream(dcrp_msg);
@@ -309,10 +309,10 @@ public class WxBase {
     }
 
     /**
-     * 将VO对象转换成XML消息体
+     * takeVOConvert objectXMLMessage body
      *
-     * @param msg 输出消息VO对象
-     * @return 微信消息
+     * @param msg Output messageVOobject
+     * @return WeChat news
      * @throws AesException
      */
     private String convert2XML(OutPutMsg msg) throws AesException {
@@ -355,7 +355,7 @@ public class WxBase {
             log.info(reply_msg);
         }
 
-        if (this.aesEncrypt) {// 加密
+        if (this.aesEncrypt) {// encryption
             reply_msg = this.wxInMsgCrt.encryptMsg(reply_msg, this.timeStamp, this.nonce);
         }
 
@@ -382,7 +382,7 @@ public class WxBase {
                 this.wxInMsgCrt = new WXBizMsgCrypt(this.mpAct.getToken(),
                         this.mpAct.getAESKey(), this.mpAct.getAppId());
             } catch (AesException e) {
-                log.error("创建AES加密失败!!!");
+                log.error("EstablishAESEncryption failed!!!");
                 log.error(e.getLocalizedMessage(), e);
                 this.wxInMsgCrt = null;
             }
@@ -396,7 +396,7 @@ public class WxBase {
     public void setMpAct(MPAct mpAct) {
         this.mpAct = mpAct;
         if (log.isInfoEnabled()) {
-            log.info("微信公众号信息...");
+            log.info("WeChat public information...");
             log.info("{}", this.mpAct);
         }
     }

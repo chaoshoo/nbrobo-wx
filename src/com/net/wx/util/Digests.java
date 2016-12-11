@@ -8,9 +8,9 @@ import java.security.SecureRandom;
 import org.apache.commons.lang.Validate;
 
 /**
- * 支持SHA-1/MD5消息摘要的工具类.
+ * SupportSHA-1/MD5Tool class for message digest.
  * 
- * 返回ByteSource，可进一步被编码为Hex, Base64或UrlSafeBase64
+ * ReturnByteSource，Can be further encoded asHex, Base64orUrlSafeBase64
  * 
  */
 public class Digests {
@@ -21,7 +21,7 @@ public class Digests {
 	private static SecureRandom random = new SecureRandom();
 
 	/**
-	 * 对输入字符串进行sha1散列.
+	 * Input stringsha1hash.
 	 */
 	public static byte[] sha1(byte[] input) {
 		return digest(input, SHA1, null, 1);
@@ -36,7 +36,7 @@ public class Digests {
 	}
 
 	/**
-	 * 对字符串进行散列, 支持md5与sha1算法.
+	 * Hash the string, Supportmd5andsha1algorithm.
 	 */
 	private static byte[] digest(byte[] input, String algorithm, byte[] salt,
 			int iterations) {
@@ -61,10 +61,10 @@ public class Digests {
 	}
 
 	/**
-	 * 生成随机的Byte[]作为salt.
+	 * Generate randomByte[]Assalt.
 	 * 
 	 * @param numBytes
-	 *            byte数组的大小
+	 *            byteArray size
 	 */
 	public static byte[] generateSalt(int numBytes) {
 		Validate.isTrue(numBytes > 0,
@@ -77,14 +77,14 @@ public class Digests {
 	}
 
 	/**
-	 * 对文件进行md5散列.
+	 * On filemd5hash.
 	 */
 	public static byte[] md5(InputStream input) throws IOException {
 		return digest(input, MD5);
 	}
 
 	/**
-	 * 对文件进行sha1散列.
+	 * On filesha1hash.
 	 */
 	public static byte[] sha1(InputStream input) throws IOException {
 		return digest(input, SHA1);

@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * HTTP请求实现
+ * HTTPRequest implementation
  */
 public class SimpleHttpReq {
 
@@ -27,10 +27,10 @@ public class SimpleHttpReq {
     private static final StrResponseHandler respHandler = new StrResponseHandler();
 
     /**
-     * GET请求
+     * GETrequest
      *
-     * @param url 请求地址
-     * @return 响应内容
+     * @param url Request address
+     * @return Response content
      * @throws java.io.IOException
      */
     public static String get(String url) throws IOException {
@@ -39,12 +39,12 @@ public class SimpleHttpReq {
     }
 
     /**
-     * POST请求
+     * POSTrequest
      *
-     * @param url 请求地址
-     * @param contentType 请求体类型[text, xml, json, html]
-     * @param body 请求体
-     * @return 响应内容
+     * @param url Request address
+     * @param contentType Type of request body[text, xml, json, html]
+     * @param body Request body
+     * @return Response content
      * @throws java.io.IOException
      */
     public static String post(String url,
@@ -57,11 +57,11 @@ public class SimpleHttpReq {
     }
 
     /**
-     * 上传文件
+     * Upload files
      *
-     * @param url 请求地址
-     * @param file 上传文件
-     * @return 响应内容
+     * @param url Request address
+     * @param file Upload files
+     * @return Response content
      * @throws java.io.IOException
      */
     public static String upload(String url, File file) throws IOException {
@@ -73,10 +73,10 @@ public class SimpleHttpReq {
     }
 
     /**
-     * 下载文件
+     * Download File
      *
-     * @param url   请求地址
-     * @param file 文件保存位置
+     * @param url   Request address
+     * @param file File save location
      * @throws java.io.IOException
      */
     public static void download(String url, File file) throws IOException {

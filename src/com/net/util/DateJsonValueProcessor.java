@@ -14,9 +14,9 @@ public class DateJsonValueProcessor implements  JsonValueProcessor {
 
     
     /**  
-     * 构造方法.  
+     * Construction method.  
      *  
-     * @param datePattern 日期格式  
+     * @param datePattern Date format  
      */  
     public DateJsonValueProcessor(String datePattern) {   
           
@@ -28,7 +28,7 @@ public class DateJsonValueProcessor implements  JsonValueProcessor {
     }   
 
     
-    /* （非 Javadoc）
+    /* （wrong Javadoc）
      * @see net.sf.json.processors.JsonValueProcessor#processArrayValue(java.lang.Object, net.sf.json.JsonConfig)
      */
     public Object processArrayValue(Object arg0, JsonConfig arg1) {
@@ -36,7 +36,7 @@ public class DateJsonValueProcessor implements  JsonValueProcessor {
         return process(arg0);   
     }
 
-    /* （非 Javadoc）
+    /* （wrong Javadoc）
      * @see net.sf.json.processors.JsonValueProcessor#processObjectValue(java.lang.String, java.lang.Object, net.sf.json.JsonConfig)
      */
     public Object processObjectValue(String arg0, Object arg1, JsonConfig arg2) {

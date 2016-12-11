@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 字节处理工具
+ * Byte processing tool
  */
 public class ByteGroup {
 
@@ -12,9 +12,9 @@ public class ByteGroup {
 	private List<Byte> byteContainer = new ArrayList<Byte>();
 
     /**
-     * 将容器转化成字节数组
+     * The container is converted into an array of bytes
      *
-     * @return 字节数组
+     * @return Byte array
      */
 	public byte[] toBytes() {
 		byte[] bytes = new byte[byteContainer.size()];
@@ -25,9 +25,9 @@ public class ByteGroup {
 	}
 
     /**
-     * 添加字节
+     * Add byte
      *
-     * @param bytes 字节数组
+     * @param bytes Byte array
      * @return com.qq.weixin.mp.aes.ByteGroup
      */
 	public ByteGroup addBytes(byte[] bytes) {
@@ -38,9 +38,9 @@ public class ByteGroup {
 	}
 
     /**
-     * 获取字节容器长度
+     * Gets the length of the byte container
      *
-     * @return  容器长度
+     * @return  Container length
      */
 	public int size() {
 		return byteContainer.size();

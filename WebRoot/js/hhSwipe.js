@@ -2,7 +2,7 @@
  * User: huanhuan
  * QQ: 651471385
  * Email: th.wanghuan@gmail.com
- * 微博: huanhuan的天使
+ * micro-blog: huanhuanAngel
  * Data 2013-12-6
  * Dependence jquery-1.10.2.min.js
  * web:https://github.com/huanhuan1989

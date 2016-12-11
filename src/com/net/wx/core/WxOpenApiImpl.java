@@ -15,7 +15,7 @@ import com.net.wx.vo.AuthInfo;
 import com.net.wx.vo.MPAct;
 
 /**
- * 微信开放平台API接口设计
+ * WeChat open platformAPIinterface design
  */
 public class WxOpenApiImpl implements WxOpenApi {
 
@@ -29,10 +29,10 @@ public class WxOpenApiImpl implements WxOpenApi {
     }
 
     /**
-     * 微信开放平台接口构建
+     * WeChat open platform interface
      *
-     * @param mpAct     服务组件公众号信息
-     * @param ticket    允许凭证
+     * @param mpAct     Service component public information
+     * @param ticket    Permission document
      */
     public WxOpenApiImpl(MPAct mpAct, String ticket) {
         this.mpAct = mpAct;
@@ -78,7 +78,7 @@ public class WxOpenApiImpl implements WxOpenApi {
                     SimpleHttpReq.APPLICATION_JSON,
                     data);
         } catch (IOException e) {
-            log.error("刷新服务组件ACCESS_TOKEN时出现异常!!!");
+            log.error("Refresh service componentACCESS_TOKENWhen there is abnormal!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -101,7 +101,7 @@ public class WxOpenApiImpl implements WxOpenApi {
         try {
             result = SimpleHttpReq.post(url, SimpleHttpReq.APPLICATION_JSON, data);
         } catch (IOException e) {
-            log.error("创建公众权预授权码时出现异常!!!");
+            log.error("Exception occurred when creating public power pre authorization code!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -136,7 +136,7 @@ public class WxOpenApiImpl implements WxOpenApi {
         try {
             result = SimpleHttpReq.post(url, SimpleHttpReq.APPLICATION_JSON, data);
         } catch (IOException e) {
-            log.error("换取授权公众号信息时出现异常!!!");
+            log.error("In exchange for the public information on the number of abnormal!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -176,7 +176,7 @@ public class WxOpenApiImpl implements WxOpenApi {
         try {
             result = SimpleHttpReq.post(url, SimpleHttpReq.APPLICATION_JSON, data);
         } catch (IOException e) {
-            log.error("获取授权公众号[{}]的选项值时出现异常!!!",authAppId);
+            log.error("Acquire to authorize public account[{}]An exception occurs when the value of the option is!!!",authAppId);
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -188,41 +188,41 @@ public class WxOpenApiImpl implements WxOpenApi {
         JSONObject tmp = JSON.parseObject(result);
         String option_value = tmp.getString("option_value");
         if (log.isInfoEnabled()) {
-            String info = "获取授权公众号["+authAppId+"]";
+            String info = "Acquire to authorize public account["+authAppId+"]";
             if(StringUtils.equals(optionName, "location_report")){
-            	info += "地理位置上报选项成功,当前状态为: ";
+            	info += "Geographic location reporting options,Current status as: ";
             	if (option_value.equals("0")) {
-                    info += "无上报";
+                    info += "No report";
                 } else if (option_value.equals("1")) {
-                    info += "进入会话时上报";
+                    info += "Report to the session";
                 } else {
-                    info += "每5s上报";
+                    info += "each5sReport";
                 }
             }else if(StringUtils.equals(optionName, "voice_recognize")){
-            	info += "语音识别选项成功,当前状态为: ";
-                info += (option_value.equals("0")?"关闭":"开启");
+            	info += "Speech recognition options,Current status as: ";
+                info += (option_value.equals("0")?"Close":"open");
             }else if(StringUtils.equals(optionName, "customer_service")){
-            	info += "多客服选项成功,当前状态为: ";
-                info += (option_value.equals("0")?"关闭":"开启");
+            	info += "Multiple customer service options,Current status as: ";
+                info += (option_value.equals("0")?"Close":"open");
             }
             /*switch (optionName) {
                 case "location_report":
-                    info += "地理位置上报选项成功,当前状态为: ";
+                    info += "Geographic location reporting options,Current status as: ";
                     if (option_value.equals("0")) {
-                        info += "无上报";
+                        info += "No report";
                     } else if (option_value.equals("1")) {
-                        info += "进入会话时上报";
+                        info += "Report to the session";
                     } else {
-                        info += "每5s上报";
+                        info += "each5sReport";
                     }
                     break;
                 case "voice_recognize":
-                    info += "语音识别选项成功,当前状态为: ";
-                    info += (option_value.equals("0")?"关闭":"开启");
+                    info += "Speech recognition options,Current status as: ";
+                    info += (option_value.equals("0")?"Close":"open");
                     break;
                 case "customer_service":
-                    info += "多客服选项成功,当前状态为: ";
-                    info += (option_value.equals("0")?"关闭":"开启");
+                    info += "Multiple customer service options,Current status as: ";
+                    info += (option_value.equals("0")?"Close":"open");
                     break;
                 default:
                     break;
@@ -246,7 +246,7 @@ public class WxOpenApiImpl implements WxOpenApi {
         try {
             result = SimpleHttpReq.post(url, SimpleHttpReq.APPLICATION_JSON, data);
         } catch (IOException e) {
-            log.error("设置授权公众号[{}]的选项值时出现异常!!!",authAppId);
+            log.error("Set authorized public account[{}]An exception occurs when the value of the option is!!!",authAppId);
             log.error(e.getLocalizedMessage(), e);
         }
 
@@ -256,41 +256,41 @@ public class WxOpenApiImpl implements WxOpenApi {
         }
 
         if (log.isInfoEnabled()) {
-            String info = "设置授权公众号["+authAppId+"]";
+            String info = "Set authorized public account["+authAppId+"]";
             if(StringUtils.equals(optionName, "location_report")){
-            	info += "地理位置上报选项成功,当前状态为: ";
+            	info += "Geographic location reporting options,Current status as: ";
                 if (optionValue.equals("0")) {
-                    info += "无上报";
+                    info += "No report";
                 } else if (optionValue.equals("1")) {
-                    info += "进入会话时上报";
+                    info += "Report to the session";
                 } else {
-                    info += "每5s上报";
+                    info += "each5sReport";
                 }
             }else if(StringUtils.equals(optionName, "voice_recognize")){
-            	info += "语音识别选项成功,当前状态为: ";
-                info += (optionValue.equals("0")?"关闭":"开启");
+            	info += "Speech recognition options,Current status as: ";
+                info += (optionValue.equals("0")?"Close":"open");
             }else if(StringUtils.equals(optionName, "customer_service")){
-            	info += "多客服选项成功,当前状态为: ";
-                info += (optionValue.equals("0")?"关闭":"开启");
+            	info += "Multiple customer service options,Current status as: ";
+                info += (optionValue.equals("0")?"Close":"open");
             }
             /*switch (optionName) {
                 case "location_report":
-                    info += "地理位置上报选项成功,当前状态为: ";
+                    info += "Geographic location reporting options,Current status as: ";
                     if (optionValue.equals("0")) {
-                        info += "无上报";
+                        info += "No report";
                     } else if (optionValue.equals("1")) {
-                        info += "进入会话时上报";
+                        info += "Report to the session";
                     } else {
-                        info += "每5s上报";
+                        info += "each5sReport";
                     }
                     break;
                 case "voice_recognize":
-                    info += "语音识别选项成功,当前状态为: ";
-                    info += (optionValue.equals("0")?"关闭":"开启");
+                    info += "Speech recognition options,Current status as: ";
+                    info += (optionValue.equals("0")?"Close":"open");
                     break;
                 case "customer_service":
-                    info += "多客服选项成功,当前状态为: ";
-                    info += (optionValue.equals("0")?"关闭":"开启");
+                    info += "Multiple customer service options,Current status as: ";
+                    info += (optionValue.equals("0")?"Close":"open");
                     break;
                 default:
                     break;

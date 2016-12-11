@@ -13,7 +13,7 @@ import com.net.wx.util.AesException;
 import com.net.wx.vo.MPAct;
 
 /**
- * SpringMVC环境接入
+ * SpringMVCEnvironmental access
  * @author zhaidong
  */
 public abstract class WxSpringSupport implements WxWebSupport {
@@ -30,11 +30,11 @@ public abstract class WxSpringSupport implements WxWebSupport {
     }
 
     /**
-     * 与微信信息交互<pre/>
-     * 实现时只需写个SpringMVC入口调用此方法即可,入口用ResponseBody输出
+     * WeChat information interaction<pre/>
+     * Only write aSpringMVCThis method is called by the portal.,Entrance useResponseBodyoutput
      *
-     * @param req   响应
-     * @return  回复消息
+     * @param req   response
+     * @return  Reply message
      * @throws IOException
      */
     protected String wxInteract(HttpServletRequest req) throws IOException {
@@ -50,12 +50,12 @@ public abstract class WxSpringSupport implements WxWebSupport {
                 reply = this.wxBase.check();
                 if (reply.isEmpty()) {
                     reply = "error";
-                    log.error("微信接入验证URL时失败!!!");
-                    log.error("微信服务器echoStr值: {}", this.wxBase.getEchostr());
-                    log.error("SHA1签名echoStr值: {}", reply);
+                    log.error("WeChat access authenticationURLWhen failure!!!");
+                    log.error("WeChat serverechoStrvalue: {}", this.wxBase.getEchostr());
+                    log.error("SHA1autographechoStrvalue: {}", reply);
                 }
             } catch (AesException e) {
-                log.error("微信接入验证URL时出现异常!!!");
+                log.error("WeChat access authenticationURLWhen there is abnormal!!!");
                 log.error(e.getLocalizedMessage(), e);
             }
             return reply;
@@ -65,7 +65,7 @@ public abstract class WxSpringSupport implements WxWebSupport {
         try {
             reply = this.wxBase.handler();
         } catch (Exception e) {
-            log.error("解析微信消息时出现异常!!!");
+            log.error("Abnormal analysis of WeChat news!!!");
             log.error(e.getLocalizedMessage(), e);
         }
 

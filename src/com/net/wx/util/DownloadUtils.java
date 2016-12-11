@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.io.IOUtils;
 
 /**
- * 下载工具类
+ * Download tool class
  * 
  */
 public class DownloadUtils {
