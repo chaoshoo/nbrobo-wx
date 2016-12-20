@@ -82,13 +82,13 @@ public  class Constants {
   		//公众号名称
   	public static final String NICKNAME = "gh_026be9e5d2a5";
   		//appID
-  	public static final String APPID = "wxfd65d5401333bc07"; 
+  	public static final String APPID = "wx595d88175949ba23"; 
   		//应用密钥
- 	public static final String APPSECRET = "9ce209909b58457286c1c1fe8cf7f22b"; 	
+ 	public static final String APPSECRET = "ef925e66aa2888bafedd644c200cd531"; 	
  	//微信登录授权APPID
-  	public static final String OAUTH_APPID = "wxfd65d5401333bc07";
+  	public static final String OAUTH_APPID = "wx595d88175949ba23";
   	//微信登录授权AppSecret
-  	public static final String OAUTH_APPSECRET = "9ce209909b58457286c1c1fe8cf7f22b";
+  	public static final String OAUTH_APPSECRET = "ef925e66aa2888bafedd644c200cd531";
   	
 	/**
 	 * Public number type
@@ -101,9 +101,9 @@ public  class Constants {
   		//是否认证
   	public static final Boolean PASS = false;
   	//消息加密密钥
-  	public static final String AESKEY = "tv4Xz6QKNoPbHS8sa5yiDfpW9qQmFl8K9kX1p1XaUh8";
+  	public static final String AESKEY = "IScLdey4qoiyhOPz9x6mlK3RVCrYwRyZj49rMjuc2ko";
   	//token
-  	public static final String TOKEN = "ningky123";
+  	public static final String TOKEN = "globaldoctor123";
    	
   	
   	/**

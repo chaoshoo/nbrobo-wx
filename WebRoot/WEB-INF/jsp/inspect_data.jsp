@@ -113,7 +113,7 @@ function history(){
 }
 
 function orderinfo(orderid){
-	window.location='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxfd65d5401333bc07&redirect_uri=http://wx.nbrobo.com/guahao/orderinfo.html?orderid='+orderid+'&response_type=code&scope=snsapi_base&state=123#wechat_redirect';
+	window.location='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx595d88175949ba23&redirect_uri=http://wx.nbrobo.com/guahao/orderinfo.html?orderid='+orderid+'&response_type=code&scope=snsapi_base&state=123#wechat_redirect';
 }
 
 </script>
