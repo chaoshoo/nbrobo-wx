@@ -1,37 +1,19 @@
 package com.nky.action;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.jfinal.plugin.activerecord.Db;
-import com.jfinal.plugin.activerecord.Record;
-import com.net.ServiceConstants;
-import com.net.entity.bo.Data;
-import com.net.jfinal.JFinalDb;
-import com.net.singleton.SysId;
-import com.net.util.DateUtil;
-import com.net.util.MD5Util;
 import com.net.util.PubMethod;
 import com.net.wx.core.WxApiImpl;
-import com.net.wx.exception.WxRespException;
 import com.net.wx.vo.Follower;
 import com.net.wx.vo.MPAct;
 import com.nky.Constants;
 import com.nky.entity.VipEntity;
-import com.nky.service.ApiInterface;
 import com.nky.service.VipService;
-import com.nky.vo.Vip;
 
 /**
  * 绑定用户身份信息
@@ -42,19 +24,13 @@ import com.nky.vo.Vip;
 @RequestMapping("/index")
 @Controller
 public class BindAction extends WxBaseAction {
+	
+	@Autowired
+	private VipService vipService;
 
 	@RequestMapping("/toBind")
-	public String toBind(HttpServletRequest request,Model model) throws WxRespException {
-		String openId2="";
-		try {
-			openId2= getVip(request).getWxopenid();
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-		finally{
-			
-		}
-		
+	public String toBind(HttpServletRequest request,Model model) throws Exception {
+		Follower fo =new Follower();
 		String code = request.getParameter("code");
 		System.out.println("code----------->" + code);
 		codeSess(request, code);
@@ -68,17 +44,31 @@ public class BindAction extends WxBaseAction {
 		if (!PubMethod.isEmpty(openId)) {
 			MPAct mpact = new MPAct(Constants.APPID, Constants.APPSECRET, Constants.TOKEN, Constants.AESKEY);
 			WxApiImpl wxApi = new WxApiImpl(mpact);
-			Follower fo = wxApi.getFollower(openId, System.currentTimeMillis() + "");
+			fo = wxApi.getFollower(openId, System.currentTimeMillis() + "");
+			System.out.println("sex=="+fo.getSex());
 			request.getSession().setAttribute(Constants.WX_USER_HEAD_IMG, fo.getHeadImgUrl());
-			System.out.println(fo);
 			openId=fo.getOpenId();
-			System.out.println(openId);
 		}
-		
+		String papersNum="";
+		String heardImgUrl="";
+		String nickName="";
+		//没有获取到数据
+		VipEntity vip=vipService.getVip(openId);
+		if(vip == null){
+			papersNum="";
+//			return "redirect:/index/toLogin.do"; 
+		}else {
+			papersNum=vip.getPapers_num();
+			System.out.println("getvipinfo==="+papersNum);
+		}
+		heardImgUrl=fo.getHeadImgUrl();
+		nickName=fo.getNickName();
+		System.out.println("openId==="+openId+"papersNum=="+papersNum+"heardImgUrl="+heardImgUrl+"nickName=="+nickName);
 		model.addAttribute("openId", openId);
-		model.addAttribute("openId2", openId2);
-		
-		return "redirect:http://123.56.5.154:8081/sendmessage/message/send.do";  
+		model.addAttribute("certno", papersNum);
+		model.addAttribute("heardImgUrl", heardImgUrl);
+		model.addAttribute("nickName", nickName);
+		return "redirect:http://wx.nbrobo.com:8098/wx/wxmain.html";  
 	}
 	
 }
