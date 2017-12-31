@@ -301,7 +301,7 @@ public class VipAction extends WxBaseAction {
         try {
             JSONObject result = new JSONObject();
             List<Record> list = new ArrayList<>();
-            Long userId = strToLong(request.getParameter("user_id"), 0L);
+            Long userId = strToLong(request.getParameter("user_id"), 1L);
             Long pageIndex = strToLong(request.getParameter("pageIndex"), 1L);
             Long pageSize = strToLong(request.getParameter("pageSize"), Long.MAX_VALUE);
             Long inspectDate = strToLong(request.getParameter("inspect_date"), 0L);
