@@ -49,7 +49,7 @@
 }
 .orderindex li {
 	display: inline-block;
-	width: 32%;
+	width: 20%;
 	text-align: center;
 	position: relative;
 }
@@ -79,9 +79,9 @@
 	content: "";
 	background: url(../img/index_user_face_line.png) no-repeat center center;
 }
-.orderindex li:nth-child(3):after {
+/* .orderindex li:nth-child(3):after {
 	background: none;
-}
+} */
 .orderindex li .react {
  padding: .28rem 0;
 }

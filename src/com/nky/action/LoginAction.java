@@ -2,9 +2,12 @@ package com.nky.action;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+
+import net.sf.ezmorph.bean.MorphDynaBean;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +15,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
 import com.net.ServiceConstants;
@@ -19,6 +25,8 @@ import com.net.entity.bo.Data;
 import com.net.jfinal.JFinalDb;
 import com.net.singleton.SysId;
 import com.net.util.DateUtil;
+import com.net.util.HttpUtil;
+import com.net.util.JsonUtil;
 import com.net.util.MD5Util;
 import com.net.util.PubMethod;
 import com.net.wx.core.WxApiImpl;
@@ -315,5 +323,61 @@ public class LoginAction extends WxBaseAction {
 		}
 		return data;
 	}
+	
+	/**
+	 * 注册
+	 * @throws SecurityException 
+	 * @throws NoSuchFieldException 
+	 */
+	@RequestMapping(value = "/getIndexData")
+	@ResponseBody
+	public String getIndexData(HttpServletRequest request,String userId) throws NoSuchFieldException, SecurityException {
+		JSONArray jsonArray=new JSONArray();
+		Map returnMap =new HashMap();
+		//通过userid查询数据
+		int suserId=Integer.parseInt(userId);
+		String BaseUrl="http://api.nbrobo.com//mobile/interface.do?content=";
+		String code="";
+		for (int i = 0; i<5; i++) {
+			if(i==0){
+				code="xinlv";
+			}else if(i==1){
+				code="xueyang";
+			}else if(i==2) {
+				code="wendu";
+			}else if(i==3){
+				code="sousuoya";
+			}else if(i==4){
+				code="suzhangya";
+			}
+			String sendData="{'type':'findgeneralinspectdata','user_id':"+suserId+",'code':'"+code+"','inspect_date':'','pageIndex':1,'pageSize':1}";
+			String url=BaseUrl+sendData;
+			String datas=HttpUtil.sendGet(url,"utf-8");
+			//解析data并封装
+			System.out.println(reversData(datas,returnMap));
+			jsonArray.add(reversData(datas,returnMap));
+		}
+		return jsonArray.toString();
+	}
+	
+	
+	//解析数据并组织成data类型
+	public JSONObject reversData(String getDatas,Map returnMap) throws NoSuchFieldException, SecurityException{
+		JSONObject jsonObject =new JSONObject();
+		Data data=new Data();
+		Map datamap=JsonUtil.getMap4Json(getDatas);
+		List<MorphDynaBean> list=net.sf.json.JSONArray.toList(new net.sf.json.JSONArray().fromObject(datamap.get("li")));
+		try {
+			String name=list.get(0).get("text_value").toString();
+			Double value= Double.parseDouble(list.get(0).get("value").toString());
+			jsonObject.put("name", name);
+			jsonObject.put("value",value);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return jsonObject;
+	}
+	
+	
 	
 }

@@ -28,11 +28,13 @@
   <img alt="" src="../img/bullhorn.png" style="width:1.2em;"/>
   </a> 
 <input type="hidden" id="vip_code" name="vip_code" value="${vip.vip_code}">
+<input type="hidden" id="vip_id" name="vip_id" value="${vip.id}">
 <input type="hidden" id="card_code" name="card_code" value="${vip.card_code}">
  <a href="#" onclick="userhome();" ><img src="${heard_img_url}" width="100"><i class="text-icon order-card order-icon" style="position:absolute;width:80px;top:85px;padding:2px;font-size:12px !important;margin-left:-15px;">进入个人中心</i></a>
   <div class="username white">${vip.nick_name}</div>
  
   <div class="userinfo white"> <i class="text-icon order-card order-icon" style="background:#F5B345">卡</i>${vip.card_code}</div>
+  <div class="userinfo white" style="margin-top:10px"> <i class="text-icon order-card order-icon" style="background:#F5B345">实</i>实时监控</div>	
 
   <dl class="list" style="background:none; border-top:none;border-bottom:none;">
     <dd>
@@ -65,6 +67,7 @@
     </a> <span class="jiating"></span> </dd>
 </dl>
 <div class="weui_grids" id="inspectlisthtml"> 
+	
 <!-- 
 <a href="" class="weui_grid">
   <div class="weui_grid_icon icon-niaosuan"> <img src="<%=path %>/img/icon_niaosuan.png" width="50" height="50"> </div>
@@ -84,22 +87,27 @@ $(document).ready(function(e) {
 	}
 	inspectnear();
 	inspectlist();
+    setInterval("inspectnear()",60000);
 });
+//显示三种类型的数据
+//并定时刷新
 	function inspectnear(){
+		var userId=$("#vip_id").val();
+		var inspectnearhtml ="";//"<span style='float:left;width:10%;margin-top:14px'>实时监控</span>";
 			$.ajax({
-				url:"<%=path%>/vip/inspectnear.json?ttt="+new Date().getTime(),
+				url:"<%=path%>/index/getIndexData.json?ttt="+new Date().getTime(),
 				type:"get",
 				dataType:"json",
-				data:"size=3",
+				data:"userId="+userId,
 				success:function(data){
-					var inspectnearhtml = "";
-					$.each(data, function(i, item){   
+					$.each(data, function(i, item){ 
 						inspectnearhtml += '<li><a href="#" class="react"> <span class="text-icon white">'+item.value
 						               +'</span> <span class="white">'+item.name+'</span> </a> </li>';
 					 });
-					$("#inspectnearul").html(inspectnearhtml);
+					  $("#inspectnearul").html(inspectnearhtml); 
 				}
 			});
+			
 	}
 	function inspectlist(){
 		$.ajax({
